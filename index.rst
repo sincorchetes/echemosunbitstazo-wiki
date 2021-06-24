@@ -11,7 +11,7 @@ Este es mi espacio de documentación personal dónde almaceno todo tipo de conoc
 **NOTA:** Si estás buscando mi blog, puedes acceder al contenido desde mi repositorio. .. GitHub: https://github.com/sincorchetes/echemosunbitstazo
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Administración de sistemas
    :glob:
 
