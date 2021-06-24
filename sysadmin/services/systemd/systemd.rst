@@ -24,7 +24,7 @@ Configurar una codificación del sistema
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
-^ sudo localectl set-locale en_US.utf8
+  sudo localectl set-locale en_US.utf8
 
 Huso horario
 ************
@@ -65,10 +65,10 @@ Troubleshooting
 ###############
 
 No encuentro la codificación que quiero
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Fedora/CentOS/RHEL
+***************************************
 
 Revisar los locales instalados
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -77,6 +77,7 @@ Revisar los locales instalados
 
 
 Instalar el idioma específico
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
   
@@ -84,6 +85,7 @@ Instalar el idioma específico
 
 
 La pantalla del portátil entra en suspensión con AC y conectada a otro monitor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :code:`/etc/systemd/logind.conf`
 
@@ -94,7 +96,8 @@ La pantalla del portátil entra en suspensión con AC y conectada a otro monitor
   HandleLidSwitchDocked=ignore
 
 
-Reiniciar el servicio (no hacer SIGHUP como dice):
+Reiniciar el servicio (no hacer SIGHUP como dice)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 

@@ -42,7 +42,7 @@
     
     <link rel="index" title="Índice" href="../../../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../../../search.html" />
-    <link rel="next" title="Bash" href="../../../scripting/bash/bash.html" />
+    <link rel="next" title="Ansible" href="../../../automation/ansible/ansible.html" />
     <link rel="prev" title="Diferencias entre gestores de servicios" href="../../systemd/systemd-construyendo-svc.html" /> 
 </head>
 
@@ -90,48 +90,29 @@
             
               <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../linux/linux.html">Linux</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../services.html">Servicios</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../databases/mariadb/MariaDB.html">MariaDB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../databases/mariadb/MariaDB-sql.html">MariaDB - Comandos SQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd.html">systemd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-construyendo-svc.html">Diferencias entre gestores de servicios</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Zabbix</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#instalacion-en-centos-8">Instalación en CentOS 8</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#actualizar-el-sistema">Actualizar el sistema</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#instalar-el-repositorio">Instalar el repositorio</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#instalar-el-software-necesario">Instalar el software necesario</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configurando-por-primera-vez-la-base-de-datos">Configurando por primera vez la base de datos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configurando-la-base-de-datos-para-el-servidor">Configurando la base de datos para el servidor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#editar-archivo-etc-nginx-conf-d-zabbix-conf">Editar archivo <code class="code docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/zabbix.conf</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#escoger-el-huso-horario-etc-php-fpm-d-zabbix-conf">Escoger el huso horario <code class="code docutils literal notranslate"><span class="pre">/etc/php-fpm.d/zabbix.conf</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arrancando-y-habilitando-zabbix-en-el-sistema">Arrancando y habilitando Zabbix en el sistema</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#accediendo-al-portal-de-configuracion">Accediendo al portal de configuración</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#let-s-encrypt">Let’s Encrypt</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Instalar el software necesario</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generando-el-certificado">Generando el certificado</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reiniciando-el-servidor-web">Reiniciando el servidor web</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#firewalld">Firewalld</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#instalar-firewalld">Instalar firewalld</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#habilitando-al-arranque-e-iniciandolo">Habilitando al arranque e iniciándolo</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#abriendo-los-puertos-para-zabbix">Abriendo los puertos para Zabbix</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#procedimiento-de-backup">Procedimiento de backup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exportar-todas-las-bases-de-datos">Exportar todas las bases de datos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comprimir-los-directorios-esenciales">Comprimir los directorios esenciales</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../sysadmin.html">Administración de sistemas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/linux.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../services.html">Servicios</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../databases/mariadb/MariaDB.html">MariaDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../databases/mariadb/MariaDB-sql.html">MariaDB - Comandos SQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../systemd/systemd.html">systemd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../systemd/systemd-construyendo-svc.html">Diferencias entre gestores de servicios</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Zabbix</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instalacion-en-centos-8">Instalación en CentOS 8</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#let-s-encrypt">Let’s Encrypt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#firewalld">Firewalld</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#procedimiento-de-backup">Procedimiento de backup</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../automation/ansible/ansible.html">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../storage/storage.html">Almacenamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gui/desktop.html">Entorno gráfico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../containers/containers.html">Contenedores</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../scripting/bash/bash.html">Bash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../containers/containers.html">Contenedores</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Automatización</span></p>
 <ul>
@@ -191,6 +172,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../sysadmin.html">Administración de sistemas</a> &raquo;</li>
         
           <li><a href="../../services.html">Servicios</a> &raquo;</li>
         
@@ -390,7 +373,7 @@ firewall-cmd --reload
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../../../scripting/bash/bash.html" class="btn btn-neutral float-right" title="Bash" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../../automation/ansible/ansible.html" class="btn btn-neutral float-right" title="Ansible" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../../systemd/systemd-construyendo-svc.html" class="btn btn-neutral float-left" title="Diferencias entre gestores de servicios" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 

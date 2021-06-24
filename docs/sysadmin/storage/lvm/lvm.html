@@ -41,7 +41,9 @@
 
     
     <link rel="index" title="Índice" href="../../../genindex.html" />
-    <link rel="search" title="Búsqueda" href="../../../search.html" /> 
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Entorno gráfico" href="../../gui/desktop.html" />
+    <link rel="prev" title="Almacenamiento" href="../storage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,11 +89,45 @@
             
             
               <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../sysadmin.html">Administración de sistemas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../storage.html">Almacenamiento</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Arquitectura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volumenes-fisicos">Volúmenes físicos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#comprobar-volumenes-fisicos">Comprobar volúmenes físicos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crear-volumen-fisico">Crear volumen físico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activar-volumenes-fisicos-inactivos">Activar volúmenes físicos inactivos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#desactivar-volumenes-fisicos">Desactivar volúmenes físicos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualizar-informacion-del-volumen-fisico">Visualizar información del volumen físico</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#grupo-de-volumenes">Grupo de volúmenes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#crear-un-grupo-de-volumenes">Crear un grupo de volúmenes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eliminar-un-grupo-de-volumenes">Eliminar un grupo de volúmenes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#averiguar-la-informacion-de-un-grupo-de-volumen">Averiguar la información de un grupo de volumen</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#volumenes-logicos-y-particiones">Volúmenes lógicos y particiones</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#comprobar-volumenes-logicos">Comprobar volúmenes lógicos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crear-volumen-logico">Crear volumen lógico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#expandir-volumen-logico-con-capacidad-especifica">Expandir volumen lógico con capacidad específica</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aumentar-un-volumen-logico-con-todo-el-espacio-disponible">Aumentar un volumen lógico con todo el espacio disponible</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reducir-el-espacio-de-un-volumen-logico-procedimiento-no-probado">Reducir el espacio de un volúmen lógico (Procedimiento NO probado)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#averiguar-la-informacion-de-un-volumen-logico">Averiguar la información de un volumen lógico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renombrar-un-volumen-logico">Renombrar un volúmen lógico</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gui/desktop.html">Entorno gráfico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Automatización</span></p>
 <ul>
@@ -151,6 +187,10 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../sysadmin.html">Administración de sistemas</a> &raquo;</li>
+        
+          <li><a href="../storage.html">Almacenamiento</a> &raquo;</li>
         
       <li>Arquitectura</li>
     
@@ -278,61 +318,39 @@ sudo vgremove Nombre_GrupoVolumen
 <li><p>Paso anterior</p></li>
 <li><p>Ocupar todo el espacio disponible del Grupo de Volúmen (<code class="code docutils literal notranslate"><span class="pre">VolGroupXY</span></code>): <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvcreate</span> <span class="pre">-l</span> <span class="pre">100%FREE</span> <span class="pre">-n</span> <span class="pre">NOMBRELV</span> <span class="pre">VOLGROUPXY</span></code></p></li>
 <li><p>Coger espacio medido (e.g 10G): <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvcreate</span> <span class="pre">-L</span> <span class="pre">20G</span> <span class="pre">-n</span> <span class="pre">NOMMBRELV</span> <span class="pre">VOLGROUPXY</span></code></p></li>
+<li><p>Formatear en EXT4: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkfs.ext4</span> <span class="pre">/dev/VolGroupXY/LVol</span></code></p></li>
+<li><p>Formatear en XFS: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkfs.xfs</span> <span class="pre">/dev/VolGroupXY/LVol</span></code></p></li>
 </ul>
-<blockquote>
-<div><ul class="simple">
-<li><p>Para EXT4: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkfs.ext4</span> <span class="pre">/dev/VolGroupXY/LVol</span></code></p></li>
-<li><p>Para XFS: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkfs.xfs</span> <span class="pre">/dev/VolGroupXY/LVol</span></code></p></li>
-</ul>
-</div></blockquote>
 </div>
 <div class="section" id="expandir-volumen-logico-con-capacidad-especifica">
 <h2>Expandir volumen lógico con capacidad específica<a class="headerlink" href="#expandir-volumen-logico-con-capacidad-especifica" title="Enlazar permanentemente con este título">¶</a></h2>
-<ul>
-<li><p>Realizar este punto</p></li>
-<li><p>Aumentar el volumen lógico a 20GB
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvextend</span> <span class="pre">-L</span> <span class="pre">+20GB</span> <span class="pre">/dev/VolGroupXY/LVol</span></code></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Para EXT4
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">resize2fs</span> <span class="pre">/dev/VolGroupXY/vol</span></code></p></li>
-<li><p>Para XFS
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">xfs_growfs</span> <span class="pre">/dev/VolGroupXY/vol</span></code></p></li>
-</ul>
-</div></blockquote>
-</li>
+<ul class="simple">
+<li><p>Aumentar el volumen lógico a 20GB <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvextend</span> <span class="pre">-L</span> <span class="pre">+20GB</span> <span class="pre">/dev/VolGroupXY/LVol</span></code></p></li>
+<li><p>Formatear en EXT4: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">resize2fs</span> <span class="pre">/dev/VolGroupXY/vol</span></code></p></li>
+<li><p>Formatear en XFS <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">xfs_growfs</span> <span class="pre">/dev/VolGroupXY/vol</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="aumentar-un-volumen-logico-con-todo-el-espacio-disponible">
 <h2>Aumentar un volumen lógico con todo el espacio disponible<a class="headerlink" href="#aumentar-un-volumen-logico-con-todo-el-espacio-disponible" title="Enlazar permanentemente con este título">¶</a></h2>
-<ul>
-<li><p>Para incrementar el espacio del volumen lógico para que consuma todo el espacio libre del grupo de volúmenes
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvextend</span> <span class="pre">-l</span> <span class="pre">+100%FREE</span> <span class="pre">/dev/VolGroupXY/LVol</span></code>
-* Para EXT4</p>
-<blockquote>
-<div><p><cite>:code:`sudo resize2fs /dev/VolGroupXY/vol</cite></p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Para XFS
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">xfs_growfs</span> <span class="pre">/dev/VolGroupXY/vol</span></code></p></li>
-</ul>
-</li>
-</ul>
+<p>Para incrementar el espacio del volumen lógico para que consuma todo el espacio libre del grupo de volúmenes: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvextend</span> <span class="pre">-l</span> <span class="pre">+100%FREE</span> <span class="pre">/dev/VolGroupXY/LVol</span></code>
+* Formatear en EXT4: <cite>:code:`sudo resize2fs /dev/VolGroupXY/vol</cite>
+* Formatear en XFS: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">xfs_growfs</span> <span class="pre">/dev/VolGroupXY/vol</span></code></p>
 </div>
 <div class="section" id="reducir-el-espacio-de-un-volumen-logico-procedimiento-no-probado">
 <h2>Reducir el espacio de un volúmen lógico (Procedimiento NO probado)<a class="headerlink" href="#reducir-el-espacio-de-un-volumen-logico-procedimiento-no-probado" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Procedimiento no válido para particiones XFS</p>
+</div>
 <ul class="simple">
-<li><p><strong>Procedimiento no válido para particiones XFS</strong></p></li>
-<li><p>Una vez identificado el volumen lógico, lo reducimos:
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvreduce</span> <span class="pre">--size</span> <span class="pre">X(GB|MB|KB)</span> <span class="pre">/dev/VolGroupXY/LVol</span></code></p></li>
+<li><p>Una vez identificado el volumen lógico, lo reducimos: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvreduce</span> <span class="pre">--size</span> <span class="pre">X(GB|MB|KB)</span> <span class="pre">/dev/VolGroupXY/LVol</span></code></p></li>
 <li><p>Hay que redimensionar el espacio de la partición utilizada</p></li>
 </ul>
 </div>
 <div class="section" id="averiguar-la-informacion-de-un-volumen-logico">
 <h2>Averiguar la información de un volumen lógico<a class="headerlink" href="#averiguar-la-informacion-de-un-volumen-logico" title="Enlazar permanentemente con este título">¶</a></h2>
 <ul class="simple">
-<li><p>Averiguar que LV queremos comprobar
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvdisplay</span> <span class="pre">/dev/VG_Nombre</span></code></p></li>
+<li><p>Averiguar que LV queremos comprobar: <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lvdisplay</span> <span class="pre">/dev/VG_Nombre</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="renombrar-un-volumen-logico">
@@ -353,6 +371,10 @@ sudo lvrename /dev/VolGroup02/VOL /dev/VolGroup02/VOL_NUEVO_NOMBRE
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../gui/desktop.html" class="btn btn-neutral float-right" title="Entorno gráfico" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../storage.html" class="btn btn-neutral float-left" title="Almacenamiento" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
 
   <hr/>
 

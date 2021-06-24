@@ -63,14 +63,14 @@ Un IDE que viene integrado con Python (*incluyendo en la instalación de Windows
 Spyder
 ******
 
-Es un IDE gratuito y libre que contiene multitud de funciones desde depuración, ejecución y redacción de un archivo en Python todo en una misma ventana. Pues ver `Más info <https://www.spyder-ide.org>`_
+Es un IDE gratuito y libre que contiene multitud de funciones desde depuración, ejecución y redacción de un archivo en Python todo en una misma ventana. Pues ver más info en su `páginas web <https://www.spyder-ide.org>`_
 
 .. image:: spyder.png
 
 Jupyter Notebook
 ****************
 
-Es un servidor web que mediante estilos, javascripts y html5 genera un IDE web con el que poder interactuar, al igual que todos permite depurar, crear archivos, navegar por los directorios del sistema operativo...etc `Más info <https://jupyter.org>`_
+Es un servidor web que mediante estilos, javascripts y html5 genera un IDE web con el que poder interactuar, al igual que todos permite depurar, crear archivos, navegar por los directorios del sistema operativo...etc `Jupyter <https://jupyter.org>`_
 
 Navegando por los directorios del SO desde su interfaz web
 
@@ -87,14 +87,14 @@ Abriendo una sesión de SO desde Web
 Jupyter labs
 ************
 
-Basado en Jupyter Notebook y Arquitecture contiene más características, como especificar qué versión de Python lanzar, ejecutar una consola directamente de Python o de SO... `Más info <https://jupyter.org>`_
+Basado en Jupyter Notebook y Arquitecture contiene más características, como especificar qué versión de Python lanzar, ejecutar una consola directamente de Python o de SO... `Más info en Jupiter <https://jupyter.org>`_
 
 .. image:: jupyterlabs.png
 
 Anaconda
 ********
 
-Anaconda es un software que contiene todo lo necesario para desplegar un entorno de desarrollo de Python tanto en Linux como en Windows. No solo contiene el intérprete, si no que también tienen varios editores que puedes seleccionar desde su panel "Anaconda Navitator". `Más info <https://www.anaconda.com>`_
+Anaconda es un software que contiene todo lo necesario para desplegar un entorno de desarrollo de Python tanto en Linux como en Windows. No solo contiene el intérprete, si no que también tienen varios editores que puedes seleccionar desde su panel "Anaconda Navitator". Más info `en su página <https://www.anaconda.com>`_
 
 .. image:: anaconda.png
 

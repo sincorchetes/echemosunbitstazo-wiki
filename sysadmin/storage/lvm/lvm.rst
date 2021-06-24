@@ -100,43 +100,37 @@ Crear volumen lógico
 * Paso anterior
 * Ocupar todo el espacio disponible del Grupo de Volúmen (:code:`VolGroupXY`): :code:`sudo lvcreate -l 100%FREE -n NOMBRELV VOLGROUPXY`
 * Coger espacio medido (e.g 10G): :code:`sudo lvcreate -L 20G -n NOMMBRELV VOLGROUPXY`
- * Para EXT4: :code:`sudo mkfs.ext4 /dev/VolGroupXY/LVol`
- * Para XFS: :code:`sudo mkfs.xfs /dev/VolGroupXY/LVol`
+* Formatear en EXT4: :code:`sudo mkfs.ext4 /dev/VolGroupXY/LVol`
+* Formatear en XFS: :code:`sudo mkfs.xfs /dev/VolGroupXY/LVol`
 
 Expandir volumen lógico con capacidad específica
 ################################################
 
-* Realizar este punto
-* Aumentar el volumen lógico a 20GB
-  :code:`sudo lvextend -L +20GB /dev/VolGroupXY/LVol`
-   * Para EXT4
-     :code:`sudo resize2fs /dev/VolGroupXY/vol`
-   * Para XFS
-     :code:`sudo xfs_growfs /dev/VolGroupXY/vol`
+* Aumentar el volumen lógico a 20GB :code:`sudo lvextend -L +20GB /dev/VolGroupXY/LVol`
+* Formatear en EXT4: :code:`sudo resize2fs /dev/VolGroupXY/vol`
+* Formatear en XFS :code:`sudo xfs_growfs /dev/VolGroupXY/vol`
 
 Aumentar un volumen lógico con todo el espacio disponible
 #########################################################
 
-*   Para incrementar el espacio del volumen lógico para que consuma todo el espacio libre del grupo de volúmenes
-    :code:`sudo lvextend -l +100%FREE /dev/VolGroupXY/LVol`
-    * Para EXT4
-      `:code:`sudo resize2fs /dev/VolGroupXY/vol`
-    * Para XFS
-      :code:`sudo xfs_growfs /dev/VolGroupXY/vol`
+Para incrementar el espacio del volumen lógico para que consuma todo el espacio libre del grupo de volúmenes: :code:`sudo lvextend -l +100%FREE /dev/VolGroupXY/LVol`
+* Formatear en EXT4: `:code:`sudo resize2fs /dev/VolGroupXY/vol`
+* Formatear en XFS: :code:`sudo xfs_growfs /dev/VolGroupXY/vol`
 
 Reducir el espacio de un volúmen lógico (Procedimiento NO probado)
 ##################################################################
 
-*   **Procedimiento no válido para particiones XFS**
-*   Una vez identificado el volumen lógico, lo reducimos:
-    :code:`sudo lvreduce --size X(GB|MB|KB) /dev/VolGroupXY/LVol`
-*   Hay que redimensionar el espacio de la partición utilizada
+.. note::
+
+  Procedimiento no válido para particiones XFS
+  
+* Una vez identificado el volumen lógico, lo reducimos: :code:`sudo lvreduce --size X(GB|MB|KB) /dev/VolGroupXY/LVol`
+* Hay que redimensionar el espacio de la partición utilizada
 
 Averiguar la información de un volumen lógico
 #############################################
 
-* Averiguar que LV queremos comprobar
-  :code:`sudo lvdisplay /dev/VG_Nombre`
+* Averiguar que LV queremos comprobar: :code:`sudo lvdisplay /dev/VG_Nombre`
 
 Renombrar un volúmen lógico
 ###########################

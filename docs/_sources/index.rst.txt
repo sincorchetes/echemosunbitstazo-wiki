@@ -15,10 +15,7 @@ Este es mi espacio de documentación personal dónde almaceno todo tipo de conoc
    :caption: Administración de sistemas
    :glob:
 
-   sysadmin/linux/*
-   sysadmin/services/*
-   sysadmin/scripting/bash/bash
-   sysadmin/containers/containers
+   sysadmin/sysadmin
 
 .. toctree::
    :maxdepth: 1

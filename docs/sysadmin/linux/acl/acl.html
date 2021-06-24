@@ -90,54 +90,30 @@
             
               <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../linux.html">Linux</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Gestión de usuari&#64;s y grupos</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#algunos-conceptos">Algunos conceptos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#usuari-s">Usuari&#64;s</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#como-crear-un-a-usuari">¿Cómo crear un(a) usuari&#64;?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comando-useradd">Comando useradd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comando-adduser">Comando adduser</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ficheros-implicados-en-el-uso-de-ambos-comandos">Ficheros implicados en el uso de ambos comandos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#como-autenticarse-con-un-a-usuari-en-nuestra-sesion">¿Cómo autenticarse con un(a) usuari&#64; en nuestra sesión?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#como-modificar-la-informacion-de-un-a-usuari">¿Cómo modificar la información de un(a) usuari&#64;?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#como-eliminar-un-a-usuari">¿Cómo eliminar un(a) usuari&#64;?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#directorio-de-trabajo">¿Directorio de trabajo?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#super-usuario">¿Super usuario?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../sysadmin.html">Administración de sistemas</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../linux.html">Linux</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Gestión de usuari&#64;s y grupos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#algunos-conceptos">Algunos conceptos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usuari-s">Usuari&#64;s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grupos">Grupos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#permisos">Permisos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#permisos-especiales">Permisos especiales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#referencias">Referencias</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#grupos">Grupos</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#grupos-primarios">¿Grupos primarios?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#como-linux-sabe-que-hace-una-cosa-y-un-grupo-otra">¿Cómo Linux sabe qué hace una cosa y un grupo otra?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#como-crear-un-grupo">¿Cómo crear un grupo?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comando-groupadd">Comando groupadd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#como-modificar-un-grupo">¿Cómo modificar un grupo?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comando-groupmod">Comando groupmod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#como-eliminar-el-grupo">¿Cómo eliminar el grupo?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#como-cambiar-temporalmente-nuestr-grupo-primario">¿Cómo cambiar temporalmente nuestr&#64; grupo primario?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#visualizando-los-grupos-en-los-que-estoy">Visualizando los grupos en los que estoy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comodin">Comodín</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pkgmnt/pkgmnt.html">Gestores de paquetes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fedora/guides/fedora.html">Fedora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../centos/guides/centos.html">CentOS</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#permisos">Permisos</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#como-ver-los-permisos">¿Cómo ver los permisos?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../storage/storage.html">Almacenamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gui/desktop.html">Entorno gráfico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#permisos-especiales">Permisos especiales</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#sticky-bit">Sticky Bit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#suid-y-sguid">SUID y SGUID</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#referencias">Referencias</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../pkgmnt/pkgmnt.html">Gestores de paquetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fedora/guides/fedora.html">Fedora</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../centos/guides/centos.html">CentOS</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Automatización</span></p>
 <ul>
@@ -197,6 +173,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../sysadmin.html">Administración de sistemas</a> &raquo;</li>
         
           <li><a href="../linux.html">Linux</a> &raquo;</li>
         

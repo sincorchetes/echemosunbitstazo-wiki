@@ -90,84 +90,33 @@
             
               <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="bash.html">Bash</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Trabajando con Bash</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#directorios-y-archivos">Directorios y archivos</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#archivos-ocultos">Archivos ocultos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rutas-absolutas-y-relativas">Rutas absolutas y relativas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#escalado-entre-directorios">Escalado entre directorios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#obtener-la-ruta-del-directorio-actual">Obtener la ruta del directorio actual</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#creando-un-directorio">Creando un directorio</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#desplazarnos-entre-directorios">Desplazarnos entre directorios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#desplazandonos-con-cd">Desplazándonos con cd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#desplazandonos-mediante-pushd-y-popd">Desplazándonos mediante pushd y popd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#renombrando-archivos-y-directorios">Renombrando archivos y directorios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#moviendo-archivos-y-directorios">Moviendo archivos y directorios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#copiando-archivos-y-directorios">Copiando archivos y directorios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#listar-archivos-y-directorios">Listar archivos y directorios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tipos-de-archivo">Tipos de archivo</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#crear-un-fichero-vacio">Crear un fichero vacío</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mostrando-informacion-de-un-fichero">Mostrando información de un fichero</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../sysadmin.html">Administración de sistemas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bash.html">Bash</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Trabajando con Bash</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#directorios-y-archivos">Directorios y archivos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trabajando-con-texto">Trabajando con texto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copias-de-seguridad">Copias de seguridad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#comando-grep">Comando grep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#alias">Alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enlaces">Enlaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#busqueda-de-archivos">Búsqueda de archivos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#redireccionamiento">Redireccionamiento</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tuberias">Tuberías</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fuentes">Fuentes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#trabajando-con-texto">Trabajando con texto</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mostrar-o-redireccionar-texto">Mostrar o redireccionar texto</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#crear-un-archivo-y-anadir-texto-directamente">Crear un archivo y añadir texto directamente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aprendiendo-scripting.html">Aprendiendo scripting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash.html#que-es-bash">¿Qué es Bash?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#copias-de-seguridad">Copias de seguridad</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#elaborando-copias-de-seguridad">Elaborando copias de seguridad</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#elaborando-una-copia-de-un-directorio">Elaborando una copia de un directorio</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comprimir-con-bzip2">Comprimir con bzip2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#utilizar-compresion-gzip">Utilizar compresión gzip</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#crear-una-copia-de-seguridad-con-formato-xz">Crear una copia de seguridad con formato xz</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#descomprimiendo-copias-de-seguridad">Descomprimiendo copias de seguridad</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#descomprimir-una-copia-de-seguridad">Descomprimir una copia de seguridad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../storage/storage.html">Almacenamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gui/desktop.html">Entorno gráfico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#comando-grep">Comando grep</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#sintaxis-y-ejemplos">Sintaxis y ejemplos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#fgrep-y-egrep">fgrep y egrep</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#alias">Alias</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enlaces">Enlaces</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enlaces-simbolicos">Enlaces simbólicos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enlaces-duros">Enlaces duros</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#busqueda-de-archivos">Búsqueda de archivos</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#comdando-find">Comdando find</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comdando-locate">Comdando locate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comando-whereis">Comando whereis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comando-whatis">Comando whatis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comando-apropos">Comando apropos</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#redireccionamiento">Redireccionamiento</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#operadores-de-redireccionamiento">Operadores de redireccionamiento</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#canales">Canales</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ejemplos">Ejemplos</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#tuberias">Tuberías</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#este-es-el-formato-de-una-tuberia-comun">Este es el formato de una tubería común</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Ejemplos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#basandonos-en-esta-estructura-de-directorios">Basándonos en esta estructura de directorios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mostrar-un-valor-relacionado-con-dmesg-1">Mostrar un valor relacionado con <code class="code docutils literal notranslate"><span class="pre">dmesg(1)</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mostrar-un-valor-relacionado-con-la-salida-del-comando-lspci-8">Mostrar un valor relacionado con la salida del comando <code class="code docutils literal notranslate"><span class="pre">lspci(8)</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#fuentes">Fuentes</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="aprendiendo-scripting.html">Aprendiendo scripting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#que-es-bash">¿Qué es Bash?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Automatización</span></p>
 <ul>
@@ -227,6 +176,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../sysadmin.html">Administración de sistemas</a> &raquo;</li>
         
           <li><a href="bash.html">Bash</a> &raquo;</li>
         

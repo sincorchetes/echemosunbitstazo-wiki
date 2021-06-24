@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Linux &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  <title>Almacenamiento &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="Gestión de usuari@s y grupos" href="acl/acl.html" />
-    <link rel="prev" title="Administración de sistemas" href="../sysadmin.html" /> 
+    <link rel="next" title="Arquitectura" href="lvm/lvm.html" />
+    <link rel="prev" title="Ansible" href="../automation/ansible/ansible.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,17 +91,18 @@
               <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../sysadmin.html">Administración de sistemas</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Linux</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="acl/acl.html">Gestión de usuari&#64;s y grupos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pkgmnt/pkgmnt.html">Gestores de paquetes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fedora/guides/fedora.html">Fedora</a></li>
-<li class="toctree-l3"><a class="reference internal" href="centos/guides/centos.html">CentOS</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/linux.html">Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scripting/bash/bash.html">Bash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../services/services.html">Servicios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../automation/ansible/ansible.html">Ansible</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../storage/storage.html">Almacenamiento</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Almacenamiento</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lvm/lvm.html">Arquitectura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lvm/lvm.html#volumenes-fisicos">Volúmenes físicos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lvm/lvm.html#grupo-de-volumenes">Grupo de volúmenes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lvm/lvm.html#volumenes-logicos-y-particiones">Volúmenes lógicos y particiones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lvm/lvm.html#referencias">Referencias</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../gui/desktop.html">Entorno gráfico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../containers/containers.html">Contenedores</a></li>
 </ul>
@@ -168,13 +169,13 @@
         
           <li><a href="../sysadmin.html">Administración de sistemas</a> &raquo;</li>
         
-      <li>Linux</li>
+      <li>Almacenamiento</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/sysadmin/linux/linux.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+            <a href="../../_sources/sysadmin/storage/storage.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
           
         
       </li>
@@ -187,30 +188,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="linux">
-<h1>Linux<a class="headerlink" href="#linux" title="Enlazar permanentemente con este título">¶</a></h1>
+  <div class="section" id="almacenamiento">
+<h1>Almacenamiento<a class="headerlink" href="#almacenamiento" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Gestión de usuarios y grupos:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="acl/acl.html">Gestión de usuari&#64;s y grupos</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Gestores de paquetes</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="pkgmnt/pkgmnt.html">Gestores de paquetes</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Fedora</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="fedora/guides/fedora.html">Fedora</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">CentOS</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="centos/guides/centos.html">CentOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lvm/lvm.html">Arquitectura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lvm/lvm.html#volumenes-fisicos">Volúmenes físicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lvm/lvm.html#grupo-de-volumenes">Grupo de volúmenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lvm/lvm.html#volumenes-logicos-y-particiones">Volúmenes lógicos y particiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lvm/lvm.html#referencias">Referencias</a></li>
 </ul>
 </div>
 </div>
@@ -221,8 +207,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="acl/acl.html" class="btn btn-neutral float-right" title="Gestión de usuari@s y grupos" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../sysadmin.html" class="btn btn-neutral float-left" title="Administración de sistemas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="lvm/lvm.html" class="btn btn-neutral float-right" title="Arquitectura" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../automation/ansible/ansible.html" class="btn btn-neutral float-left" title="Ansible" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

@@ -444,6 +444,6 @@ Desactivando el servicio al arranque
 Fuentes
 #######
 
-* [[https://www.devdungeon.com/content/creating-systemd-service-files|DevDungeon - Creating systemd service files]]
-* [[https://wiki.debian.org/LSBInitScripts/|Debian Wiki LSB Init Scripts]]
-* [[https://www.cyberciti.biz/tips/linux-write-sys-v-init-script-to-start-stop-service.html|Cybercity - Linux Write Sys V init to start stop service]]
+* `Creating systemd service files <https://www.devdungeon.com/content/creating-systemd-service-files>`_
+* `Debian Wiki LSB Init Scripts <https://wiki.debian.org/LSBInitScripts/>`_
+* `Linux Write Sys V init to start stop service <https://www.cyberciti.biz/tips/linux-write-sys-v-init-script-to-start-stop-service.html>`_

@@ -9,11 +9,11 @@ NVIDIA Optimus
 .. note::
 
   * Requisitos: 
-    * Tener instalado RPM Fusion
-    * Identificar la tarjeta gráfica (Procedimiento probado y certificado con el siguiente hardware):
-      * Portátil Gigabyte Sabre 15
-      * NVIDIA GeForce GTX 1050
-      * Intel HD Graphics 630
+     * Tener instalado RPM Fusion
+     * Identificar la tarjeta gráfica (Procedimiento probado y certificado con el siguiente hardware):
+        * Portátil Gigabyte Sabre 15
+        * NVIDIA GeForce GTX 1050
+        * Intel HD Graphics 630
 
 Instalando
 ##########
