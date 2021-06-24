@@ -17,6 +17,7 @@ Este es mi espacio de documentación personal dónde almaceno todo tipo de conoc
 
    sysadmin/linux/*
    sysadmin/services/*
+   sysadmin/scripting/bash/bash
 
 .. toctree::
    :maxdepth: 1 

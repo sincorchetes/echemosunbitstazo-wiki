@@ -1,52 +1,5 @@
-Bash
-----
-
-¿Qué es Bash?
-#############
-
-Bash es un intérprete de comandos también conocido en inglés como una "*shell*" desarrollada el 8 de junio de 1989 por Brian Fox en el lenguaje C como alternativa y mejora de SH (*Bourne Shell*). Hoy en día es multiplataforma ya que puede correr tanto en Linux como en Mac OS X (de hecho es shell por defecto), en Windows mediante `Cygwin https://www.cygwin.com?target=_blank>`_ o mediante la instalación oficial desde su apartado de añadir nuevas características de software.
-
-Actualmente existen multitudes de I.C pero mencionaremos las más destacadas como:
-
- * csh: C Shell creada por Bill Joy, 1978
- * tcsh: TENEX C Shell desarrollada por Ken Greer, 1981
- * fish: Shell interactiva liberada el 13 de febrero de 2005 por Axel Liljencrantz
- * zsh: Z Shell elaborada por Paul Falstad en 1990
- * ksh: KornShell creada por David Korn en 1983
-
-Cada una de ellas contiene ciertos matices a la hora de desarrollar scripts que son un serie de ficheros que suelen contener comandos e intrucciones adicionales para que se puedan ejecutar sin tener que escribir grandes bloques de comandos, variables...
-
-Entrada/Salida
-##############
-
-Las entradas y salidas es algo que debemos tener claro desde el principio. Una entrada se produce cuando introducimos un comando y pulsamos ejecutar o un programa automatizado ejecuta un programa X.
-
-La salida es el resultado producido al ejecutar dicho comando. Más adelante veremos, que podemos trabajar con salidas para que trabajen como entradas y viceversa.
-
-Modificadores
-#############
-
-Son las opciones con las que cambiaremos el comportamiento de los comandos y programas. Se identifican con un guión delante de una letra que hace referencia a una modificación.
-
-Por ejemplo, :code:`ls -l` lista todos los nombres de los directorios y de los archivos junto con información adicional como:
-
-* Permisos
-* Cantidad de dir hijos que hay dentro del directorio padre incluyendo así mismo y el padre
-* Grupo que gestiona el archivo/directorio 
-* Usuario propietario
-* Nº de inodo
-* Fecha de modificación
-
-Sin embargo, un :code:`ls` (que es :code:`ls -a` por defecto), mostrará solo el nombre de los archivos y directorios situados en el dir actual.
-
-.. code-block::
-
-  En artículos posteriores veremos con más profundidad qué son estos parámetros en los archivos.
-
 Trabajando con Bash
-###################
-
-A continuación veremos una recopilación de comandos básicos para poder trabajar con nuestra shell antes de poder seguir. Quizás nos pueda parecer un poco abrumador así de entrada todos los comandos, los modificadores, tipos de rutas...etc etc etc. Pero desde Echemos un bitstazo apostamos por el dicho de "la práctica hace al maestro". Y es así, mucho de nosotros que desarrollamos sufrimos una pérdida de memoria cuando dejamos de hacerlo. Así que... ¡Ha llegado la hora de practicar!
+-------------------
 
 Directorios y archivos
 **********************
@@ -152,60 +105,60 @@ Renombrando
 
 Para cambiar de nombre, solo será necesario ejecutar el comando `mv(1)` junto con el directorio que queramos cambiar y el directorio con nuevo nombre. Se pueden emplear rutas relativas, absolutas o una combinación de ambas:
 
-* :source:`mv dir dir_nuevo_nombre`
-* :source:`mv dir /home/sincorchetes/nuevo_nombre`
-* :source:`mv /home/sincorchetes/dir /home/sincorchetes/nuevo_nombre`
+* :code:`mv dir dir_nuevo_nombre`
+* :code:`mv dir /home/sincorchetes/nuevo_nombre`
+* :code:`mv /home/sincorchetes/dir /home/sincorchetes/nuevo_nombre`
 
 .. note::
 
-  Hay que tener cuidado con utilizar :source:`mv(1)` porque también sirve para mover directorios.**
+  Hay que tener cuidado con utilizar :code:`mv(1)` porque también sirve para mover directorios.**
 
 Moviendo
 ********
 
-Para desplazar directorios o archivos, tan solo tendremos que hacer uso de nuevo del comando :source:`mv(1)`.
+Para desplazar directorios o archivos, tan solo tendremos que hacer uso de nuevo del comando :code:`mv(1)`.
 
-* :source:`mv archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo`
-* :source:`mv archivo.ogg Videos/Echemosunbitstazo`
-* :source:`mv /home/sincorchetes/archivo.ogg Videos/Echemosunbitstazo`
+* :code:`mv archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo`
+* :code:`mv archivo.ogg Videos/Echemosunbitstazo`
+* :code:`mv /home/sincorchetes/archivo.ogg Videos/Echemosunbitstazo`
 
 También se puede aplicar un renombre más traslado:
 
-* :source:`mv archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo/nuevo_nombre.ogg`
-* :source:`mv archivo.ogg Videos/Echemosunbitstazo/nuevo_nombre.ogg`
-* :source:`mv /home/sincorchetes/archivo.ogg Videos/Echemosunbitstazo`
-* :source:`mv /home/sincorchetes/archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo`
+* :code:`mv archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo/nuevo_nombre.ogg`
+* :code:`mv archivo.ogg Videos/Echemosunbitstazo/nuevo_nombre.ogg`
+* :code:`mv /home/sincorchetes/archivo.ogg Videos/Echemosunbitstazo`
+* :code:`mv /home/sincorchetes/archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo`
 
 Copiando
 ********
 
-En el caso de copiar archivos, tenemos el comando :source:`cp(1)`. También puede aplicarse el uso de rutas absolutas, relativas o un conjunto de las mismas.
-:source:`cp archivo directorio_a_copiar`
+En el caso de copiar archivos, tenemos el comando :code:`cp(1)`. También puede aplicarse el uso de rutas absolutas, relativas o un conjunto de las mismas.
+:code:`cp archivo directorio_a_copiar`
 
-Es importante destacar, que para copiar un directorio completo a pesar de que esté vacio. Hagamos uso del modificador :source:`-r` o :source:`-R` (_recursivo_)
+Es importante destacar, que para copiar un directorio completo a pesar de que esté vacio. Hagamos uso del modificador :code:`-r` o :code:`-R` (_recursivo_)
 
-También dispone de un modo interactivo utilizando el modificador :source:`-i`
+También dispone de un modo interactivo utilizando el modificador :code:`-i`
 
 Listar archivos y directorios
 *****************************
 
-El comando por excelencia en estos casos es :source:`ls(1)` Nos permite listar con multitudes de opciones si utilizamos los modificadores.
+El comando por excelencia en estos casos es :code:`ls(1)` Nos permite listar con multitudes de opciones si utilizamos los modificadores.
 
-* Listar todos los archivos incluyendo los ocultos con la información que muestra :source:`ls -l`: :source:`ls -al`
-* Mostar el nombre de todos los archivos incluyendo la representación del espacio como caracter escapado: :source:`ls -b`
-* Mostrar el nombre de todos los archivos en una sola columna: :source:`ls -w 1`
+* Listar todos los archivos incluyendo los ocultos con la información que muestra :code:`ls -l`: :code:`ls -al`
+* Mostar el nombre de todos los archivos incluyendo la representación del espacio como caracter escapado: :code:`ls -b`
+* Mostrar el nombre de todos los archivos en una sola columna: :code:`ls -w 1`
 
 Tipo de archivo
 ***************
 
 En contra posición de sistemas como Windows, en Linux se puede tener un archivo sin ningún tipo de extensión. El sistema se encarga de averiguar que tipo de archivo es y abrirlo con la aplicación correspondiente.
 
-Si queremos saber algún día si nos han enviado un ejecutable o un audio realmente, haremos uso del comando :source:`file(1)`
+Si queremos saber algún día si nos han enviado un ejecutable o un audio realmente, haremos uso del comando :code:`file(1)`
 
 Crear un fichero vacío
 **********************
 
-Aunque la auténtica utilidad del comando :source:`touch(1)` es modificar la fecha y hora de los archivos. También se puede utilizar para crear un fichero vacío y añadir texto posteriormente.
+Aunque la auténtica utilidad del comando :code:`touch(1)` es modificar la fecha y hora de los archivos. También se puede utilizar para crear un fichero vacío y añadir texto posteriormente.
 
 .. code-block:: bash
 
@@ -214,9 +167,9 @@ Aunque la auténtica utilidad del comando :source:`touch(1)` es modificar la fec
 Mostrando información de un fichero
 ***********************************
 
-Si queremos leer un archivo de texto plano como la configuración de un servidor Apache, haremos uso del comando :source:`cat(1)`.
+Si queremos leer un archivo de texto plano como la configuración de un servidor Apache, haremos uso del comando :code:`cat(1)`.
 
-:source:`cat /etc/profile`
+:code:`cat /etc/profile`
 
 Salida truncada:
 
@@ -251,7 +204,7 @@ Trabajando con texto
 Mostrar o redireccionar texto
 *****************************
 
-Bash nos permite mostrar una frase, un texto que queramos gracias al comando :source:`echo(1)`.
+Bash nos permite mostrar una frase, un texto que queramos gracias al comando :code:`echo(1)`.
 
 .. code-block:: bash
 
@@ -272,7 +225,7 @@ Añadir información a un archivo ya existente
 Crear un archivo y añadir texto directamente
 ********************************************
 
-Podemos hacer uso del comando :source:`cat(1)` para finalizar la edición, tendremos que finalizarla pulsando la combinación de teclas :source:`CTRL+D` y para ello de la siguiente manera:
+Podemos hacer uso del comando :code:`cat(1)` para finalizar la edición, tendremos que finalizarla pulsando la combinación de teclas :code:`CTRL+D` y para ello de la siguiente manera:
 
 .. code-block:: bash
 
@@ -283,7 +236,7 @@ Podemos hacer uso del comando :source:`cat(1)` para finalizar la edición, tendr
 Copias de seguridad
 ###################
 
-El comando por excelencia para elaborar copias de seguridad en Linux es haciendo uso del comando :source:`tar(1)`
+El comando por excelencia para elaborar copias de seguridad en Linux es haciendo uso del comando :code:`tar(1)`
 
 Elaborando copias de seguridad
 ******************************
