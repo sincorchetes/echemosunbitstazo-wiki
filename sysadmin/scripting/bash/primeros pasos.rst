@@ -147,143 +147,189 @@ Volviendo hacia atrás:
 
 Estos comandos tienen algunas características especiales que podemos consultarlas en el manual de cada uno de ellos.
 
-### Renombrando 
+Renombrando 
+***********
 
 Para cambiar de nombre, solo será necesario ejecutar el comando `mv(1)` junto con el directorio que queramos cambiar y el directorio con nuevo nombre. Se pueden emplear rutas relativas, absolutas o una combinación de ambas:
 
-* `mv dir dir_nuevo_nombre`
-* `mv dir /home/sincorchetes/nuevo_nombre`
-* `mv /home/sincorchetes/dir /home/sincorchetes/nuevo_nombre`
+* :source:`mv dir dir_nuevo_nombre`
+* :source:`mv dir /home/sincorchetes/nuevo_nombre`
+* :source:`mv /home/sincorchetes/dir /home/sincorchetes/nuevo_nombre`
 
-**NOTA: Hay que tener cuidado con utilizar `mv(1)` porque también sirve para mover directorios.**
+.. note::
 
-### Moviendo
+  Hay que tener cuidado con utilizar :source:`mv(1)` porque también sirve para mover directorios.**
 
-Para desplazar directorios o archivos, tan solo tendremos que hacer uso de nuevo del comando `mv(1)`.
+Moviendo
+********
 
-* `mv archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo`
-* `mv archivo.ogg Videos/Echemosunbitstazo`
-* `mv /home/sincorchetes/archivo.ogg Videos/Echemosunbitstazo`
+Para desplazar directorios o archivos, tan solo tendremos que hacer uso de nuevo del comando :source:`mv(1)`.
+
+* :source:`mv archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo`
+* :source:`mv archivo.ogg Videos/Echemosunbitstazo`
+* :source:`mv /home/sincorchetes/archivo.ogg Videos/Echemosunbitstazo`
 
 También se puede aplicar un renombre más traslado:
 
-* `mv archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo/nuevo_nombre.ogg`
-* `mv archivo.ogg Videos/Echemosunbitstazo/nuevo_nombre.ogg`
-* `mv /home/sincorchetes/archivo.ogg Videos/Echemosunbitstazo`
-* `mv /home/sincorchetes/archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo`
+* :source:`mv archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo/nuevo_nombre.ogg`
+* :source:`mv archivo.ogg Videos/Echemosunbitstazo/nuevo_nombre.ogg`
+* :source:`mv /home/sincorchetes/archivo.ogg Videos/Echemosunbitstazo`
+* :source:`mv /home/sincorchetes/archivo.ogg /home/sincorchetes/Videos/Echemosunbitstazo`
 
-### Copiando
+Copiando
+********
 
-En el caso de copiar archivos, tenemos el comando `cp(1)`. También puede aplicarse el uso de rutas absolutas, relativas o un conjunto de las mismas.
-`cp archivo directorio_a_copiar`
+En el caso de copiar archivos, tenemos el comando :source:`cp(1)`. También puede aplicarse el uso de rutas absolutas, relativas o un conjunto de las mismas.
+:source:`cp archivo directorio_a_copiar`
 
-Es importante destacar, que para copiar un directorio completo a pesar de que esté vacio. Hagamos uso del modificador `-r` o `-R` (_recursivo_)
+Es importante destacar, que para copiar un directorio completo a pesar de que esté vacio. Hagamos uso del modificador :source:`-r` o :source:`-R` (_recursivo_)
 
-También dispone de un modo interactivo utilizando el modificador `-i`
+También dispone de un modo interactivo utilizando el modificador :source:`-i`
 
-### Listar archivos y directorios
+Listar archivos y directorios
+*****************************
 
-El comando por excelencia en estos casos es `ls(1)` Nos permite listar con multitudes de opciones si utilizamos los modificadores.
+El comando por excelencia en estos casos es :source:`ls(1)` Nos permite listar con multitudes de opciones si utilizamos los modificadores.
 
-* Listar todos los archivos incluyendo los ocultos con la información que muestra `ls -l`: `ls -al`
-* Mostar el nombre de todos los archivos incluyendo la representación del espacio como caracter escapado: `ls -b`
-* Mostrar el nombre de todos los archivos en una sola columna: `ls -w 1`
+* Listar todos los archivos incluyendo los ocultos con la información que muestra :source:`ls -l`: :source:`ls -al`
+* Mostar el nombre de todos los archivos incluyendo la representación del espacio como caracter escapado: :source:`ls -b`
+* Mostrar el nombre de todos los archivos en una sola columna: :source:`ls -w 1`
 
-### Tipo de archivo
+Tipo de archivo
+***************
 
 En contra posición de sistemas como Windows, en Linux se puede tener un archivo sin ningún tipo de extensión. El sistema se encarga de averiguar que tipo de archivo es y abrirlo con la aplicación correspondiente.
 
-Si queremos saber algún día si nos han enviado un ejecutable o un audio realmente, haremos uso del comando `file(1)`
+Si queremos saber algún día si nos han enviado un ejecutable o un audio realmente, haremos uso del comando :source:`file(1)`
 
-### Crear un fichero vacío
+Crear un fichero vacío
+**********************
 
-Aunque la auténtica utilidad del comando `touch(1)` es modificar la fecha y hora de los archivos. También se puede utilizar para crear un fichero vacío y añadir texto posteriormente.
-`touch fichero_nuevo`
+Aunque la auténtica utilidad del comando :source:`touch(1)` es modificar la fecha y hora de los archivos. También se puede utilizar para crear un fichero vacío y añadir texto posteriormente.
 
-### Mostrando información de un fichero
+.. code-block:: bash
 
-Si queremos leer un archivo de texto plano como la configuración de un servidor Apache, haremos uso del comando `cat(1)`.
+  touch fichero_nuevo
 
-`cat /etc/profile`
+Mostrando información de un fichero
+***********************************
+
+Si queremos leer un archivo de texto plano como la configuración de un servidor Apache, haremos uso del comando :source:`cat(1)`.
+
+:source:`cat /etc/profile`
 
 Salida truncada:
 
 .. code-block:: bash
-# /etc/profile
 
-# System wide environment and startup programs, for login setup
-# Functions and aliases go in /etc/bashrc
+  # /etc/profile
 
-# It's NOT a good idea to change this file unless you know what you
-# are doing. It's much better to create a custom.sh shell script in
-# /etc/profile.d/ to make custom changes to your environment, as this
-# will prevent the need for merging in future updates.
+  # System wide environment and startup programs, for login setup
+  # Functions and aliases go in /etc/bashrc
 
-pathmunge () {
+  # It's NOT a good idea to change this file unless you know what you
+  # are doing. It's much better to create a custom.sh shell script in
+  # /etc/profile.d/ to make custom changes to your environment, as this
+  # will prevent the need for merging in future updates.
+
+  pathmunge () {
     case ":${PATH}:" in
-        *:"$1":*)
-            ;;
-        *)
-            if [ "$2" = "after" ] ; then
-                PATH=$PATH:$1
-            else
-                PATH=$1:$PATH
-            fi
-    esac
-}
+      *:"$1":*)
+      ;;
+      *)
+      if [ "$2" = "after" ] ; then
+        PATH=$PATH:$1
+      else
+        PATH=$1:$PATH
+      fi
+      esac
+  }
+
+Trabajando con texto
+####################
+
+Mostrar o redireccionar texto
+*****************************
+
+Bash nos permite mostrar una frase, un texto que queramos gracias al comando :source:`echo(1)`.
+
 .. code-block:: bash
 
-## Trabajando con texto
-
-### Mostrar o redireccionar texto
-
-Bash nos permite mostrar una frase, un texto que queramos gracias al comando `echo(1)`.
-
-`echo "¡No nos perderemos los nuevos artículos de Echemosunbitstazo!"`
+  echo "¡No nos perderemos los nuevos artículos de Echemosunbitstazo!"
 
 También podemos redirigir el texto a un archivo nuevo
-`echo "¡No nos perderemos los nuevos artículos de Echemosunbitstazo!" > /home/sincorchetes/Documentos/archivo_nuevo`
-
-Añadir información a un archivo ya existente
-`echo "¡No te pierdas él próximo día otro capítulo más sobre Bash en echemosunbitstazo.es" >> /home/sincorchetes/Documento/existente`
-
-### Crear un archivo y añadir texto directamente
-
-Podemos hacer uso del comando `cat(1)` para finalizar la edición, tendremos que finalizarla pulsando la combinación de teclas `CTRL+D` y para ello de la siguiente manera:
 
 .. code-block:: bash
-cat >fichero_de_ejemplo
-Esto es un ejemplo.
+
+  echo "¡No nos perderemos los nuevos artículos de Echemosunbitstazo!" > /home/sincorchetes/Documentos/archivo_nuevo
+
+Añadir información a un archivo ya existente
+
+.. code-block:: bash
+
+  echo "¡No te pierdas él próximo día otro capítulo más sobre Bash en echemosunbitstazo.es" >> /home/sincorchetes/Documento/existente
+
+Crear un archivo y añadir texto directamente
+********************************************
+
+Podemos hacer uso del comando :source:`cat(1)` para finalizar la edición, tendremos que finalizarla pulsando la combinación de teclas :source:`CTRL+D` y para ello de la siguiente manera:
+
+.. code-block:: bash
+
+  cat >fichero_de_ejemplo
+  Esto es un ejemplo.
 
 
-## Copias de seguridad
+Copias de seguridad
+###################
 
-El comando por excelencia para elaborar copias de seguridad en Linux es haciendo uso del comando `tar(1)`
+El comando por excelencia para elaborar copias de seguridad en Linux es haciendo uso del comando :source:`tar(1)`
 
-### Elaborando copias de seguridad
+Elaborando copias de seguridad
+******************************
 
 Elaborando una copia de un directorio
-`tar cfv copia_seguridad.tar dir1 dir2 archivo1 archivo2...`
+*************************************
+
+.. code-block:: bash
+
+  tar cfv copia_seguridad.tar dir1 dir2 archivo1 archivo2...
 
 Comprimir con bzip2
-`tar cfvj copia_Seguridad.tar.bz2 dir1 dir2 arch1 arch2...`
+*******************
+
+.. code-block:: bash
+
+  tar cfvj copia_Seguridad.tar.bz2 dir1 dir2 arch1 arch2...
 
 Utilizar compresión gzip
-`tar cfvz copia_seguridad.tar.gz dir1 dir2 arch1 arch2...`
+************************
+
+.. code-block:: bash
+
+  tar cfvz copia_seguridad.tar.gz dir1 dir2 arch1 arch2...
 
 Crear una copia de seguridad con formato xz
-`tar cfvJ copia_seguridad.tar.xz dir1 dir2 arch1 arch2...`
+*******************************************
 
-### Descomprimiendo copias de seguridad
+.. code-block:: bash
+
+  tar cfvJ copia_seguridad.tar.xz dir1 dir2 arch1 arch2...
+
+Descomprimiendo copias de seguridad
+***********************************
 
 A la hora de descomprimir las copias de seguridad no tenemos que declarar el tipo de formato en el que está comprimido, con lo que ganamos más tiempo para dedicarlo a otras cosas.
 
-Para Descomprimir una copia de seguridad
-`tar xfv copia_seguridad.tar`
+Descomprimir una copia de seguridad
+***********************************
 
-# Fuentes
+.. code-block:: bash
 
-* [Google](https://google.es?target=_blank)
-* [Wikipedia](https://www.wikipedia.org)
+  tar xfv copia_seguridad.tar
+
+Fuentes
+#######
+
 * Ediciones ENI - LPI I Tercera edición
 * Man pages 
