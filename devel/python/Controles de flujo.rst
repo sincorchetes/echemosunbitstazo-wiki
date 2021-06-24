@@ -1,8 +1,8 @@
 Condicionales
-----
+-------------
 
-if
-****
+Condicional if
+##############
 
 Esta estructura de control te permite evaluar una condición y ejecutar un trozo de código si la cumple.
 
@@ -12,8 +12,8 @@ Esta estructura de control te permite evaluar una condición y ejecutar un trozo
   >>>  Bloque de código
 
 
-if-else
-****
+Condicional if-else
+###################
 
 El :code:`if-else` es una estructura de control que permite hacer 1 cosa si se cumple la condicioń, si esta no se cumple, únicamente se ejecutará un bloque de código sin contemplar otras posibilidades.
 
@@ -36,8 +36,8 @@ Veamos un ejemplo, Si tenemos un coche de marca Opel, emitirás un mensaje que d
   'No tienes un coche Opel'
 
 
-if-elif-else
-****
+Condicional if-elif-else
+########################
 
 ¿Pero qué pasa cuando queremos comprobar múltiples condiciones? No podemos estar anidando :code:`if-else` como si no hubiese un mañana uno dentro del otro. Para eso tenemos la estructura :code:`if-elif-else`. Esta estructura nos permite hacer 1 cosa u otra en base a una condición, la cuál estará compuesto por uno o múltiples operadores como aritméticos, lógicos...
 
@@ -92,10 +92,10 @@ Todo esto se puede complicar aún más haciendo uso de otros operadores y de otr
 Este mensaje se produce porque en el primer condicional estamos esperando recibir el modelo AE92, y sin embargo, recibimos el AE87; como en la segunda condición (:code:`elif`) requiere del modelo "Citröen" también queda descartado imprimiendo el mensaje "Error 404, Tu coche no encontrado.". No obstante, si cambiamos :code:`modelo_coche` por AE92 y volvemos a ejecutar las sentencias, veremos que recibiremos el mensaje de: "Perfecto".
 
 Bucles
-----
+######
 
 Bucle for
-****
+*********
 
 ¿Qué ocurre si queremos recorrer una lista o generar múltiples ejecuciones de código? Pues evidetenmente con un :code:`if` no nos vale, ya que solo nos permite validar una condicioń, y cuando la valide, esta dejará de ejecutarse.
 
@@ -105,7 +105,7 @@ Bucle for
     Bloque código
 
 ¿Cómo funciona?
-^^^^^
+^^^^^^^^^^^^^^^
 
 En :code:`secuencia` va una condición, podemos poner que recorra todos los valores de una lista y nos lo imprima por :code:`variable_interactiva`.
 
@@ -132,7 +132,7 @@ También se puede hacer ejecuciones por el tamaño de la lista:
   Esta es la posición 3 de la fruta:  Pomelo
 
 ¿Cómo podemos hacer, que se hagan :code:`n` ejecuciones para hacer tal cosa? 
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Con la función :code:`range()`.
 
@@ -148,12 +148,12 @@ Con la función :code:`range()`.
   [... Corto aquí porque llega hasta 99 ...]
 
 ¿Por qué hasta 99 y no 100? 
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Porque recordemos que el valor 0 es una posición que se cuenta, realmente es :code:`n - 1`.
 
 ¿Cómo puedo romper una ejecución?
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Tenemos el comando :code:`break` que rompe la ejecución del código, por lo que me han enseñado, es mejor finalizar las cosas como tocan en vez de usar este tipo de "cañones". Pero que sepamos que lo podemos usar. Normalmente se usan cuando hay condicionales añadidos, esto no quiere decir que se siga ejecutándo el resto del programa que tengamos, solo se frena el bucle :code:`for` que hemos invocado en nuestro fragmento de código.
 
@@ -171,7 +171,7 @@ Tenemos el comando :code:`break` que rompe la ejecución del código, por lo que
   [... Se para la ejecución ...]
 
 Bucle while
-****
+***********
 
 Este bucle se repetirá hasta que la condición se cumpla. 
 
@@ -195,7 +195,7 @@ Un ejemplo sencillo puede ser:
   8
 
 break, continue, pass
-----
+*********************
 
 Estas tres sentencias permiten modificar la interacción de los bucles.
 :code:`break`: Rompe toda la ejecución de un bucle.
@@ -232,7 +232,7 @@ En este caso, observamos que cuando detecte que :code:`x = 5`, el valor 5 no se 
 Se ejecutará como si no existiera la palabra reservada :code:`pass`.
 
 Juego, Dragón VS Personaje
-----
+**************************
 
 Un dragón nos estará golpeando hasta que nosotros matemos al dragón o el dragón nos mate a nosotros:
 

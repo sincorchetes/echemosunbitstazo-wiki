@@ -1,5 +1,5 @@
 Ansible
--------
+=======
 
 Playbooks
 #########
@@ -27,10 +27,10 @@ Concatenar cadena con un valor de una variable
 
 .. code-block:: yaml
 
-"{{ '.'.join(('www',dominio))}}"</code>
+  "{{ '.'.join(('www',dominio))}}"</code>
 
 Actualizar todos los paquetes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: yaml
 
@@ -68,14 +68,14 @@ Ansible Vault es una funcionalidad que permite encriptar contraseñas en archivo
 Crear vault
 ^^^^^^^^^^^
 
-.. code-block:: yaml
+.. code-block:: bash
 
   ansible-vault create nombre_archivo
 
 Editar información del vault
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: yaml
+.. code-block:: bash
 
   ansible-vault edit nombre_archivo
 

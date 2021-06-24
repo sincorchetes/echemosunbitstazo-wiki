@@ -18,6 +18,13 @@ Servicios
 .. toctree::
    :maxdepth: 1
    :glob:
+   :caption: Gestores de servicios
+
+   systemd/*
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
    :caption: Monitorización
 
    monitoring/zabbix/*

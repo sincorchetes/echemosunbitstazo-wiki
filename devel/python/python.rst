@@ -7,3 +7,4 @@ Python
    :glob:
 
    *
+   Preparando el entorno/Preparando el entorno

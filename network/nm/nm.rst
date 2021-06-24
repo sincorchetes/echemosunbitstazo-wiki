@@ -30,14 +30,14 @@ Gestionando una conexión
 ########################
 
 Obtener listado de conexiones nmcli con
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+***************************************
 
 .. code-block:: bash
 
   nmcli con
 
 Cambiar la IP y el gateway de una conexión
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+******************************************
 
 .. code-block:: bash
 
@@ -50,7 +50,7 @@ Troubleshooting
 ###############
 
 Caso 1: La red nos dice que la IP se está utilizando pero si hacemos ping a la IP, esta no resuelve
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+***************************************************************************************************
 
 Tenemos una máquina virtual que accede a una red en modo bridge con la siguiente configuración:
 
@@ -63,6 +63,7 @@ Y cuando tratamos de levantar la interfaz, esta falla. Veamos la configuración 
 Configuración en :code:`/etc/sysconfig/network-scripts/ifcfg-eth0`:
 
 .. code-block::
+
   DEVICE=eth0
   HWADDR=AB:CD:EF:GH:IJ:KL
   TYPE=Ethernet

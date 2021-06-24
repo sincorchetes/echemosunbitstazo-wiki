@@ -1,8 +1,8 @@
 Imprimir valores y funciones
-----
+----------------------------
 
 Sustitución de tipos de datos en sentencias print()
-####
+###################################################
 
 Cuando queremos incluir un valor que proviene de variables, listas, sets, tuplas... se pueden hacer de múltiples formas. Por ejemplo:
 
@@ -23,7 +23,8 @@ Podemos hacerlo de esta forma:
 Tenemos que tener en cuenta que de esta manera, hay que definir si el dato que vamos a sustituir es :code:`str` = :code:`%s%`, :code:`int` = :code:`%i`, :code:`float` = :code:`%f`. 
 
 .. note::
-Los valores de tipo :code:`complex` = :code:`%c` no tienen sustitución directa en esta forma, por lo que hay que utilizar otro método como en el anterior.
+
+  Los valores de tipo :code:`complex` = :code:`%c` no tienen sustitución directa en esta forma, por lo que hay que utilizar otro método como en el anterior.
 
 O de esta otra:
 
@@ -42,7 +43,7 @@ También tenemos esta otra:
 En fin, hay muchas formas de hacer sustituciones en los :code:`str` y en otros tipos de datos que puedes consultar en la `documentación oficial <https://docs.python.org/3/tutorial/inputoutput.html>`_
 
 Iteradores
-####
+##########
 
 Un iterador es una especie de puntero que permite devolver valores que le especifiquemos.
 
@@ -68,7 +69,7 @@ Un iterador es una especie de puntero que permite devolver valores que le especi
     print(item)
 
 Funciones
-####
+#########
 
 Conjunto de código organizado y que contienen una serie de instrucciones que pueden reutilizarse. Por ejemplo, :code:`dormir` es una función que tenemos, hay múltiples variables como el lugar, la intensidad de la luz, si estamos cómodos... pero que al final el resultado es descansar. Lo mismo sucede con las funciones.
 
@@ -81,7 +82,7 @@ Declaración de ejemplo de una función:
 
 
 return
-^^^^
+******
 
 :code:`return` permite devolver un valor de la función y darla por terminada más que utilizar un :code:`print()`
 
@@ -95,7 +96,7 @@ return
 
 
 yield
-^^^^
+*****
 
 En contra posición de :code:`return`, :code:`yield` permite seguir aplicando el código que venga más adelante de la función creando una especie de co-rutina o gestión de resultados o ejecución por turnos, como si fuera un corredor de atletismo que le pasa el testigo a otro y su marca de tiempo es el valor de retorno. Hacemos uso de los iteradores para extraer los datos.
 
@@ -118,7 +119,7 @@ En contra posición de :code:`return`, :code:`yield` permite seguir aplicando el
 
 
 Tipos de funciones en Python
-####
+############################
 
 En Python, tenemos 2 tipos de funciones, una que creamos nosotros y otras que vienen integradas. Las que nosotros creamos las definimos en nuestra aplicación, script... mientras que las integradas, vienen con la instalación de Python que ya fueron elaboradas y que puedes utilizar como: :code:`len()`, :code:`max()`, :code:`min(), :code:`type()`, :code:`range()`...
 
@@ -148,7 +149,7 @@ Podemos pasar todo tipo de valores, por ejemplo, pasaremos una lista como valor 
 
 
 Asignar una función a una variable
-####
+##################################
 
 Podemos asignar una función a una variable y llamarla como función desde la propia variable:
 
@@ -165,7 +166,7 @@ Podemos asignar una función a una variable y llamarla como función desde la pr
 
 
 Asignar valores por defecto a los argumentos
-####
+############################################
 
 Si no le decimos o especificamos un valor cuando llamamos a la función, podemos hacer que tome parámetros por defecto.
 
@@ -185,7 +186,7 @@ Esto devolverá "Valor que queremos", si especificamos un valor tal que así:
 Devolverá :code:`Hola mundo`
 
 Closures
-####
+########
 
 Los closures es un objeto especial que permite obtener información de otras funciones hijas que forman parte de una función padre, permiten dar más seguridad al código ya que todo lo que tenga que ejecutarse se hará dentro de ese ámbito o *scope*.
 
@@ -200,7 +201,7 @@ Ejemplo de closure:
 
 
 Generadores
-####
+###########
 
 Son funciones que crean iteradores, estas funciones realmente son objetos en Python. Si hacemos un print sobre la función, veremos :code:`<generator object mensaje at 0x7f31a4957250>`, es muy importante saberlo.
 
@@ -227,7 +228,7 @@ No solo podemos trabajar con :code:`return`, también con :code:`yield`.
           print(item)
 
 Función Lambda
-####
+##############
 
 Esta función no tiene nombre también se le conoce como función anónima, sin embargo, no puede contener más de una expresión:
 

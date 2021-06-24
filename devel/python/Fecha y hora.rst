@@ -1,8 +1,9 @@
 Fecha y hora
-####
+############
 
 Módulo time
-----
+***********
+
 Permite trabajar con la fecha y la hora, estos son algunos métodos.
 
 .. code-block:: python
@@ -52,7 +53,7 @@ Este es un ejemplo de como almacenar el resultado del comando `dmesg` del sistem
     dmesg_log.close()
 
 Módulo calendar
-----
+***************
 
 Muestra un calendario como el comando :code:`cal` de Linux.
 

@@ -1,15 +1,18 @@
+Diferencias entre gestores de servicios
+---------------------------------------
+
 Introducción
-------------
+############
 
 Red Hat 6 y 7 tienen gestores de servicio diferentes. La versión 6 utiliza Upstart, sin embargo, el equipo de Red Hat lo implementó como reemplazo de SysVinit por su modo de arranque que es más cómodo y más moderno, no obstante, ellos utilizan para todo el sistema scripts de SysVinit por su compatibilidad con Upstart.
 
 En Red Hat 7, utilizan el gestor de servicios de systemd, este gestor de servicios es una síntesis de todos los gestores que habían en el ecosistema UNIX incluyendo el de OS X, y Lennart Poettering, voluntario del proyecto Fedora elaboró un gestor de servicios con cada una de las ideas de cada gestor (SysVinit, Upstart, runit, rc.d...). Este soportaba paralelización de procesos en el arranque acelerando las cargas del sistema operativo, también permite una mayor escritura en logs porque no usa texto si no, binarios. Hoy en día, es el gestor de servicios estándar después de que los demás proyectos comunitarios como OpenSUSE, ArchLinux, el proyecto Debian y por consiguiente Ubuntu lo hubiesen adoptado por defecto.
 
 Breves diferencias a nivel de servicios
----------------------------------------
+#######################################
 
 SysVinit
-########
+********
 
 * Directorio de scripts de arranque: :code:`/etc/init.d`
 * Los logs son específicos de cada servicio, por lo general se almacenan en :code:`/var/log/` (el texto es más difícil de procesar a nivel de servicio)
@@ -211,7 +214,7 @@ Definimos las funciones que hará nuestro servicio, por lo general son los coman
 
   exit $?
 
-Este switch funciona cuando ejecutemos el comando :code:`service check_nfs_working start|status|restart`, el parámetro recibido. :code:` `**¡No olvides asignarle permisos de ejecución!**
+Este switch funciona cuando ejecutemos el comando :code:`service check_nfs_working start|status|restart`, el parámetro recibido. :code:` ` **¡No olvides asignarle permisos de ejecución!**
 
 Elaborando el script que comprueba el servicio nfs
 
@@ -285,7 +288,7 @@ Desactivando el servicio al arranque
   sudo chkconfig check_nfs_working off
 
 Systemd
-#######
+*******
 
 * Directorio de servicios locales: :code:`/etc/systemd/`
 * Directorio de servicios específicos por RPM instalados: :code:`/usr/lib/systemd`

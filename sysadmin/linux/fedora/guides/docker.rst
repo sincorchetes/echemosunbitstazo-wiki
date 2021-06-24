@@ -54,7 +54,6 @@ Instalar Docker Compose
 Fuentes
 #######
 
-* `doc oficial - Docker <https://docs.docker.com/engine/install/fedora/> `_
-* `Post instalación (doc oficial)- Docker <https://docs.docker.com/engine/install/linux-postinstall/>`_
-* `Instalación Docker Compose (doc oficial) <https://docs.docker.com/compose/install/>`_
+* `Documentación de Docker <https://docs.docker.com/engine/install/fedora/>`_
+* `Instalación de Docker Compose doc oficial <https://docs.docker.com/compose/install/>`_
 

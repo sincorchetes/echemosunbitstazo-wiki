@@ -11,7 +11,7 @@ Lanzar un contenedor NGINX en modo segundo plano y que se ejecute en el puerto 8
   sudo docker run -d -p 80:80 nginx
 
 Lanzar un contenedor NGINX en modo segundo plano y que se ejecute en el puerto 8080
-*********************************************************************************
+***********************************************************************************
 
 .. code-block:: bash
 

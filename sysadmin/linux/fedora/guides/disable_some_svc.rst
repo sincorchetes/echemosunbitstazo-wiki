@@ -17,7 +17,7 @@ Si no utilizamos un lector de huellas, es mejor deshabilitarlo
 
 
 livesys/livesys-late - Servicios LiveCD/DVD/USB
-***************************
+***********************************************
 
 Estos servicios se utilizan para configuraciones mientras se instala la distribución pero no nos hace más falta una vez instalada
 
@@ -65,6 +65,7 @@ NFS - Sistema de archivos en red
 Si no usas NFS cliente/servidor, desactívalo:
 
 .. code-block:: bash
+
   sudo systemctl disable --now nfs-blkmap.service
   sudo systemctl disable --now nfs-client.target
   sudo systemctl disable --now nfs-server.service

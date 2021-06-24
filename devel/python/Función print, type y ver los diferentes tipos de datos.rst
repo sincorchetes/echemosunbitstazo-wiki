@@ -1,5 +1,5 @@
 Función print()
-----
+###############
 
 Esta función se utiliza para imprimir valores por lo que nos podemos imaginar lo que podemos imprimir, resultados de funciones, valores asignados a variables, textos...etc.
 
@@ -10,7 +10,7 @@ Esta función se utiliza para imprimir valores por lo que nos podemos imaginar l
 Esta sentencia imprime en pantalla `Hello World`. Más adelante, veremos distintos usos de cómo utilizar esta función como por ejemplo, sustituciones de valores por variables...
 
 Función type()
-----
+##############
 
 Esta función nos permite averiguar el tipo de dato que estamos tratando.
 
@@ -21,9 +21,11 @@ Esta función nos permite averiguar el tipo de dato que estamos tratando.
 O asignándolo en una variable y después imprimirlo:
 
 .. code-block:: python
+
   >>> type("Hello World")
 
 Esto nos devolverá un mensaje como: :code:`<class 'str'>` indicando que es un :code:`str` o cadena.
+
 Si probamos con un nº entero como el 2 nos devolverá :code:`<class 'int'>`:
 
 .. code-block:: python
@@ -40,7 +42,7 @@ Tipos de datos en Python (Literals)
 * Especiales
 
 Cadenas o *strings*
-####
+###################
 
 Se forman encerrando un texto utilizando (" ") ó (' '). 
 
@@ -52,7 +54,8 @@ Por ejemplo:
   helloWorld = 'Hello world'
 
 
-Se puede definir cadenas con múltiples líneas:
+Se puede definir cadenas con múltiples líneas
+*********************************************
 
 .. code-block:: python
   :linenos:
@@ -64,7 +67,8 @@ Se puede definir cadenas con múltiples líneas:
   cometieron en el pasado. '''
 
 
-Obtener la primera letra de un :code:`str`:
+Obtener la primera letra de un str
+**********************************
 
 .. code-block:: python
 
@@ -73,7 +77,8 @@ Obtener la primera letra de un :code:`str`:
   h
 
 
-Obtener letras de un :code:`str` a partir de un rango:
+Obtener letras de un str a partir de un rango
+*********************************************
 
 .. code-block:: python
 
@@ -82,7 +87,8 @@ Obtener letras de un :code:`str` a partir de un rango:
   hola
 
 
-Conseguir la posición de un :code:`str` en un :code:`str`:
+Conseguir la posición de un str en un str
+*****************************************
 
 .. code-block:: python
 
@@ -92,7 +98,8 @@ Conseguir la posición de un :code:`str` en un :code:`str`:
 
 Si nos ponemos a contar (*desde 0 siempre*) caracter por caracter (*incluyendo los espacios y ,*), obtendremos el número 12.
 
-Reemplazar un :code:´str´ dentro de un :code:´str´:
+Reemplazar un str dentro de un str
+**********************************
 
 .. code-block:: python
 
@@ -101,7 +108,8 @@ Reemplazar un :code:´str´ dentro de un :code:´str´:
   'Hola mundo, me llamo anonymous y estamos en echemosunbitstazo.es'
 
 
-Separar un :code:`str` cuando encuentre un caracter específico y devolver el resultado como una lista :code:`list`:
+Separar un str cuando encuentre un caracter específico y devolver el resultado como una lista
+*********************************************************************************************
 
 .. code-block:: python
 
@@ -118,7 +126,8 @@ Separar un :code:`str` cuando encuentre un caracter específico y devolver el re
    'echemosunbitstazo.es']
 
 
-Busca en el :code:`str` un :code:`str` y devuelve el nº de coincidencias:
+Busca en el str un str y devuelve el nº de coincidencias
+********************************************************
 
 .. code-block:: python
 
@@ -126,7 +135,8 @@ Busca en el :code:`str` un :code:`str` y devuelve el nº de coincidencias:
   >>> hi.count("l")
   2
 
-Convertir todos los caracteres de un :code:`str` a mayúsculas:
+Convertir todos los caracteres de un str a mayúsculas
+**********************************************************************************
 
 .. code-block:: python
 
@@ -134,7 +144,8 @@ Convertir todos los caracteres de un :code:`str` a mayúsculas:
   >>> hi.upper()
   'HELLO'
 
-Convertir todos los caracteres de un :code:`str` a minúsculas:
+Convertir todos los caracteres de un str a minúsculas
+*****************************************************
 
 .. code-block:: python
 
@@ -142,7 +153,8 @@ Convertir todos los caracteres de un :code:`str` a minúsculas:
   >>> hi.lower()
  'hello'
 
-Convertir el primer caracter de un :code:`str` en mayúscula:
+Convertir el primer caracter de un str en mayúscula
+***************************************************
 
 .. code-block:: python
 
@@ -150,7 +162,8 @@ Convertir el primer caracter de un :code:`str` en mayúscula:
   >>> hi.capitalize()
   'Hello'
 
-Obtener el valor máximo de un :code:`str`:
+Obtener el valor máximo de un str
+*********************************
 
 .. code-block:: python
 
@@ -158,7 +171,8 @@ Obtener el valor máximo de un :code:`str`:
   >>> max(valor)
   'h'
 
-Obtener el valor mínimo de un :code:`str`:
+Obtener el valor mínimo de un str
+*********************************
 
 .. code-block:: python
 
@@ -167,7 +181,7 @@ Obtener el valor mínimo de un :code:`str`:
   '!'
 
 Constantes
-####
+##########
 
 Las constantes como su nombre indica son valores que no se modificarán a lo largo de la vida del programa. Sin embargo en Python no se declaran a lo mejor como en otro lenguaje tipo PHP. Para hacerlo en Python, tenemos que respetar una forma de trabajo y sintaxis específicas.
 
@@ -182,39 +196,44 @@ Veamos un ejemplo:
 2. Añadimos las siguientes variables:
 
 .. code-block:: python
-IP_SERVIDOR = '127.0.0.1'
-PUERTO_SERVIDOR = 3306
-NOMBRE_USUARIO = 'sincorchetes'
-PASS_USUARIO = 'Foo1234'
-NOMBRE_DB = 'Foo'
+
+  IP_SERVIDOR = '127.0.0.1'
+  PUERTO_SERVIDOR = 3306
+  NOMBRE_USUARIO = 'sincorchetes'
+  PASS_USUARIO = 'Foo1234'
+  NOMBRE_DB = 'Foo'
 
 3. Creamos un archivo :code:`main.py`
 4. Importamos el archivo y mencionamos a la constante.
+
 .. code-block:: python
-import constantes
-print(constantes.IP_SERVIDOR)
+
+  import constantes
+  print(constantes.IP_SERVIDOR)
 
 Veremos que tendremos una salida:
+
 .. code-block:: python
-127.0.0.1
+
+  127.0.0.1
 
 
 Así definiríamos una constante en Python.
 
-Por otro lado, Python tiene unas constantes integradas que no estaría más echarles un vistazo, no son muchas, pero viene bien <a href="https://docs.python.org/3/library/constants.html" target="blank">saberlas</a>.
+Por otro lado, Python tiene unas constantes integradas que no estaría más echarles un vistazo, no son muchas, pero viene bien `saberlas <https://docs.python.org/3/library/constants.html>`_
 
 Números
-####
+#######
 
 Tenemos varios tipos de dato en Python como puede ser:
 
 * :code:`int`
-* :code:`long` (_no se usa más en Python 3_)
+* :code:`long` (no se usa más en Python 3)
 * :code:`float`
 * :code:`complex`
 
 int o números enteros
-^^^^
+*********************
 
 * Este tipo de dato solo almacena números enteros (*positivos y negativos, nada de comas, ni decimales, ni fracciones*).
 * Este tipo de dato no contiene ninguna restricción por parte del número de bits en Python y puede expandirse el límite de la memoria disponible.
@@ -229,11 +248,12 @@ int o números enteros
 
 
 float o número de coma flotante
-^^^^
+*******************************
 
 Si necesitas utilizar decimales, este es el tipo de dato que buscar.
 
 .. code-block:: python
+
   >>> x = 20.30
   >>> y = -33.99
   >>> z = 100.12
@@ -241,7 +261,7 @@ Si necesitas utilizar decimales, este es el tipo de dato que buscar.
   -45.83
 
 complex o números complejos
-^^^^
+***************************
 
 Se utilizan para diferentes tipos de cálculos aplicados a la geometría, física... La definición en Python es :code:`a+bj`, dónde :code:`a` es el número que se encuentra representado en los números reales; :code:`bj` es el número imaginario.
 
@@ -253,6 +273,6 @@ Se utilizan para diferentes tipos de cálculos aplicados a la geometría, físic
 
 
 Tipos de datos especiales
-####
+*************************
 
 Tenemos el valor :code:`None` que viene a ser el valor :code:`null` en otros lenguajes como SQL, se suele utilizar para declarar un campo con este valor *¡ojo, esto no quiere decir que esté vacío!*

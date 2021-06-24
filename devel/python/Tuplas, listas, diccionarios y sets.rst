@@ -1,5 +1,6 @@
 Tuplas
-----
+######
+
 Conjunto de valores que no cambian dentro del flujo de la ejecución del programa. Pueden contener como valor todo tipo de dato incluyendo otra tupla. Más info en la `doc oficial de Python <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
 
 .. code-block:: python
@@ -9,7 +10,8 @@ Conjunto de valores que no cambian dentro del flujo de la ejecución del program
   >>> print(paises)
   ('España', ('Español', 'Turco', 'Italiano'), 'Turquía', 'Italia')
 
-Añadir elementos a la tupla:
+Añadir elementos a la tupla
+***************************
 
 .. code-block:: python
 
@@ -19,7 +21,8 @@ Añadir elementos a la tupla:
   >>> print(paises)
     ('España', ('Español', 'Turco', 'Italiano'), 'Turquía', 'Italia', 'Francia', 'Munich')
 
-Duplicar el :code:`str` o caracter que obtengamos por un nº de veces:
+Duplicar el :code:`str` o caracter que obtengamos por un nº de veces
+********************************************************************
 
 .. code-block:: python
 
@@ -27,7 +30,8 @@ Duplicar el :code:`str` o caracter que obtengamos por un nº de veces:
   >>> nacionalidad * 2
   ('Español', 'Turco', 'Italiano', 'Español', 'Turco', 'Italiano')
 
-Muestra el :code:`str` que esté ubicada en una posición:
+Muestra el :code:`str` que esté ubicada en una posición
+*******************************************************
 
 .. code-block:: python
 
@@ -35,7 +39,8 @@ Muestra el :code:`str` que esté ubicada en una posición:
   >>> print(nacionalidad[2])
   'Italiano'
 
-Mostrar un conjunto de valores específicos de la tupla haciendo uso de su posición:
+Mostrar un conjunto de valores específicos de la tupla haciendo uso de su posición
+**********************************************************************************
 
 .. code-block:: python
 
@@ -45,8 +50,9 @@ Mostrar un conjunto de valores específicos de la tupla haciendo uso de su posic
 
 
 Listas
-----
-Grupo de valores representados dentro de unos [], se pueden cambiar de forma simple y sencilla. Más info en la `doc oficial de Python <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+######
+
+Grupo de valores representados dentro de unos [], se pueden cambiar de forma simple y sencilla. Más info en la `doc oficial de las listas en Python <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 Declarando una lista:
 
@@ -54,7 +60,8 @@ Declarando una lista:
 
   >>> animales = [ 'gato', 'perro', 'búho' ]
 
-Añadir valores en la última posición de la lista, (*similar a la tupla*):
+Añadir valores en la última posición de la lista, (*similar a la tupla*)
+************************************************************************
 
 .. code-block:: python
 
@@ -63,7 +70,8 @@ Añadir valores en la última posición de la lista, (*similar a la tupla*):
   >>> print(animales)
   ['gato', 'perro', 'búho', 'lagartija', 'pez']
 
-También podemos utilizar :code:`.extend()`:
+También podemos utilizar .extend()
+**********************************
 
 .. code-block:: python
 
@@ -81,7 +89,8 @@ Por otro lado podemos añadir un valor a partir de una posición específica den
   >>> print(animales)
   ['lagartija', 'gato', 'perro', 'búho']
 
-Eliminar un valor de la lista:
+Eliminar un valor de la lista
+*****************************
 
 .. code-block:: python
 
@@ -90,7 +99,8 @@ Eliminar un valor de la lista:
   >>> print(animales)
   [ 'perro', 'búho' ]
 
-Multiplicar el nº veces los valores de la lista:
+Multiplicar el nº veces los valores de la lista
+***********************************************
 
 .. code-block:: python
 
@@ -98,7 +108,8 @@ Multiplicar el nº veces los valores de la lista:
   >>> animales * 2
   ['gato', 'perro', 'búho', 'gato', 'perro', 'búho']
 
-Mostrar valores específicos utilizando la posición de dichos valores en la lista:
+Mostrar valores específicos utilizando la posición de dichos valores en la lista
+********************************************************************************
 
 .. code-block:: python
 
@@ -108,16 +119,17 @@ Mostrar valores específicos utilizando la posición de dichos valores en la lis
 
 
 Diccionarios
-----
+############
 
-Son un conjunto de valores que se almacenan en modo *clave:valor*, separados los valores por comas, y todas las claves y sus valores van encerrados en :code:`{}` como JSON. Las claves no pueden contener tuplas, diccionarios, sets... solo :code:`str` o :code:`int`. Más info en la `doc oficial de Python <https://docs.python.org/3/library/stdtypes.html?highlight=dictionary#dict>`_
+Son un conjunto de valores que se almacenan en modo *clave:valor*, separados los valores por comas, y todas las claves y sus valores van encerrados en :code:`{}` como JSON. Las claves no pueden contener tuplas, diccionarios, sets... solo :code:`str` o :code:`int`. Más info en la `doc oficial <https://docs.python.org/3/library/stdtypes.html?highlight=dictionary#dict>`_
 
 .. code-block:: python
 
   >>> ciudades = { 'Andalucía': 'Sevilla', 'País Vasco': 'Bilbao', 'Baleares':'Palma' }
 
 
-Accediendo a un valor del diccionario:
+Accediendo a un valor del diccionario
+*************************************
 
 .. code-block:: python
 
@@ -125,7 +137,8 @@ Accediendo a un valor del diccionario:
   >>> print(ciudades['Andalucía'])
   Sevilla
 
-Obtener el nº de posiciones de una lista:
+Obtener el nº de posiciones de una lista
+****************************************
 
 .. code-block:: python
 
@@ -133,7 +146,8 @@ Obtener el nº de posiciones de una lista:
   >>> len(ciudades)
   3
 
-Obtener las claves de un diccionario:
+Obtener las claves de un diccionario
+************************************
 
 .. code-block:: python
 
@@ -141,7 +155,8 @@ Obtener las claves de un diccionario:
   >>> ciudades.keys()
   dict_keys(['Andalucía', 'País Vasco', 'Baleares'])
 
-Obtener los valores de un diccionario:
+Obtener los valores de un diccionario
+*************************************
 
 .. code-block:: python
 
@@ -149,13 +164,15 @@ Obtener los valores de un diccionario:
   >>> ciudades.values()
   dict_values(['Sevilla', 'Bilbao', 'Palma'])
 
-Obtener un valor de una clave del diccionario:
+Obtener un valor de una clave del diccionario
+*********************************************
 
 .. code-block:: python
 
   >>> print(ciudades.get('Baleares'))
 
-Eliminar un valor de una clave del diccionario:
+Eliminar un valor de una clave del diccionario
+**********************************************
 
 .. code-block:: python
 
@@ -164,7 +181,8 @@ Eliminar un valor de una clave del diccionario:
   # Esto de volverá None.
   print(ciudades.get('Baleares'))
 
-Cambiar el valor de una clave del diccionario:
+Cambiar el valor de una clave del diccionario
+*********************************************
 
 .. code-block:: python
 
@@ -174,10 +192,10 @@ Cambiar el valor de una clave del diccionario:
   print(ciudades.get('Baleares'))
 
 Sets
-----
+####
 
 Son un conjunto sin orden de valores encerrados en :code:`{}` que se ordenan cuando se imprimen:
-_Más info en la `doc oficial de Python <https://docs.python.org/3.8/library/stdtypes.html#set-types-set-frozenset>`_
+_Más info en la `doc oficial de los Sets en Python <https://docs.python.org/3.8/library/stdtypes.html#set-types-set-frozenset>`_
 
 .. code-block:: python
 
@@ -185,7 +203,9 @@ _Más info en la `doc oficial de Python <https://docs.python.org/3.8/library/std
   >>> print(marcas_coche)
   {'Citröen', 'Opel', 'Tesla'}
 
-Comparar 2 sets y mostrar los valores no duplicados de ambas listas:
+Comparar 2 sets y mostrar los valores no duplicados de ambas listas
+*******************************************************************************************************************************************************
+
 
 .. code-block:: python
 
@@ -194,7 +214,8 @@ Comparar 2 sets y mostrar los valores no duplicados de ambas listas:
   >>> marcas_coche | marcas_moto
   {'Citröen', 'Opel', 'Suzuki', 'Tesla', 'Yamaha'}
 
-Comparar 2 sets y mostrar los valores duplicados de ambas listas como sin repetirlos:
+Comparar 2 sets y mostrar los valores duplicados de ambas listas como sin repetirlos
+************************************************************************************
 
 .. code-block:: python
 
@@ -203,7 +224,8 @@ Comparar 2 sets y mostrar los valores duplicados de ambas listas como sin repeti
   >>> marcas_coche & marcas_moto
   {'Citröen', 'Tesla'}
 
-Comparar 2 sets y mostrar diferencias:
+Comparar 2 sets y mostrar diferencias
+*************************************
 
 .. code-block:: python
 
@@ -214,7 +236,8 @@ Comparar 2 sets y mostrar diferencias:
   >>> marcas_moto - marcas_coche
   {'Suzuki', 'Yamaha'}
 
-Añadir un conjunto de valores a un set y que queden en primer lugar:
+Añadir un conjunto de valores a un set y que queden en primer lugar
+*******************************************************************
 
 .. code-block:: python
 
@@ -222,7 +245,8 @@ Añadir un conjunto de valores a un set y que queden en primer lugar:
   print(marcas_coche)
   {2, 3, 4, 'Opel', 'Citröen', 'Tesla'}
 
-Añadir un valor al set:
+Añadir un valor al set
+**********************
 
 .. code-block:: python
 
@@ -230,7 +254,8 @@ Añadir un valor al set:
   print(marcas_coche)
   {2, 3, 4, 'Opel', 'Citröen', 'Tesla', 'Valor'}
 
-Eliminar un valor del set:
+Eliminar un valor del set
+*************************
 
 .. code-block:: python
 
@@ -238,7 +263,8 @@ Eliminar un valor del set:
   print(marcas_coche)
   {2, 3, 4, 'Citröen', 'Tesla', 'Valor'}
 
-Imprimir dos sets en uno:
+Imprimir dos sets en uno
+************************
 
 .. code-block:: python
 

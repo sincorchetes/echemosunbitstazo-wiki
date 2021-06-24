@@ -1,5 +1,5 @@
 Obtener datos introducidos por el usuario
-----
+-----------------------------------------
 
 Tenemos una función que es `input()` y podemos solicitar al usuario que introduzca un dato y que este se almacene en una variable, esto nos puede ayudar a dinamizar los programas interactuando con los usuarios:
 
@@ -9,7 +9,7 @@ Tenemos una función que es `input()` y podemos solicitar al usuario que introdu
 
 .. note::
 
-Los datos introducidos se almacenan como un :code:`str`, por lo que si quieres almacenar datos tipo :code:`float`, :code:`int` tendrás que usar la función de conversión que hemos hablado en el apartado de Tipos de datos en Python.
+  Los datos introducidos se almacenan como un :code:`str`, por lo que si quieres almacenar datos tipo :code:`float`, :code:`int` tendrás que usar la función de conversión que hemos hablado en el apartado de Tipos de datos en Python.
 
 Vamos hacer este ejemplo:
 
@@ -29,12 +29,13 @@ Imprimirá un resultado como:
 
 
 Control de excepciones
-####
+######################
 
 ¿Qué ocurre si queremos ejecutar un código y depende de una serie de datos que no se han inicializado? No pasa nada, tenemos un mecanismo que controla las excepciones.
 
 try-except
-^^^^
+**********
+
 .. code-block:: python
 
   try:
@@ -111,7 +112,7 @@ También podemos usar un alias e imprimir solo el mensaje de error:
 ¿Para qué nos sirve esto? Para tener un mayor control en la validación e impresión de nuestro código. :code:`EstoEsUnError` imprimirá: :code:`NameError: name 'a' is not defined`, con este :code:`str` podemos iniciar una validación on :code:`if-elif-else`.
 
 with
-^^^^
+****
 
 :code:`with` es un método que permite realizar acciones que posteriormente necesitan limpiarse para que no queden restos en memoria, un ejemplo muy común y extendido es cuando se trabaja con archivos.
 
@@ -137,13 +138,13 @@ En el siguiente punto trabajaremos más con los archivos, no nos alarmemos.
 Puedes consultar más información sobre este apartado en este `hilo <https://docs.python.org/3/tutorial/errors.html>`_ de la documentación.
 
 Trabajando con archivos en Python
-####
+#################################
 
 ¿Qué podemos hacer en Python con los archivos? ¿Podemos trabajar con ellos?
 La cuestión es que sí, podemos abrir, leer, escribir o crear y eliminar archivos, las operaciones básicas que nos deja hacer un SO si estuvieramos en una shell como :code:`bash` o :code:`zsh`.
 
 Abriendo un archivo
-^^^^
+*******************
 
 La sintaxis que se utiliza es:
 
@@ -158,24 +159,25 @@ La sintaxis **correcta**, que **debe usarse** y que utilizaremos en estos ejempl
   with open("ruta del archivo", modo) as nombreFichero:
     # Bloque de código
 
-|------|-------------|
-| Modo | Descripción |
-|======|=============|
++----------+-----------------------------------------------------------------------------------------------------------------+
+| Modo     | Descripción                                                                                                     |
++==========+=============+===================================================================================================+
 |:code:`r` | Lectura, es el valor por defecto, abre el archivo para que se pueda leer y da un error si el archivo no existe. |
-|------|-------------|
-|:code:`a` | Abre un archivo para agregarle información al final, si no existe el archivo lo crea.|
-|------|-------------|
-|:code:`w` | Sobreescribe cualquier contendio que haya en el archivo que esté abierto y/o crea el archivo si no existe.|
-|------|-------------|
-|:code:`x` | Crea el archivo, si devuelve error quiere decir que ya existe.|
-|------|-------------|
++----------+-----------------------------------------------------------------------------------------------------------------+
+|:code:`a` | Abre un archivo para agregarle información al final, si no existe el archivo lo crea.                           |
++----------+-----------------------------------------------------------------------------------------------------------------+
+|:code:`w` | Sobreescribe cualquier contendio que haya en el archivo que esté abierto y/o crea el archivo si no existe.      |
++----------+-----------------------------------------------------------------------------------------------------------------+
+|:code:`x` | Crea el archivo, si devuelve error quiere decir que ya existe.                                                  |
++----------+-----------------------------------------------------------------------------------------------------------------+
 
 Leer archivo
-^^^^
+************
 
 Creamos este archivo:
 
 .. code-block:: bash
+
   $ cd /home/$USER/
   $ cat << EOF >> hola.txt
   > Hola Mundo
@@ -193,7 +195,7 @@ Bien, abrimos el archivo con Python
 Este método también permite decirle que nos imprima los n caracteres del principio del texto con :code:`.read(4)`.
 
 Devuelve una línea
-^^^^
+******************
 
 Si tenemos un archivo con más líneas, podemos imprimirlas con :code:`.readline()` en vez de :code:`.read()`. Sin embargo, si queremos imprimir mas líneas, tenemos que llamar varias veces al método.
 
@@ -204,7 +206,7 @@ Si tenemos un archivo con más líneas, podemos imprimirlas con :code:`.readline
 
 
 Leer el archivo completo
-^^^^
+************************
 
 Con ayuda de un bucle :code:`for` lo hacemos:
 
@@ -215,7 +217,7 @@ Con ayuda de un bucle :code:`for` lo hacemos:
   >>>   print(linea)
 
 Creando un archivo nuevo
-^^^^
+************************
 
 Si el archivo existe, dará error.
 
@@ -230,7 +232,7 @@ Cuando terminemos de escribir en un archivo, lo cerramos para que no quede en me
   fichero.close()
 
 Añadir información al archivo
-^^^^
+*****************************
 
 En esta línea añadimos el siguiente texto.
 
@@ -246,7 +248,7 @@ Cuando terminemos de escribir en un archivo, lo cerramos para que no quede en me
   fichero.close()
 
 Sobreescribir en el archivo
-^^^^
+***************************
 
 Sobreescribimos el archivo si lo abrimos con el modo :code:`w`:
 
@@ -258,15 +260,17 @@ Sobreescribimos el archivo si lo abrimos con el modo :code:`w`:
 Cuando terminemos de escribir en un archivo, lo cerramos para que no quede en memoria.
 
 .. code-block:: python
+
   fichero.close()
 
 
 Eliminar un archivo
-^^^^
+*******************
 
 Hay que importar un módulo llamado :code:`os`:
 
 .. code-block:: python
+
   import os
   os.remove("hola.txt")
 

@@ -11,13 +11,28 @@ Este es mi espacio de documentación personal dónde almaceno todo tipo de conoc
 **NOTA:** Si estás buscando mi blog, puedes acceder al contenido desde mi repositorio. .. GitHub: https://github.com/sincorchetes/echemosunbitstazo
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Administración de sistemas
    :glob:
 
    sysadmin/linux/*
    sysadmin/services/*
    sysadmin/scripting/bash/bash
+   sysadmin/containers/containers
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Automatización
+   :glob:
+
+   sysadmin/automation/ansible/ansible
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Redes informáticas
+   :glob:
+
+   network/network
 
 .. toctree::
    :maxdepth: 1 
