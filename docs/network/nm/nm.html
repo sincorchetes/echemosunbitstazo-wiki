@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Network Manager &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Instalar Packet Tracer 7.3 en Linux" href="../packettracer/instalar-packettracer.html" />
+    <link rel="prev" title="FirewallD" href="../fw/firewalld.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/linux/linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../network.html">Redes informáticas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../fw/firewalld.html">FirewallD</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Network Manager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ver-la-configuracion-de-una-conexion">Ver la configuración de una conexión</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ver-un-resumen-de-las-conexiones">Ver un resumen de las conexiones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creando-una-conexion">Creando una conexión</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestionando-una-conexion">Gestionando una conexión</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#obtener-listado-de-conexiones-nmcli-con">Obtener listado de conexiones nmcli con</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cambiar-la-ip-y-el-gateway-de-una-conexion">Cambiar la IP y el gateway de una conexión</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#caso-1-la-red-nos-dice-que-la-ip-se-esta-utilizando-pero-si-hacemos-ping-a-la-ip-esta-no-resuelve">Caso 1: La red nos dice que la IP se está utilizando pero si hacemos ping a la IP, esta no resuelve</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../packettracer/instalar-packettracer.html">Instalar Packet Tracer 7.3 en Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conversion-numeros.html">Conversión de números</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../network.html">Redes informáticas</a> &raquo;</li>
+        
+      <li>Network Manager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/network/nm/nm.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="network-manager">
+<h1>Network Manager<a class="headerlink" href="#network-manager" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="ver-la-configuracion-de-una-conexion">
+<h2>Ver la configuración de una conexión<a class="headerlink" href="#ver-la-configuracion-de-una-conexion" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmcli con show ens192
+</pre></div>
+</div>
+</div>
+<div class="section" id="ver-un-resumen-de-las-conexiones">
+<h2>Ver un resumen de las conexiones<a class="headerlink" href="#ver-un-resumen-de-las-conexiones" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmcli con
+</pre></div>
+</div>
+</div>
+<div class="section" id="creando-una-conexion">
+<h2>Creando una conexión<a class="headerlink" href="#creando-una-conexion" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>Tener previamente la IP que queremos configurar con su puerta de enlace y máscara de red</p></li>
+<li><p>Saber cómo llamar la conexión y qué interfaz de red vamos a utilizar para esta conexión</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nmcli add <span class="nb">type</span> ethernet con-name NOMBRE_CONEXION ifname NOMBRE_INTERFAZ ip4 IP4/PERFIJO gw4 IP4_GATEWAY/PREFIJO ipv4.dns <span class="s2">&quot;X.X.X.X Y.Y.Y.Y&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gestionando-una-conexion">
+<h2>Gestionando una conexión<a class="headerlink" href="#gestionando-una-conexion" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="obtener-listado-de-conexiones-nmcli-con">
+<h3>Obtener listado de conexiones nmcli con<a class="headerlink" href="#obtener-listado-de-conexiones-nmcli-con" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmcli con
+</pre></div>
+</div>
+</div>
+<div class="section" id="cambiar-la-ip-y-el-gateway-de-una-conexion">
+<h3>Cambiar la IP y el gateway de una conexión<a class="headerlink" href="#cambiar-la-ip-y-el-gateway-de-una-conexion" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nmcli con mod ens192 ip4 <span class="m">192</span>.168.1.1 gw4 <span class="m">192</span>.168.1.254
+sudo nmcli con down ens192
+sudo nmcli con up ens192
+ip addr <span class="p">|</span>grep ens192
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="caso-1-la-red-nos-dice-que-la-ip-se-esta-utilizando-pero-si-hacemos-ping-a-la-ip-esta-no-resuelve">
+<h3>Caso 1: La red nos dice que la IP se está utilizando pero si hacemos ping a la IP, esta no resuelve<a class="headerlink" href="#caso-1-la-red-nos-dice-que-la-ip-se-esta-utilizando-pero-si-hacemos-ping-a-la-ip-esta-no-resuelve" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Tenemos una máquina virtual que accede a una red en modo bridge con la siguiente configuración:</p>
+<ul class="simple">
+<li><p>IP de host:192.168.1.2</p></li>
+<li><p>Máscara de red: 255.255.255.0</p></li>
+<li><p>Puerta de enlace: 192.168.1.1</p></li>
+</ul>
+<p>Y cuando tratamos de levantar la interfaz, esta falla. Veamos la configuración y el procedimiento para levantar la interfaz con nuestra configuración:</p>
+<p>Configuración en <code class="code docutils literal notranslate"><span class="pre">/etc/sysconfig/network-scripts/ifcfg-eth0</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEVICE</span><span class="o">=</span><span class="n">eth0</span>
+<span class="n">HWADDR</span><span class="o">=</span><span class="n">AB</span><span class="p">:</span><span class="n">CD</span><span class="p">:</span><span class="n">EF</span><span class="p">:</span><span class="n">GH</span><span class="p">:</span><span class="n">IJ</span><span class="p">:</span><span class="n">KL</span>
+<span class="n">TYPE</span><span class="o">=</span><span class="n">Ethernet</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="n">no</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="n">static</span>
+<span class="n">IPADDR</span><span class="o">=</span><span class="mf">192.168.1.2</span>
+<span class="n">NETMASK</span><span class="o">=</span><span class="mf">255.255.255.0</span>
+<span class="n">GATEWAY</span><span class="o">=</span><span class="mf">192.168.1.1</span>
+</pre></div>
+</div>
+<p>Tratando de levantar la interfaz:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ifup eth0</span>
+Determining <span class="k">if</span> ip address <span class="m">192</span>.168.1.2 is already <span class="k">in</span> use <span class="k">for</span> device eth0...
+Error some other host already uses address <span class="m">192</span>.168.1.2.
+</pre></div>
+</div>
+<p>Para diagnosticar si es cierto, utilizamos el comando arping:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># arping -c N -w N -D -I Nombre_Nic Dirección_IP</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">-c</span> <span class="pre">N</span></code>: Cuenta los paquetes que se envían</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-w</span> <span class="pre">N</span></code>: Cuanto se tarda en obtener una respuesta</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-D</span></code>: Duplica la dirección en modo de detención</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-I</span> <span class="pre">Nombre_Nic</span></code>: Aquí definimos con qué interfaz de red realizar la prueba</p></li>
+<li><p>Dirección_IP</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># arping -c 2 -w 3 -D -I eth0 192.168.1.2</span>
+ARPING <span class="m">192</span>.1.68.1.2 from <span class="m">0</span>.0.0.0 eth0
+Unicast reply from <span class="m">192</span>.168.1.2 <span class="o">[</span>UU:VV:WW:XX:YY:ZZ<span class="o">]</span> <span class="m">0</span>.926ms
+</pre></div>
+</div>
+<p>Ahí tenemos una interfaz de un equipo X que está cogiendo esa IP.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../packettracer/instalar-packettracer.html" class="btn btn-neutral float-right" title="Instalar Packet Tracer 7.3 en Linux" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../fw/firewalld.html" class="btn btn-neutral float-left" title="FirewallD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

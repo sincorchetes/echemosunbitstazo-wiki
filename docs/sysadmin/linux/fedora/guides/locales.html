@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Codificación/idioma &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+    <link rel="next" title="NVIDIA Optimus" href="nvidia_optimus.html" />
+    <link rel="prev" title="Docker" href="docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../linux.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../acl/acl.html">Gestión de usuari&#64;s y grupos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pkgmnt/pkgmnt.html">Gestores de paquetes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="fedora.html">Fedora</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="codecs.html">Códecs audio/video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="disable_some_svc.html">Deshabilitando servicios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Codificación/idioma</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-otras-codificaciones-locales">Instalar otras codificaciones/locales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ver-la-configuracion-actual">Ver la configuración actual</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listar-las-codificaciones-e-idiomas-instalados">Listar las codificaciones e idiomas instalados</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configurar">Configurar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#paginas-de-documentacion-man">Páginas de documentación, man</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-traducciones">Instalar traducciones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#buscar-traducciones-disponibles">Buscar traducciones disponibles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-una-traduccion">Instalar una traducción</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#realizar-consultas-en-otros-idiomas">Realizar consultas en otros idiomas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#libreoffice">Libreoffice</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#buscar-los-idiomas-de-interfaz-disponibles">Buscar los idiomas de interfaz disponibles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-el-paquete-idiomatico">Instalar el paquete idiomático</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#plasma-kde">Plasma (KDE)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ver-los-idiomas-disponibles">Ver los idiomas disponibles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-el-soporte-idiomatico-en-espanol">Instalar el soporte idiomático en español</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nvidia_optimus.html">NVIDIA Optimus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selenium.html">Selenium</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skype.html">Skype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spotify.html">Spotify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="third_party_repos.html">Repositorio a terceros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zoom.html">Zoom</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../centos/guides/centos.html">CentOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../linux.html">Linux</a> &raquo;</li>
+        
+          <li><a href="fedora.html">Fedora</a> &raquo;</li>
+        
+      <li>Codificación/idioma</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/sysadmin/linux/fedora/guides/locales.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="codificacion-idioma">
+<h1>Codificación/idioma<a class="headerlink" href="#codificacion-idioma" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="instalar-otras-codificaciones-locales">
+<h2>Instalar otras codificaciones/locales<a class="headerlink" href="#instalar-otras-codificaciones-locales" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install glibc-langpack-ny
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">ny</span></code> representa las dos letras del idioma, es por ejemplo para el español.</p></li>
+</ul>
+</div>
+<div class="section" id="ver-la-configuracion-actual">
+<h2>Ver la configuración actual<a class="headerlink" href="#ver-la-configuracion-actual" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>localectl status
+</pre></div>
+</div>
+</div>
+<div class="section" id="listar-las-codificaciones-e-idiomas-instalados">
+<h2>Listar las codificaciones e idiomas instalados<a class="headerlink" href="#listar-las-codificaciones-e-idiomas-instalados" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>localectl list-locales
+</pre></div>
+</div>
+</div>
+<div class="section" id="configurar">
+<h2>Configurar<a class="headerlink" href="#configurar" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo localectl set-locale aa_bb.codificación
+</pre></div>
+</div>
+<p>Idiomas de teclado tanto para X11 (X.org) y para tty o modo consola</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>localectl list-keymaps
+</pre></div>
+</div>
+<p>Configurar un idioma de teclado tanto para X11 (X.org) y para tty o modo consola</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>localectl set-keymap
+</pre></div>
+</div>
+<p>Reiniciar el sistema</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl reboot
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="paginas-de-documentacion-man">
+<h1>Páginas de documentación, man<a class="headerlink" href="#paginas-de-documentacion-man" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="instalar-traducciones">
+<h2>Instalar traducciones<a class="headerlink" href="#instalar-traducciones" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="buscar-traducciones-disponibles">
+<h2>Buscar traducciones disponibles<a class="headerlink" href="#buscar-traducciones-disponibles" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf search man-pages
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalar-una-traduccion">
+<h2>Instalar una traducción<a class="headerlink" href="#instalar-una-traduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install man-pages-es man-pages-es-extra
+</pre></div>
+</div>
+</div>
+<div class="section" id="realizar-consultas-en-otros-idiomas">
+<h2>Realizar consultas en otros idiomas<a class="headerlink" href="#realizar-consultas-en-otros-idiomas" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>man -L es man
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="libreoffice">
+<h1>Libreoffice<a class="headerlink" href="#libreoffice" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="buscar-los-idiomas-de-interfaz-disponibles">
+<h2>Buscar los idiomas de interfaz disponibles<a class="headerlink" href="#buscar-los-idiomas-de-interfaz-disponibles" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf search libreoffice-langpack
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalar-el-paquete-idiomatico">
+<h2>Instalar el paquete idiomático<a class="headerlink" href="#instalar-el-paquete-idiomatico" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install libreoffice-langpack-es
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Este detectará tambień el idioma que falta en el entorno de escritorio y el corrector ortográfico (Hunspell) utilizado por el proyecto.</p>
+</div>
+</div>
+</div>
+<div class="section" id="plasma-kde">
+<h1>Plasma (KDE)<a class="headerlink" href="#plasma-kde" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="ver-los-idiomas-disponibles">
+<h2>Ver los idiomas disponibles<a class="headerlink" href="#ver-los-idiomas-disponibles" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf search kde-l10n
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalar-el-soporte-idiomatico-en-espanol">
+<h2>Instalar el soporte idiomático en español<a class="headerlink" href="#instalar-el-soporte-idiomatico-en-espanol" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install kde-l10n-es
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="nvidia_optimus.html" class="btn btn-neutral float-right" title="NVIDIA Optimus" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="docker.html" class="btn btn-neutral float-left" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

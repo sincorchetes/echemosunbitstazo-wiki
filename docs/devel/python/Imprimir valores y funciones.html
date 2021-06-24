@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Imprimir valores y funciones &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Obtener datos introducidos por el usuario" href="Introducir%20datos%20y%20control%20de%20excepciones.html" />
+    <link rel="prev" title="Función print()" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/linux/linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Controles%20de%20flujo.html">Condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fecha%20y%20hora.html">Fecha y hora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html">Función print()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#funcion-type">Función type()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#cadenas-o-strings">Cadenas o <em>strings</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#constantes">Constantes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#numeros">Números</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Imprimir valores y funciones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sustitucion-de-tipos-de-datos-en-sentencias-print">Sustitución de tipos de datos en sentencias print()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iteradores">Iteradores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funciones">Funciones</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#return">return</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#yield">yield</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tipos-de-funciones-en-python">Tipos de funciones en Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asignar-una-funcion-a-una-variable">Asignar una función a una variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asignar-valores-por-defecto-a-los-argumentos">Asignar valores por defecto a los argumentos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#closures">Closures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generadores">Generadores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funcion-lambda">Función Lambda</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Introducir%20datos%20y%20control%20de%20excepciones.html">Obtener datos introducidos por el usuario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Int%C3%A9rprete%2C%20comentarios%2C%20identificadores%20y%20palabras%20clave.html">¿Cómo usar Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programaci%C3%B3n%20Orientada%20a%20Objetos.html">Programación orientada a objetos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tipos%20de%20operadores%20e%20introducci%C3%B3n%20a%20los%20m%C3%B3dulos.html">Tipos de operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#listas">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#diccionarios">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#sets">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Preparando%20el%20entorno/Preparando%20el%20entorno.html">Historia</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="python.html">Python</a> &raquo;</li>
+        
+      <li>Imprimir valores y funciones</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/devel/python/Imprimir valores y funciones.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imprimir-valores-y-funciones">
+<h1>Imprimir valores y funciones<a class="headerlink" href="#imprimir-valores-y-funciones" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="sustitucion-de-tipos-de-datos-en-sentencias-print">
+<h2>Sustitución de tipos de datos en sentencias print()<a class="headerlink" href="#sustitucion-de-tipos-de-datos-en-sentencias-print" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Cuando queremos incluir un valor que proviene de variables, listas, sets, tuplas… se pueden hacer de múltiples formas. Por ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="s2">&quot;Susana&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola me llamo:&quot;</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
+<span class="n">Hola</span> <span class="n">me</span> <span class="n">llamo</span> <span class="n">Susana</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Podemos hacerlo de esta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="s2">&quot;Susana&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola me llamo: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">variable</span><span class="p">)</span>
+<span class="n">Hola</span> <span class="n">me</span> <span class="n">llamo</span> <span class="n">Susana</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Tenemos que tener en cuenta que de esta manera, hay que definir si el dato que vamos a sustituir es <code class="code docutils literal notranslate"><span class="pre">str</span></code> = <code class="code docutils literal notranslate"><span class="pre">%s%</span></code>, <code class="code docutils literal notranslate"><span class="pre">int</span></code> = <code class="code docutils literal notranslate"><span class="pre">%i</span></code>, <code class="code docutils literal notranslate"><span class="pre">float</span></code> = <code class="code docutils literal notranslate"><span class="pre">%f</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Los valores de tipo <code class="code docutils literal notranslate"><span class="pre">complex</span></code> = <code class="code docutils literal notranslate"><span class="pre">%c</span></code> no tienen sustitución directa en esta forma, por lo que hay que utilizar otro método como en el anterior.</p>
+</div>
+<p>O de esta otra:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="n">Susana</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hola me llamo </span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>También tenemos esta otra:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="s2">&quot;Susana&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola me llamo </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variable</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>En fin, hay muchas formas de hacer sustituciones en los <code class="code docutils literal notranslate"><span class="pre">str</span></code> y en otros tipos de datos que puedes consultar en la <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html">documentación oficial</a></p>
+</div>
+<div class="section" id="iteradores">
+<h2>Iteradores<a class="headerlink" href="#iteradores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un iterador es una especie de puntero que permite devolver valores que le especifiquemos.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">lista</span><span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hola&quot;</span><span class="p">,</span><span class="s2">&quot;esto&quot;</span><span class="p">,</span><span class="s2">&quot;es&quot;</span><span class="p">,</span><span class="s2">&quot;un&quot;</span><span class="p">,</span><span class="s2">&quot;ejemplo&quot;</span><span class="p">,</span><span class="s2">&quot;de&quot;</span><span class="p">,</span><span class="s2">&quot;iterador&quot;</span><span class="p">]</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1"># Inicializamos el iterador</span>
+<span class="linenos"> 4</span><span class="n">mi_iterador</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="c1"># Se puede imprimir el valor de esta manera, que devuelve la palabra Hola</span>
+<span class="linenos"> 7</span><span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">mi_iterador</span><span class="p">))</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="c1"># Pasamos al siguiente iterador que contiene la palabra &quot;esto&quot;, pero no la imprimimos.</span>
+<span class="linenos">10</span><span class="nb">next</span><span class="p">(</span><span class="n">mi_iterador</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="c1"># Imprimimos la palabra &quot;es&quot;</span>
+<span class="linenos">13</span><span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">mi_iterador</span><span class="p">))</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># Imprimir todos los elementos del iterador:</span>
+<span class="linenos">16</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mi_iterador</span><span class="p">:</span>
+<span class="linenos">17</span>  <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="funciones">
+<h2>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Conjunto de código organizado y que contienen una serie de instrucciones que pueden reutilizarse. Por ejemplo, <code class="code docutils literal notranslate"><span class="pre">dormir</span></code> es una función que tenemos, hay múltiples variables como el lugar, la intensidad de la luz, si estamos cómodos… pero que al final el resultado es descansar. Lo mismo sucede con las funciones.</p>
+<p>Declaración de ejemplo de una función:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_funcion</span><span class="p">():</span>
+  <span class="c1"># Bloque de código</span>
+</pre></div>
+</div>
+<div class="section" id="return">
+<h3>return<a class="headerlink" href="#return" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><code class="code docutils literal notranslate"><span class="pre">return</span></code> permite devolver un valor de la función y darla por terminada más que utilizar un <code class="code docutils literal notranslate"><span class="pre">print()</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">a</span>
+
+<span class="n">valor</span><span class="o">=</span><span class="n">func</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="yield">
+<h3>yield<a class="headerlink" href="#yield" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En contra posición de <code class="code docutils literal notranslate"><span class="pre">return</span></code>, <code class="code docutils literal notranslate"><span class="pre">yield</span></code> permite seguir aplicando el código que venga más adelante de la función creando una especie de co-rutina o gestión de resultados o ejecución por turnos, como si fuera un corredor de atletismo que le pasa el testigo a otro y su marca de tiempo es el valor de retorno. Hacemos uso de los iteradores para extraer los datos.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<span class="linenos"> 2</span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Devolvemos el primer resultado: </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="linenos"> 3</span>  <span class="k">yield</span> <span class="n">a</span>
+<span class="linenos"> 4</span>  <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="linenos"> 5</span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Devolvemos el segundo valor: </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="linenos"> 6</span>  <span class="k">yield</span> <span class="n">c</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">abc</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">mi_iter</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">abc</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mi_iter</span><span class="p">:</span>
+<span class="linenos">13</span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tipos-de-funciones-en-python">
+<h2>Tipos de funciones en Python<a class="headerlink" href="#tipos-de-funciones-en-python" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En Python, tenemos 2 tipos de funciones, una que creamos nosotros y otras que vienen integradas. Las que nosotros creamos las definimos en nuestra aplicación, script… mientras que las integradas, vienen con la instalación de Python que ya fueron elaboradas y que puedes utilizar como: <code class="code docutils literal notranslate"><span class="pre">len()</span></code>, <code class="code docutils literal notranslate"><span class="pre">max()</span></code>, <code class="code docutils literal notranslate"><span class="pre">min(),</span> <span class="pre">:code:`type()</span></code>, <code class="code docutils literal notranslate"><span class="pre">range()</span></code>…</p>
+<p>Veamos un ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">hola_mundo</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola Mundo&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hola_mundo</span><span class="p">()</span>
+<span class="go">Hola Mundo</span>
+</pre></div>
+</div>
+<p>Podemos pasar todo tipo de valores, por ejemplo, pasaremos una lista como valor y un número entero:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="n">lugares</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Toronto&quot;</span><span class="p">,</span> <span class="s2">&quot;Tokio&quot;</span><span class="p">,</span> <span class="s2">&quot;Nueva Zelanda&quot;</span> <span class="p">]</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">mostrar_lugares</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
+<span class="linenos">4</span><span class="gp">&gt;&gt;&gt; </span>  <span class="k">for</span> <span class="n">lugar</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">:</span>
+<span class="linenos">5</span><span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">lugar</span><span class="p">)</span>
+<span class="linenos">6</span><span class="gp">&gt;&gt;&gt; </span><span class="n">mostrar_lugares</span><span class="p">(</span><span class="n">lugares</span><span class="p">)</span>
+<span class="linenos">7</span><span class="go">Toronto</span>
+<span class="linenos">8</span><span class="go">Tokio</span>
+<span class="linenos">9</span><span class="go">Nueva Zelanda</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="asignar-una-funcion-a-una-variable">
+<h2>Asignar una función a una variable<a class="headerlink" href="#asignar-una-funcion-a-una-variable" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Podemos asignar una función a una variable y llamarla como función desde la propia variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">mensaje</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">segundo</span><span class="o">=</span><span class="n">mensaje</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="c1"># Imprime &quot;Mundo&quot;</span>
+<span class="linenos">7</span><span class="n">segundo</span><span class="p">(</span><span class="s2">&quot;Mundo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="asignar-valores-por-defecto-a-los-argumentos">
+<h2>Asignar valores por defecto a los argumentos<a class="headerlink" href="#asignar-valores-por-defecto-a-los-argumentos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Si no le decimos o especificamos un valor cuando llamamos a la función, podemos hacer que tome parámetros por defecto.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="s2">&quot;Valor que queremos&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+
+<span class="n">test</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Esto devolverá «Valor que queremos», si especificamos un valor tal que así:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;Hola mundo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Devolverá <code class="code docutils literal notranslate"><span class="pre">Hola</span> <span class="pre">mundo</span></code></p>
+</div>
+<div class="section" id="closures">
+<h2>Closures<a class="headerlink" href="#closures" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los closures es un objeto especial que permite obtener información de otras funciones hijas que forman parte de una función padre, permiten dar más seguridad al código ya que todo lo que tenga que ejecutarse se hará dentro de ese ámbito o <em>scope</em>.</p>
+<p>Ejemplo de closure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">func_a</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">func_a</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generadores">
+<h2>Generadores<a class="headerlink" href="#generadores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Son funciones que crean iteradores, estas funciones realmente son objetos en Python. Si hacemos un print sobre la función, veremos <code class="code docutils literal notranslate"><span class="pre">&lt;generator</span> <span class="pre">object</span> <span class="pre">mensaje</span> <span class="pre">at</span> <span class="pre">0x7f31a4957250&gt;</span></code>, es muy importante saberlo.</p>
+<p>No solo podemos trabajar con <code class="code docutils literal notranslate"><span class="pre">return</span></code>, también con <code class="code docutils literal notranslate"><span class="pre">yield</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">mensaje</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="nf">lector</span><span class="p">():</span>
+<span class="linenos"> 3</span>        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;leido por un lector.&quot;</span><span class="p">))</span>
+<span class="linenos"> 4</span>    <span class="k">def</span> <span class="nf">escritor</span><span class="p">():</span>
+<span class="linenos"> 5</span>        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;escrito por un escritor.&quot;</span><span class="p">))</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>    <span class="k">yield</span> <span class="n">lector</span><span class="p">()</span>
+<span class="linenos"> 8</span>    <span class="k">yield</span> <span class="n">escritor</span><span class="p">()</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">ejemplo</span> <span class="o">=</span> <span class="n">mensaje</span><span class="p">(</span><span class="s2">&quot;Alguien escribió este mensaje y ha sido&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ejemplo</span><span class="p">:</span>
+<span class="linenos">13</span>    <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">14</span>        <span class="k">pass</span>
+<span class="linenos">15</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">16</span>        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="funcion-lambda">
+<h2>Función Lambda<a class="headerlink" href="#funcion-lambda" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta función no tiene nombre también se le conoce como función anónima, sin embargo, no puede contener más de una expresión:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">resultado</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+<span class="go">15</span>
+</pre></div>
+</div>
+<p>Si lo pasamos a función esto sería así:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">sumar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sumar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">15</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Introducir%20datos%20y%20control%20de%20excepciones.html" class="btn btn-neutral float-right" title="Obtener datos introducidos por el usuario" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html" class="btn btn-neutral float-left" title="Función print()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Ansible &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Redes informáticas" href="../../../network/network.html" />
+    <link rel="prev" title="Docker" href="../../containers/docker/docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ansible</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#playbooks">Playbooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#concepto">Concepto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formato">Formato</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modulos">Módulos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aplicaciones">Aplicaciones</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#concatenar-cadena-con-un-valor-de-una-variable">Concatenar cadena con un valor de una variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#actualizar-todos-los-paquetes">Actualizar todos los paquetes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#crear-un-playbook-que-muestre-la-fecha-hora-del-sistema">Crear un playbook que muestre la fecha/hora del sistema</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vault">Vault</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#encriptar-datos">Encriptar datos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#crear-vault">Crear vault</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editar-informacion-del-vault">Editar información del vault</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usando-el-vault-en-un-playbook">Usando el vault en un playbook</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Ansible</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/sysadmin/automation/ansible/ansible.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ansible">
+<h1>Ansible<a class="headerlink" href="#ansible" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="playbooks">
+<h2>Playbooks<a class="headerlink" href="#playbooks" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="concepto">
+<h3>Concepto<a class="headerlink" href="#concepto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los Playbooks permiten escribir guiones que permiten automatizar multitud de procesos y tareas sin tener que ir ejecutando cada uno de los comandos en modo ad-hoc en el resto de servidores.</p>
+</div>
+<div class="section" id="formato">
+<h3>Formato<a class="headerlink" href="#formato" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los playbooks utilizan un lenguaje de datos serializado llamado YAML.</p>
+</div>
+<div class="section" id="modulos">
+<h3>Módulos<a class="headerlink" href="#modulos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Son librerías desarrolladas para facilitar la gestión de determinadas tareas como la decompresión/compresión de archivos; cambios de permisos; gestión de paquetería…etc</p>
+</div>
+<div class="section" id="aplicaciones">
+<h3>Aplicaciones<a class="headerlink" href="#aplicaciones" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="concatenar-cadena-con-un-valor-de-una-variable">
+<h4>Concatenar cadena con un valor de una variable<a class="headerlink" href="#concatenar-cadena-con-un-valor-de-una-variable" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;.&#39;.join((&#39;www&#39;,dominio))}}&quot;</span><span class="l l-Scalar l-Scalar-Plain">&lt;/code&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="actualizar-todos-los-paquetes">
+<h4>Actualizar todos los paquetes<a class="headerlink" href="#actualizar-todos-los-paquetes" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Actualizar paquetería</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">host</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Actualizando la paquetería del sistema</span>
+    <span class="nt">dnf</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;*&quot;</span>
+      <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="crear-un-playbook-que-muestre-la-fecha-hora-del-sistema">
+<h3>Crear un playbook que muestre la fecha/hora del sistema<a class="headerlink" href="#crear-un-playbook-que-muestre-la-fecha-hora-del-sistema" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Obtener fecha/hora</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">host</span> <span class="p p-Indicator">}}</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Obtener fehca/hora del sistema</span>
+    <span class="nt">shell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">date</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="vault">
+<h2>Vault<a class="headerlink" href="#vault" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="encriptar-datos">
+<h3>Encriptar datos<a class="headerlink" href="#encriptar-datos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ansible Vault es una funcionalidad que permite encriptar contraseñas en archivos.</p>
+<div class="section" id="crear-vault">
+<h4>Crear vault<a class="headerlink" href="#crear-vault" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-vault create nombre_archivo
+</pre></div>
+</div>
+</div>
+<div class="section" id="editar-informacion-del-vault">
+<h4>Editar información del vault<a class="headerlink" href="#editar-informacion-del-vault" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-vault edit nombre_archivo
+</pre></div>
+</div>
+</div>
+<div class="section" id="usando-el-vault-en-un-playbook">
+<h4>Usando el vault en un playbook<a class="headerlink" href="#usando-el-vault-en-un-playbook" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Incluimos el vault en el apartado <code class="code docutils literal notranslate"><span class="pre">vars_files:</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test encrypted vault file</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
+  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
+
+  <span class="nt">vars_files</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">foo_vault_file.yml</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">debug secret</span>
+      <span class="nt">debug</span><span class="p">:</span>
+        <span class="nt">var</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my_variable</span>
+</pre></div>
+</div>
+<p>Ejecutamos el playbook:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible-playbook test_vault_file.yml --ask-vault-pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../../network/network.html" class="btn btn-neutral float-right" title="Redes informáticas" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../containers/docker/docker.html" class="btn btn-neutral float-left" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

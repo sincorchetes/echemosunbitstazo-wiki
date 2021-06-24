@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>DNF &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Fedora" href="../fedora/guides/fedora.html" />
+    <link rel="prev" title="dpkg, APT, aptitude" href="apt.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../linux.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../acl/acl.html">Gestión de usuari&#64;s y grupos</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="pkgmnt.html">Gestores de paquetes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="apt.html">dpkg, APT, aptitude</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DNF</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-de-paqueteria">Gestión de paquetería</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fedora/guides/fedora.html">Fedora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../centos/guides/centos.html">CentOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../linux.html">Linux</a> &raquo;</li>
+        
+          <li><a href="pkgmnt.html">Gestores de paquetes</a> &raquo;</li>
+        
+      <li>DNF</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/sysadmin/linux/pkgmnt/dnf.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dnf">
+<h1>DNF<a class="headerlink" href="#dnf" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="gestion-de-paqueteria">
+<h2>Gestión de paquetería<a class="headerlink" href="#gestion-de-paqueteria" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="refrescar-la-base-de-datos-de-dnf">
+<h3>Refrescar la base de datos de DNF<a class="headerlink" href="#refrescar-la-base-de-datos-de-dnf" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf check-update
+</pre></div>
+</div>
+</div>
+<div class="section" id="actualizar-el-sistema-con-los-ultimos-parches">
+<h3>Actualizar el sistema con los últimos parches<a class="headerlink" href="#actualizar-el-sistema-con-los-ultimos-parches" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf upgrade
+</pre></div>
+</div>
+</div>
+<div class="section" id="sincronizar-los-ultimos-paquetes-instalados">
+<h3>Sincronizar los últimos paquetes instalados<a class="headerlink" href="#sincronizar-los-ultimos-paquetes-instalados" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Solo cuando se actualiza de versión.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf distro-sync
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalar-software">
+<h3>Instalar software<a class="headerlink" href="#instalar-software" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf install <span class="o">[</span>paquete1 paquete2...<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="desinstalar-software">
+<h3>Desinstalar software<a class="headerlink" href="#desinstalar-software" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf remove <span class="o">[</span>paquete1 paquete2...<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="buscar-software">
+<h3>Buscar software<a class="headerlink" href="#buscar-software" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf search <span class="o">[</span>palabra_a_buscar<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="buscar-paquetes-mediante-un-archivo">
+<h3>Buscar paquetes mediante un archivo<a class="headerlink" href="#buscar-paquetes-mediante-un-archivo" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf provides /bin/bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="descargar-solo-paquetes">
+<h3>Descargar solo paquetes<a class="headerlink" href="#descargar-solo-paquetes" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf download <span class="o">[</span>paquete1 paquete2...<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="obtener-informacion-del-paquete">
+<h3>Obtener información del paquete<a class="headerlink" href="#obtener-informacion-del-paquete" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf info <span class="o">[</span>paquete<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../fedora/guides/fedora.html" class="btn btn-neutral float-right" title="Fedora" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="apt.html" class="btn btn-neutral float-left" title="dpkg, APT, aptitude" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

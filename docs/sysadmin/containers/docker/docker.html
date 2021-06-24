@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Docker &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Ansible" href="../../automation/ansible/ansible.html" />
+    <link rel="prev" title="Contenedores" href="../containers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../containers.html">Contenedores</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-de-contenedores">Gestión de contenedores</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lanzar-un-contenedor-nginx-en-modo-segundo-plano-y-que-se-ejecute-en-el-puerto-80">Lanzar un contenedor NGINX en modo segundo plano y que se ejecute en el puerto 80</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lanzar-un-contenedor-nginx-en-modo-segundo-plano-y-que-se-ejecute-en-el-puerto-8080">Lanzar un contenedor NGINX en modo segundo plano y que se ejecute en el puerto 8080</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lanzar-un-contenedor-con-un-nombre-identificativo">Lanzar un contenedor con un nombre identificativo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lanzar-un-contenedor-para-ejecutar-cosas-en-el">Lanzar un contenedor para ejecutar cosas en él</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mapear-una-unidad-del-so-en-un-contenedor">Mapear una unidad del SO en un contenedor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listar-los-contenedores-incluyendo-los-que-no-estan-en-marcha">Listar los contenedores incluyendo los que no están en marcha</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listar-los-contenedores-que-solo-estan-en-marcha">Listar los contenedores que solo están en marcha</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eliminar-todos-los-contenedores-incluyendo-los-que-estan-en-marcha-dieron-error-o-no-se-han-desplegado">Eliminar todos los contenedores incluyendo los que están en marcha, dieron error o no se han desplegado</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eliminar-todos-los-contenedores-solo-lo-que-estan-en-marcha">Eliminar todos los contenedores solo lo que están en marcha</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../containers.html">Contenedores</a> &raquo;</li>
+        
+      <li>Docker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/sysadmin/containers/docker/docker.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker">
+<h1>Docker<a class="headerlink" href="#docker" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="gestion-de-contenedores">
+<h2>Gestión de contenedores<a class="headerlink" href="#gestion-de-contenedores" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="lanzar-un-contenedor-nginx-en-modo-segundo-plano-y-que-se-ejecute-en-el-puerto-80">
+<h3>Lanzar un contenedor NGINX en modo segundo plano y que se ejecute en el puerto 80<a class="headerlink" href="#lanzar-un-contenedor-nginx-en-modo-segundo-plano-y-que-se-ejecute-en-el-puerto-80" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker run -d -p <span class="m">80</span>:80 nginx
+</pre></div>
+</div>
+</div>
+<div class="section" id="lanzar-un-contenedor-nginx-en-modo-segundo-plano-y-que-se-ejecute-en-el-puerto-8080">
+<h3>Lanzar un contenedor NGINX en modo segundo plano y que se ejecute en el puerto 8080<a class="headerlink" href="#lanzar-un-contenedor-nginx-en-modo-segundo-plano-y-que-se-ejecute-en-el-puerto-8080" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker run -d -p <span class="m">8080</span>:80 nginx:latest
+</pre></div>
+</div>
+</div>
+<div class="section" id="lanzar-un-contenedor-con-un-nombre-identificativo">
+<h3>Lanzar un contenedor con un nombre identificativo<a class="headerlink" href="#lanzar-un-contenedor-con-un-nombre-identificativo" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker run -d -n NGINX -p <span class="m">80</span>:80 nginx:latest
+</pre></div>
+</div>
+</div>
+<div class="section" id="lanzar-un-contenedor-para-ejecutar-cosas-en-el">
+<h3>Lanzar un contenedor para ejecutar cosas en él<a class="headerlink" href="#lanzar-un-contenedor-para-ejecutar-cosas-en-el" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker run -ti centos:latest /bin/bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="mapear-una-unidad-del-so-en-un-contenedor">
+<h3>Mapear una unidad del SO en un contenedor<a class="headerlink" href="#mapear-una-unidad-del-so-en-un-contenedor" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker run -ti -v /home/sincorchetes:/app centos:latest /bin/bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="listar-los-contenedores-incluyendo-los-que-no-estan-en-marcha">
+<h3>Listar los contenedores incluyendo los que no están en marcha<a class="headerlink" href="#listar-los-contenedores-incluyendo-los-que-no-estan-en-marcha" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker ps -a
+</pre></div>
+</div>
+</div>
+<div class="section" id="listar-los-contenedores-que-solo-estan-en-marcha">
+<h3>Listar los contenedores que solo están en marcha<a class="headerlink" href="#listar-los-contenedores-que-solo-estan-en-marcha" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker ps
+</pre></div>
+</div>
+</div>
+<div class="section" id="eliminar-todos-los-contenedores-incluyendo-los-que-estan-en-marcha-dieron-error-o-no-se-han-desplegado">
+<h3>Eliminar todos los contenedores incluyendo los que están en marcha, dieron error o no se han desplegado<a class="headerlink" href="#eliminar-todos-los-contenedores-incluyendo-los-que-estan-en-marcha-dieron-error-o-no-se-han-desplegado" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker rm -f <span class="k">$(</span>docker ps -a <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> tail -n +2<span class="k">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="eliminar-todos-los-contenedores-solo-lo-que-estan-en-marcha">
+<h3>Eliminar todos los contenedores solo lo que están en marcha<a class="headerlink" href="#eliminar-todos-los-contenedores-solo-lo-que-estan-en-marcha" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker rm -f <span class="k">$(</span>docker ps <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> tail -n +2<span class="k">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../automation/ansible/ansible.html" class="btn btn-neutral float-right" title="Ansible" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../containers.html" class="btn btn-neutral float-left" title="Contenedores" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

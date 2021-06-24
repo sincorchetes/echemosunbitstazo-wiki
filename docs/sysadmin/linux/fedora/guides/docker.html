@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Docker &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+    <link rel="next" title="Codificación/idioma" href="locales.html" />
+    <link rel="prev" title="Deshabilitando servicios" href="disable_some_svc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../linux.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../acl/acl.html">Gestión de usuari&#64;s y grupos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pkgmnt/pkgmnt.html">Gestores de paquetes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="fedora.html">Fedora</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="codecs.html">Códecs audio/video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="disable_some_svc.html">Deshabilitando servicios</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-dependencias-y-docker">Instalar dependencias y Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reiniciar-el-equipo">Reiniciar el equipo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#habilitar-y-arrancar-el-servicio-al-arranque">Habilitar y arrancar el servicio al arranque</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ejecutar-docker-sin-necesitar-privilegios">Ejecutar Docker sin necesitar privilegios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-docker-compose">Instalar Docker Compose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fuentes">Fuentes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="locales.html">Codificación/idioma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="locales.html#paginas-de-documentacion-man">Páginas de documentación, man</a></li>
+<li class="toctree-l3"><a class="reference internal" href="locales.html#libreoffice">Libreoffice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="locales.html#plasma-kde">Plasma (KDE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nvidia_optimus.html">NVIDIA Optimus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selenium.html">Selenium</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skype.html">Skype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spotify.html">Spotify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="third_party_repos.html">Repositorio a terceros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zoom.html">Zoom</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../centos/guides/centos.html">CentOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../linux.html">Linux</a> &raquo;</li>
+        
+          <li><a href="fedora.html">Fedora</a> &raquo;</li>
+        
+      <li>Docker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/sysadmin/linux/fedora/guides/docker.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker">
+<h1>Docker<a class="headerlink" href="#docker" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="instalar-dependencias-y-docker">
+<h2>Instalar dependencias y Docker<a class="headerlink" href="#instalar-dependencias-y-docker" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo grubby --update-kernel<span class="o">=</span>ALL --args<span class="o">=</span><span class="s2">&quot;systemd.unified_cgroup_hierarchy=0&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reiniciar-el-equipo">
+<h2>Reiniciar el equipo<a class="headerlink" href="#reiniciar-el-equipo" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl reboot
+</pre></div>
+</div>
+</div>
+<div class="section" id="habilitar-y-arrancar-el-servicio-al-arranque">
+<h2>Habilitar y arrancar el servicio al arranque<a class="headerlink" href="#habilitar-y-arrancar-el-servicio-al-arranque" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl <span class="nb">enable</span> --now docker.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejecutar-docker-sin-necesitar-privilegios">
+<h2>Ejecutar Docker sin necesitar privilegios<a class="headerlink" href="#ejecutar-docker-sin-necesitar-privilegios" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Añadir el usuario que necesites al grupo <code class="code docutils literal notranslate"><span class="pre">docker</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo gpasswd -a USUARIO docker
+</pre></div>
+</div>
+<p>Salir y entrar de la sesión o ejecutar</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>newgrp docker
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalar-docker-compose">
+<h2>Instalar Docker Compose<a class="headerlink" href="#instalar-docker-compose" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Realizar cualquier operativa basta con que ejecutes <code class="code docutils literal notranslate"><span class="pre">docker-compose</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="fuentes">
+<h2>Fuentes<a class="headerlink" href="#fuentes" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/fedora/">Documentación de Docker</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/compose/install/">Instalación de Docker Compose doc oficial</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="locales.html" class="btn btn-neutral float-right" title="Codificación/idioma" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="disable_some_svc.html" class="btn btn-neutral float-left" title="Deshabilitando servicios" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

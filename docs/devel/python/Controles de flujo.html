@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Condicionales &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Fecha y hora" href="Fecha%20y%20hora.html" />
+    <link rel="prev" title="Python" href="python.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/linux/linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="python.html">Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Condicionales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#condicional-if">Condicional if</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#condicional-if-else">Condicional if-else</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#condicional-if-elif-else">Condicional if-elif-else</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bucles">Bucles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bucle-for">Bucle for</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bucle-while">Bucle while</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#break-continue-pass">break, continue, pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#juego-dragon-vs-personaje">Juego, Dragón VS Personaje</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Fecha%20y%20hora.html">Fecha y hora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html">Función print()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#funcion-type">Función type()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#cadenas-o-strings">Cadenas o <em>strings</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#constantes">Constantes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#numeros">Números</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Imprimir%20valores%20y%20funciones.html">Imprimir valores y funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introducir%20datos%20y%20control%20de%20excepciones.html">Obtener datos introducidos por el usuario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Int%C3%A9rprete%2C%20comentarios%2C%20identificadores%20y%20palabras%20clave.html">¿Cómo usar Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programaci%C3%B3n%20Orientada%20a%20Objetos.html">Programación orientada a objetos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tipos%20de%20operadores%20e%20introducci%C3%B3n%20a%20los%20m%C3%B3dulos.html">Tipos de operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#listas">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#diccionarios">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#sets">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Preparando%20el%20entorno/Preparando%20el%20entorno.html">Historia</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="python.html">Python</a> &raquo;</li>
+        
+      <li>Condicionales</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/devel/python/Controles de flujo.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="condicionales">
+<h1>Condicionales<a class="headerlink" href="#condicionales" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="condicional-if">
+<h2>Condicional if<a class="headerlink" href="#condicional-if" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta estructura de control te permite evaluar una condición y ejecutar un trozo de código si la cumple.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="n">condición</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span> <span class="n">Bloque</span> <span class="n">de</span> <span class="n">código</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="condicional-if-else">
+<h2>Condicional if-else<a class="headerlink" href="#condicional-if-else" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El <code class="code docutils literal notranslate"><span class="pre">if-else</span></code> es una estructura de control que permite hacer 1 cosa si se cumple la condicioń, si esta no se cumple, únicamente se ejecutará un bloque de código sin contemplar otras posibilidades.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condición</span> <span class="mi">1</span><span class="p">):</span>
+  <span class="n">Bloque</span> <span class="n">de</span> <span class="n">código</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="n">Bloque</span> <span class="n">de</span> <span class="n">código</span>
+</pre></div>
+</div>
+<p>Veamos un ejemplo, Si tenemos un coche de marca Opel, emitirás un mensaje que diga «Tienes un Opel», si no es así, mostraremos un mensaje que diga que «No tienes un coche Opel».</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">marca</span> <span class="o">=</span> <span class="s2">&quot;Citröen&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="n">marca</span> <span class="o">==</span> <span class="s2">&quot;Opel&quot;</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tienes un Opel&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No tienes un coche Opel&quot;</span><span class="p">)</span>
+<span class="go">&#39;No tienes un coche Opel&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="condicional-if-elif-else">
+<h2>Condicional if-elif-else<a class="headerlink" href="#condicional-if-elif-else" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>¿Pero qué pasa cuando queremos comprobar múltiples condiciones? No podemos estar anidando <code class="code docutils literal notranslate"><span class="pre">if-else</span></code> como si no hubiese un mañana uno dentro del otro. Para eso tenemos la estructura <code class="code docutils literal notranslate"><span class="pre">if-elif-else</span></code>. Esta estructura nos permite hacer 1 cosa u otra en base a una condición, la cuál estará compuesto por uno o múltiples operadores como aritméticos, lógicos…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condición</span> <span class="mi">1</span><span class="p">):</span>
+  <span class="n">Bloque</span> <span class="n">de</span> <span class="n">código</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">condición3</span><span class="p">):</span>
+  <span class="n">Bloque</span> <span class="n">de</span> <span class="n">código</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">condición2</span><span class="p">):</span>
+  <span class="n">Bloque</span> <span class="n">de</span> <span class="n">código</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="n">Bloque</span> <span class="n">de</span> <span class="n">código</span>
+</pre></div>
+</div>
+<p>Veamos un ejemplo, Si tenemos un coche de marca Opel, emitirás un mensaje que diga «Tienes un Opel», si no es así, mostraremos un mensaje que diga que «No tienes un coche Opel».</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">marca</span> <span class="o">=</span> <span class="s2">&quot;Citröen&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="n">marca</span> <span class="o">==</span> <span class="s2">&quot;Opel&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tienes un Opel&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">elif</span> <span class="p">(</span><span class="n">marca</span> <span class="o">==</span> <span class="s2">&quot;Citröen&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tienes un coche Opel&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">elif</span> <span class="p">(</span><span class="n">marca</span> <span class="o">==</span> <span class="s2">&quot;Audi&quot;</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tienes un Audi&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">else</span><span class="p">:</span><span class="n">p</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tu marca de coche no está registrada&quot;</span><span class="p">)</span>
+<span class="go">Tienes un coche Citröen</span>
+</pre></div>
+</div>
+<p>Todo esto se puede complicar aún más haciendo uso de otros operadores y de otros <code class="code docutils literal notranslate"><span class="pre">if-elif-else</span></code> anidados, por ejemplo, utilizaremos los operadores de comparación con lógicos tal que así:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">marca_coche</span> <span class="o">=</span> <span class="s2">&quot;Toyota&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">modelo_coche</span> <span class="o">=</span> <span class="s2">&quot;AE87&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">motor_coche</span> <span class="o">=</span> <span class="mi">1600</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="n">marca_coche</span> <span class="o">==</span> <span class="s2">&quot;Toyota&quot;</span> <span class="ow">and</span> <span class="n">modelo_coche</span> <span class="o">==</span> <span class="s2">&quot;AE92&quot;</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">if</span> <span class="p">(</span><span class="n">motor_coche</span> <span class="o">==</span> <span class="mi">1600</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Perfecto&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">elif</span> <span class="p">(</span><span class="n">motor_coche</span> <span class="o">==</span> <span class="mi">1400</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bien&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">elif</span> <span class="p">(</span><span class="n">motor_coche</span> <span class="o">==</span> <span class="mi">1200</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cuidado con las cuestas&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">else</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Esto huele a chasis&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">elif</span> <span class="p">(</span><span class="n">marca_coche</span> <span class="o">==</span> <span class="s2">&quot;Citröen&quot;</span> <span class="ow">and</span> <span class="n">modelo_coche</span> <span class="o">==</span> <span class="s2">&quot;Saxo&quot;</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enhorabuena, tienes un coche que pesa poco y corre mucho.&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error 404, Tu coche no encontrado.&quot;</span><span class="p">)</span>
+<span class="go">Error 404, Tu coche no encontrado.</span>
+</pre></div>
+</div>
+<p>Este mensaje se produce porque en el primer condicional estamos esperando recibir el modelo AE92, y sin embargo, recibimos el AE87; como en la segunda condición (<code class="code docutils literal notranslate"><span class="pre">elif</span></code>) requiere del modelo «Citröen» también queda descartado imprimiendo el mensaje «Error 404, Tu coche no encontrado.». No obstante, si cambiamos <code class="code docutils literal notranslate"><span class="pre">modelo_coche</span></code> por AE92 y volvemos a ejecutar las sentencias, veremos que recibiremos el mensaje de: «Perfecto».</p>
+</div>
+<div class="section" id="bucles">
+<h2>Bucles<a class="headerlink" href="#bucles" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="bucle-for">
+<h3>Bucle for<a class="headerlink" href="#bucle-for" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>¿Qué ocurre si queremos recorrer una lista o generar múltiples ejecuciones de código? Pues evidetenmente con un <code class="code docutils literal notranslate"><span class="pre">if</span></code> no nos vale, ya que solo nos permite validar una condicioń, y cuando la valide, esta dejará de ejecutarse.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable_interactiva</span> <span class="ow">in</span> <span class="n">secuencia</span><span class="p">:</span>
+  <span class="n">Bloque</span> <span class="n">código</span>
+</pre></div>
+</div>
+<div class="section" id="como-funciona">
+<h4>¿Cómo funciona?<a class="headerlink" href="#como-funciona" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>En <code class="code docutils literal notranslate"><span class="pre">secuencia</span></code> va una condición, podemos poner que recorra todos los valores de una lista y nos lo imprima por <code class="code docutils literal notranslate"><span class="pre">variable_interactiva</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Peras&quot;</span><span class="p">,</span> <span class="s2">&quot;Manzanas&quot;</span><span class="p">,</span> <span class="s2">&quot;Arándanos&quot;</span><span class="p">,</span> <span class="s2">&quot;Pomelo&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+<span class="go">Peras</span>
+<span class="go">Manzanas</span>
+<span class="go">Arándanos</span>
+<span class="go">Pomelo</span>
+</pre></div>
+</div>
+<p>También se puede hacer ejecuciones por el tamaño de la lista:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Peras&quot;</span><span class="p">,</span> <span class="s2">&quot;Manzanas&quot;</span><span class="p">,</span> <span class="s2">&quot;Arándanos&quot;</span><span class="p">,</span> <span class="s2">&quot;Pomelo&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">frutas</span><span class="p">)):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Esta es la posición&quot;</span><span class="p">,</span> <span class="n">fruta</span><span class="p">,</span><span class="s2">&quot;de la fruta: &quot;</span><span class="p">,</span><span class="n">frutas</span><span class="p">[</span><span class="n">fruta</span><span class="p">])</span>
+<span class="go">Esta es la posición 0 de la fruta:  Peras</span>
+<span class="go">Esta es la posición 1 de la fruta:  Manzanas</span>
+<span class="go">Esta es la posición 2 de la fruta:  Arándanos</span>
+<span class="go">Esta es la posición 3 de la fruta:  Pomelo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="como-podemos-hacer-que-se-hagan-n-ejecuciones-para-hacer-tal-cosa">
+<h4>¿Cómo podemos hacer, que se hagan <code class="code docutils literal notranslate"><span class="pre">n</span></code> ejecuciones para hacer tal cosa?<a class="headerlink" href="#como-podemos-hacer-que-se-hagan-n-ejecuciones-para-hacer-tal-cosa" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Con la función <code class="code docutils literal notranslate"><span class="pre">range()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">[... Corto aquí porque llega hasta 99 ...]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="por-que-hasta-99-y-no-100">
+<h4>¿Por qué hasta 99 y no 100?<a class="headerlink" href="#por-que-hasta-99-y-no-100" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Porque recordemos que el valor 0 es una posición que se cuenta, realmente es <code class="code docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+</div>
+<div class="section" id="como-puedo-romper-una-ejecucion">
+<h4>¿Cómo puedo romper una ejecución?<a class="headerlink" href="#como-puedo-romper-una-ejecucion" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Tenemos el comando <code class="code docutils literal notranslate"><span class="pre">break</span></code> que rompe la ejecución del código, por lo que me han enseñado, es mejor finalizar las cosas como tocan en vez de usar este tipo de «cañones». Pero que sepamos que lo podemos usar. Normalmente se usan cuando hay condicionales añadidos, esto no quiere decir que se siga ejecutándo el resto del programa que tengamos, solo se frena el bucle <code class="code docutils literal notranslate"><span class="pre">for</span></code> que hemos invocado en nuestro fragmento de código.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">break</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">[... Se para la ejecución ...]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bucle-while">
+<h3>Bucle while<a class="headerlink" href="#bucle-while" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Este bucle se repetirá hasta que la condición se cumpla.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="p">(</span> <span class="n">condicion</span> <span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="c1"># Bloque de código</span>
+</pre></div>
+</div>
+<p>Un ejemplo sencillo puede ser:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="n">a</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="go">0</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">6</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="break-continue-pass">
+<h3>break, continue, pass<a class="headerlink" href="#break-continue-pass" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Estas tres sentencias permiten modificar la interacción de los bucles.
+<code class="code docutils literal notranslate"><span class="pre">break</span></code>: Rompe toda la ejecución de un bucle.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">break</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Veremos que la ejecución cuando llega a 5 el bucle se para a pesar de que le hemos dicho que el bucle vaya de 0 a 10 e imprimirá como último valor 4.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">continue</span></code>: Se salta la ejecución en ese momento de la condición del bucle, pero sigue iterando el resto de elementos del bucle hasta finalizar.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">continue</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En este caso, observamos que cuando detecte que <code class="code docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span></code>, el valor 5 no se imprimirá, pero continuará realizando el resto de condición.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">pass</span></code>: No ejecuta nada y deja que continue el flujo del bucle.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">pass</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Se ejecutará como si no existiera la palabra reservada <code class="code docutils literal notranslate"><span class="pre">pass</span></code>.</p>
+</div>
+<div class="section" id="juego-dragon-vs-personaje">
+<h3>Juego, Dragón VS Personaje<a class="headerlink" href="#juego-dragon-vs-personaje" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Un dragón nos estará golpeando hasta que nosotros matemos al dragón o el dragón nos mate a nosotros:</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Vamos a llamar al módulo <code class="code docutils literal notranslate"><span class="pre">random</span></code> y lo llamaremos como <code class="code docutils literal notranslate"><span class="pre">TirarDados</span></code> que más tarde utilizaremos el método <code class="code docutils literal notranslate"><span class="pre">.random()</span></code> para generar números aleatorios que están comprendidos entre 0.n y 1.n y que, haciendo uso del método <code class="code docutils literal notranslate"><span class="pre">.round()</span></code> aproximaremos el número a favor del 1 o del 0.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span><span class="c1">#</span>
+<span class="linenos"> 3</span><span class="c1"># Juego elaborado por Álvaro Castillo</span>
+<span class="linenos"> 4</span><span class="c1"># GPLv2</span>
+<span class="linenos"> 5</span><span class="c1">#</span>
+<span class="linenos"> 6</span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> <span class="k">as</span> <span class="n">TirarDados</span>
+<span class="linenos"> 7</span><span class="n">dragon_hp</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos"> 8</span><span class="n">personaje_hp</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos"> 9</span><span class="n">hit_dragon</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">10</span><span class="n">hit_personaje</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos">13</span>  <span class="k">if</span> <span class="n">personaje_hp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">14</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hemos ganado :)&quot;</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="k">break</span>
+<span class="linenos">16</span>  <span class="k">elif</span> <span class="n">dragon_hp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">17</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ganó el Dragón :(&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>    <span class="k">break</span>
+<span class="linenos">19</span>  <span class="k">else</span><span class="p">:</span>
+<span class="linenos">20</span>    <span class="k">pass</span>
+<span class="linenos">21</span>  <span class="n">dados</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">TirarDados</span><span class="p">())</span>
+<span class="linenos">22</span>  <span class="k">if</span> <span class="p">(</span> <span class="n">dados</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>
+<span class="linenos">23</span>    <span class="n">dragon_hp</span> <span class="o">-=</span> <span class="n">hit_dragon</span>
+<span class="linenos">24</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Hemos golpeado al dragón!, le queda: &quot;</span><span class="p">,</span> <span class="n">dragon_hp</span><span class="p">,</span> <span class="s2">&quot;de vida.&quot;</span><span class="p">)</span>
+<span class="linenos">25</span>  <span class="k">elif</span> <span class="p">(</span> <span class="n">dados</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">26</span>   <span class="n">personaje_hp</span> <span class="o">-=</span> <span class="n">hit_personaje</span>
+<span class="linenos">27</span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡El dragón nos ha golpeado!, tenemos de vida:&quot;</span><span class="p">,</span> <span class="n">personaje_hp</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="linenos">28</span>  <span class="k">else</span><span class="p">:</span>
+<span class="linenos">29</span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hubo un fallo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Este es el análisis resumido de este juego:</p>
+<ol class="arabic simple">
+<li><p>La vida de ambos duelistas están asignadas en una variable</p></li>
+<li><p>El daño que quita cada uno de ellos también</p></li>
+<li><p>La condición siempre es <code class="code docutils literal notranslate"><span class="pre">True</span></code> por lo que siempre se ejecutará originando un bucle infinito <code class="code docutils literal notranslate"><span class="pre">infinityLoop</span></code></p></li>
+<li><p>Si la vida de alguno de los duelistas llega a <code class="code docutils literal notranslate"><span class="pre">0</span></code>, se interrumpe el bucle usando <code class="code docutils literal notranslate"><span class="pre">break</span></code></p></li>
+<li><p>La variable <code class="code docutils literal notranslate"><span class="pre">dados</span></code> obtiene un número aproximado a <code class="code docutils literal notranslate"><span class="pre">1|0</span></code> dependiendo lo que salga.</p></li>
+<li><p>Hay un condicional que dice si <code class="code docutils literal notranslate"><span class="pre">datos=1</span></code> ataca el dragón, si <code class="code docutils literal notranslate"><span class="pre">dados=0</span></code> atacamos nosotros.</p></li>
+<li><p>Haciendo uso de los operadores de asignación, restamos el valor de afección a la vida del duelista afectado y se imprime un mensaje indicando quién ha golpeado a quién y cuánta vida le queda al duelista contrario.</p></li>
+<li><p>Se repite el proceso hasta llegar al punto 4</p></li>
+</ol>
+<p>Dando como resultado algo parecido a esto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>¡El dragón nos ha golpeado!, tenemos de vida: 95 .
+¡Hemos golpeado al dragón!, le queda:  95 de vida.
+¡Hemos golpeado al dragón!, le queda:  90 de vida.
+¡Hemos golpeado al dragón!, le queda:  85 de vida.
+¡El dragón nos ha golpeado!, tenemos de vida: 90 .
+¡Hemos golpeado al dragón!, le queda:  80 de vida.
+¡Hemos golpeado al dragón!, le queda:  75 de vida.
+[...]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Fecha%20y%20hora.html" class="btn btn-neutral float-right" title="Fecha y hora" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="python.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

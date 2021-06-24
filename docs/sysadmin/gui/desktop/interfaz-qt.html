@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Ajustando la apariencia en aplicaciones Qt &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Ajustando la apariencia en aplicaciones Qt</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/sysadmin/gui/desktop/interfaz-qt.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ajustando-la-apariencia-en-aplicaciones-qt">
+<h1>Ajustando la apariencia en aplicaciones Qt<a class="headerlink" href="#ajustando-la-apariencia-en-aplicaciones-qt" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="cual-es-el-problema">
+<h2>¿Cuál es el problema?<a class="headerlink" href="#cual-es-el-problema" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Seguro que muchas veces nos ha pasado que hemos instalado aplicaciones que utilizan Qt y se ven muy feas en entornos de escritorio ajenos a Plasma (aka KDE) o LXQT. En este post descubriremos cómo ponerle fin a este suceso, y cómo afrontarlo.</p>
+</div>
+<div class="section" id="que-es-qt">
+<h2>¿Qué es Qt?<a class="headerlink" href="#que-es-qt" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Qt es un framework multiplataforma orientado a objetos utilizado para desarrollar aplicaciones que utilicen interfaz grafica. Actualmente este framework es el que utiliza el equipo de Plasma (antes KDE) para su desarrollo y continuación en todo su software de escritorio; la suite de ofimática Calligra Suite (antes llamado KOffice) también lo utiliza; el famoso reproductor multimedia VLC; reproductor y conversor de archivos de audio Clementine…etc.</p>
+</div>
+<div class="section" id="existe-algun-metodo-para-solucionarlo">
+<h2>¿Existe algún método para solucionarlo?<a class="headerlink" href="#existe-algun-metodo-para-solucionarlo" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Sí, efectivamente, tenemos varios métodos, uno de ellos es hacer uso de scripts, pero vamos a simplificarlo haciendo de la herramienta gráfica que nos proporciona el equipo de Qt llamada <cite>qt5ct</cite> para obtenerla en nuestro sistema bastará con instalarla.</p>
+</div>
+<div class="section" id="instalacion">
+<h2>Instalación<a class="headerlink" href="#instalacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En este proceso tenemos la instalación mediante binarios que se obtienen mediante los repositorios de los gestores de paquetes, o bien, mediante código fuente.</p>
+<div class="section" id="binarios">
+<h3>Binarios<a class="headerlink" href="#binarios" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Distribuciones más populares:</p>
+<ul class="simple">
+<li><p>Fedora:
+<code class="code docutils literal notranslate"><span class="pre">#</span> <span class="pre">dnf</span> <span class="pre">install</span> <span class="pre">qt5ct</span></code></p></li>
+<li><p>Archlinux
+<code class="code docutils literal notranslate"><span class="pre">#</span> <span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">qt5ct</span></code></p></li>
+<li><p>Ubuntu y Debian
+<code class="code docutils literal notranslate"><span class="pre">#</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">qt5ct</span></code></p></li>
+<li><p>Gentoo
+<code class="code docutils literal notranslate"><span class="pre">#</span> <span class="pre">emerge</span> <span class="pre">-av</span> <span class="pre">qt5ct</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="codigo-fuente">
+<h3>Código fuente<a class="headerlink" href="#codigo-fuente" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para poder compilar el código fuente, hay una serie de pasos que debemos seguir:</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Dependiendo de la distribución, pueden variar algunos nombres respecto al qmake porque puede haber más de una versión de Qt instalada en nuestro sistema como es el caso de Fedora que tiene <code class="code docutils literal notranslate"><span class="pre">qmake-qt5</span></code> para Qt5 y qmake para Qt4.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Descargar el archivo comprimido que contiene el código fuente desde <a class="reference external" href="https://sourceforge.net/projects/qt5ct/files/latest/download?target=_blank">aquí</a></p></li>
+<li><p>Descomprimirlo en el directorio que queramos</p></li>
+<li><p>Instalar software adicional requerido para el proceso de compilación</p></li>
+<li><p>Compilar el código fuente</p></li>
+<li><p>Instalar en nuestro sistema</p></li>
+<li><p>Ejecutar dicho software.</p></li>
+</ol>
+<p>#### Paquetes necesarios</p>
+<p>Esta es la lista de los paquetes que necesitaremos para compilar <code class="code docutils literal notranslate"><span class="pre">qt5ct</span></code>, a la izquierda, el nombre común, a la derecha, el nombre de los paquetes en Fedora.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qttools</span><span class="o">-</span><span class="n">devel</span> <span class="o">=&gt;</span> <span class="n">qt5</span><span class="o">-</span><span class="n">qttools</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">qtbase</span><span class="o">-</span><span class="n">devel</span> <span class="o">=&gt;</span> <span class="n">qt5</span><span class="o">-</span><span class="n">qtbase</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">qtbase</span><span class="o">-</span><span class="n">static</span> <span class="o">=&gt;</span> <span class="n">qt5</span><span class="o">-</span><span class="n">qtbase</span><span class="o">-</span><span class="n">static</span>
+<span class="n">qtsvg</span><span class="o">-</span><span class="n">devel</span> <span class="o">=&gt;</span> <span class="n">qt5</span><span class="o">-</span><span class="n">qtsvg</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">g</span><span class="o">++</span> <span class="o">=&gt;</span> <span class="n">gcc</span><span class="o">-</span><span class="n">c</span><span class="o">++</span>
+<span class="n">make</span> <span class="o">=&gt;</span> <span class="n">make</span>
+<span class="n">gcc</span> <span class="o">=&gt;</span> <span class="n">gcc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compilando">
+<h3>Compilando<a class="headerlink" href="#compilando" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Según el README:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qmake <span class="nv">PREFIX</span><span class="o">=</span>/DIRECTORIO_A_INSTALAR
+$ make
+<span class="c1"># make install</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="para-instalarlo-en-el-sistema-fedora">
+<h3>Para instalarlo en el sistema (Fedora)<a class="headerlink" href="#para-instalarlo-en-el-sistema-fedora" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qmake-qt5 <span class="nv">PREFIX</span><span class="o">=</span>/usr
+$ make
+<span class="c1"># make install</span>
+</pre></div>
+</div>
+<p>Ya lo tendremos instalado, sin embargo, actualizamos la base de datos de los ficheros .desktop para que aparezca en los menús de nuestro entorno de escritorio <code class="code docutils literal notranslate"><span class="pre">update-desktop-database(1)</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># update-desktop-database</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="no-puedo-iniciar-el-programa-porque-obtengo-este-error">
+<h3>No puedo iniciar el programa porque obtengo este error<a class="headerlink" href="#no-puedo-iniciar-el-programa-porque-obtengo-este-error" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">The</span> <span class="n">QT_QPA_PLATFORMTHEME</span> <span class="n">environment</span> <span class="n">variable</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">set</span> <span class="n">correctly</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Para solucionarlo, añadimos el siguiente código a un archivo nuevo dentro del directorio <code class="code docutils literal notranslate"><span class="pre">/etc/profile.d/</span></code> , guardamos con extensión <code class="code docutils literal notranslate"><span class="pre">.sh</span></code> y salimos de la sesión, ya debería estar arreglado.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">QT_QPA_PLATFORMTHEME</span><span class="o">=</span>qt5ct
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications?target=_blank">Archlinux wiki</a></p></li>
+<li><p>Qt5ct README</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Zabbix &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+    <link rel="next" title="Bash" href="../../../scripting/bash/bash.html" />
+    <link rel="prev" title="Diferencias entre gestores de servicios" href="../../systemd/systemd-construyendo-svc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/linux.html">Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../services.html">Servicios</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../databases/mariadb/MariaDB.html">MariaDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../databases/mariadb/MariaDB-sql.html">MariaDB - Comandos SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd.html">systemd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-construyendo-svc.html">Diferencias entre gestores de servicios</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Zabbix</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#instalacion-en-centos-8">Instalación en CentOS 8</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#actualizar-el-sistema">Actualizar el sistema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-el-repositorio">Instalar el repositorio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-el-software-necesario">Instalar el software necesario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configurando-por-primera-vez-la-base-de-datos">Configurando por primera vez la base de datos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configurando-la-base-de-datos-para-el-servidor">Configurando la base de datos para el servidor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editar-archivo-etc-nginx-conf-d-zabbix-conf">Editar archivo <code class="code docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/zabbix.conf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#escoger-el-huso-horario-etc-php-fpm-d-zabbix-conf">Escoger el huso horario <code class="code docutils literal notranslate"><span class="pre">/etc/php-fpm.d/zabbix.conf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arrancando-y-habilitando-zabbix-en-el-sistema">Arrancando y habilitando Zabbix en el sistema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accediendo-al-portal-de-configuracion">Accediendo al portal de configuración</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#let-s-encrypt">Let’s Encrypt</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Instalar el software necesario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generando-el-certificado">Generando el certificado</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reiniciando-el-servidor-web">Reiniciando el servidor web</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#firewalld">Firewalld</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instalar-firewalld">Instalar firewalld</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#habilitando-al-arranque-e-iniciandolo">Habilitando al arranque e iniciándolo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#abriendo-los-puertos-para-zabbix">Abriendo los puertos para Zabbix</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#procedimiento-de-backup">Procedimiento de backup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exportar-todas-las-bases-de-datos">Exportar todas las bases de datos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#comprimir-los-directorios-esenciales">Comprimir los directorios esenciales</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../containers/containers.html">Contenedores</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../services.html">Servicios</a> &raquo;</li>
+        
+      <li>Zabbix</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/sysadmin/services/monitoring/zabbix/Zabbix.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="zabbix">
+<h1>Zabbix<a class="headerlink" href="#zabbix" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Software de monitorización elaborado en PHP….</p>
+<div class="section" id="instalacion-en-centos-8">
+<h2>Instalación en CentOS 8<a class="headerlink" href="#instalacion-en-centos-8" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="actualizar-el-sistema">
+<h3>Actualizar el sistema<a class="headerlink" href="#actualizar-el-sistema" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf upgrade
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalar-el-repositorio">
+<h3>Instalar el repositorio<a class="headerlink" href="#instalar-el-repositorio" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/8/x86_64/zabbix-release-5.0-1.el8.noarch.rpm
+dnf clean all
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalar-el-software-necesario">
+<h3>Instalar el software necesario<a class="headerlink" href="#instalar-el-software-necesario" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf install zabbix-server-mysql zabbix-web-mysql zabbix-nginx-conf zabbix-agent mariadb-server
+</pre></div>
+</div>
+</div>
+<div class="section" id="configurando-por-primera-vez-la-base-de-datos">
+<h3>Configurando por primera vez la base de datos<a class="headerlink" href="#configurando-por-primera-vez-la-base-de-datos" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="habilitando-al-arranque-y-arrancando-mariadb">
+<h4>Habilitando al arranque y arrancando MariaDB<a class="headerlink" href="#habilitando-al-arranque-y-arrancando-mariadb" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> --now mariadb.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="configurando-la-base-de-datos">
+<h4>Configurando la base de datos<a class="headerlink" href="#configurando-la-base-de-datos" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Solo hay que seguir los pasos.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysql_secure_installation
+</pre></div>
+</div>
+</div>
+<div class="section" id="configurando-la-base-de-datos-para-zabbix">
+<h4>Configurando la base de datos para Zabbix<a class="headerlink" href="#configurando-la-base-de-datos-para-zabbix" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span>
+<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">zabbix</span> <span class="nb">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8</span> <span class="k">COLLATE</span> <span class="n">utf8_bin</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">zabbix</span><span class="o">@</span><span class="n">localhost</span> <span class="n">identified</span> <span class="k">BY</span> <span class="s1">&#39;AQUI_UNA_CONTRASEÑA&#39;</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">zabbix</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">zabbix</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">QUIT</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="importando-el-esquema-de-base-de-datos">
+<h4>Importando el esquema de base de datos<a class="headerlink" href="#importando-el-esquema-de-base-de-datos" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz <span class="p">|</span> mysql -u zabbix -p AQUI_UNA_CONTRASEÑA
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configurando-la-base-de-datos-para-el-servidor">
+<h3>Configurando la base de datos para el servidor<a class="headerlink" href="#configurando-la-base-de-datos-para-el-servidor" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Editar el archivo <code class="code docutils literal notranslate"><span class="pre">/etc/zabbix/zabbix_server.conf</span></code> y cambiar la contraseña de BBDD:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DBPassword</span><span class="o">=</span><span class="n">AQUI_UNA_CONTRASEÑA</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="editar-archivo-etc-nginx-conf-d-zabbix-conf">
+<h3>Editar archivo <code class="code docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/zabbix.conf</span></code><a class="headerlink" href="#editar-archivo-etc-nginx-conf-d-zabbix-conf" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Descomentar y configurar las directivas <code class="code docutils literal notranslate"><span class="pre">listen</span></code> y <code class="code docutils literal notranslate"><span class="pre">server_name</span></code></p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># listen 80;</span>
+<span class="c1"># server_name example.com;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="escoger-el-huso-horario-etc-php-fpm-d-zabbix-conf">
+<h3>Escoger el huso horario <code class="code docutils literal notranslate"><span class="pre">/etc/php-fpm.d/zabbix.conf</span></code><a class="headerlink" href="#escoger-el-huso-horario-etc-php-fpm-d-zabbix-conf" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">php</span>
+<span class="x">php_value[date.timezone] = Atlantic/Canary</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="arrancando-y-habilitando-zabbix-en-el-sistema">
+<h3>Arrancando y habilitando Zabbix en el sistema<a class="headerlink" href="#arrancando-y-habilitando-zabbix-en-el-sistema" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> --now zabbix-server.service zabbix-agent.service nginx.service php-fpm.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="accediendo-al-portal-de-configuracion">
+<h3>Accediendo al portal de configuración<a class="headerlink" href="#accediendo-al-portal-de-configuracion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Accedemos mediante el dominio que hemos configurado anteriormente:</p>
+<ul class="simple">
+<li><p>Usuario: Admin</p></li>
+<li><p>Contraseña: zabbix</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="let-s-encrypt">
+<h2>Let’s Encrypt<a class="headerlink" href="#let-s-encrypt" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="id1">
+<h3>Instalar el software necesario<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf install epel-release
+dnf install certbot python3-certbot-nginx
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Teniendo el dominio apuntando al servidor y certificando en <a class="reference external" href="https://dnschecker.org">DNS Checker</a> que el resultado del registro es la IP del dominio, procedemos a generar el certificado.</p>
+</div>
+</div>
+<div class="section" id="generando-el-certificado">
+<h3>Generando el certificado<a class="headerlink" href="#generando-el-certificado" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certbot --nginx -d DOMINIO -m TU_EMAIL --agree-tos --non-interactive
+</pre></div>
+</div>
+</div>
+<div class="section" id="reiniciando-el-servidor-web">
+<h3>Reiniciando el servidor web<a class="headerlink" href="#reiniciando-el-servidor-web" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl restart nginx.service
+</pre></div>
+</div>
+<p>Ya tendremos nuestro servidor web protegido via SSL.</p>
+</div>
+</div>
+<div class="section" id="firewalld">
+<h2>Firewalld<a class="headerlink" href="#firewalld" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="instalar-firewalld">
+<h3>Instalar firewalld<a class="headerlink" href="#instalar-firewalld" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf install firewalld
+</pre></div>
+</div>
+</div>
+<div class="section" id="habilitando-al-arranque-e-iniciandolo">
+<h3>Habilitando al arranque e iniciándolo<a class="headerlink" href="#habilitando-al-arranque-e-iniciandolo" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> --now firewalld.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="abriendo-los-puertos-para-zabbix">
+<h3>Abriendo los puertos para Zabbix<a class="headerlink" href="#abriendo-los-puertos-para-zabbix" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>firewall-cmd --add-service http --add-service https --zone public --permanent
+firewall-cmd --reload
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="procedimiento-de-backup">
+<h2>Procedimiento de backup<a class="headerlink" href="#procedimiento-de-backup" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="exportar-todas-las-bases-de-datos">
+<h3>Exportar todas las bases de datos<a class="headerlink" href="#exportar-todas-las-bases-de-datos" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysqldump -u root --all-databases -p  &gt; dump-<span class="k">$(</span>date +%d-%m-%y<span class="k">)</span>.sql
+
+* :code:<span class="sb">`</span>-u root<span class="sb">`</span>: Usuario root
+* :code:<span class="sb">`</span>--all-databases<span class="sb">`</span>: Todas las bases de datos
+* :code:<span class="sb">`</span>-p<span class="sb">`</span>: Pregunta por la contraseña
+* :code:<span class="sb">`</span>&gt;<span class="sb">`</span> : Redirige el flujo hacia el fichero salida :code:<span class="sb">`</span>dump-<span class="k">$(</span>date +%d-%m-%y<span class="k">)</span>.sql<span class="sb">`</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comprimir-los-directorios-esenciales">
+<h3>Comprimir los directorios esenciales<a class="headerlink" href="#comprimir-los-directorios-esenciales" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar zcfv /root/zabbix-<span class="k">$(</span>date +%d-%m-%y<span class="k">)</span>.tar.gz /etc/zabbix /usr/share/zabbix --acls --xattrs --selinux
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../../scripting/bash/bash.html" class="btn btn-neutral float-right" title="Bash" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../systemd/systemd-construyendo-svc.html" class="btn btn-neutral float-left" title="Diferencias entre gestores de servicios" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
