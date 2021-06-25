@@ -1,0 +1,750 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Tipos de operadores &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Tuplas" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html" />
+    <link rel="prev" title="Programación orientada a objetos" href="Programaci%C3%B3n%20Orientada%20a%20Objetos.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/sysadmin.html">Administración de sistemas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Controles%20de%20flujo.html">Condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fecha%20y%20hora.html">Fecha y hora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html">Función print()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#funcion-type">Función type()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#cadenas-o-strings">Cadenas o <em>strings</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#constantes">Constantes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funci%C3%B3n%20print%2C%20type%20y%20ver%20los%20diferentes%20tipos%20de%20datos.html#numeros">Números</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Imprimir%20valores%20y%20funciones.html">Imprimir valores y funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introducir%20datos%20y%20control%20de%20excepciones.html">Obtener datos introducidos por el usuario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Int%C3%A9rprete%2C%20comentarios%2C%20identificadores%20y%20palabras%20clave.html">¿Cómo usar Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programaci%C3%B3n%20Orientada%20a%20Objetos.html">Programación orientada a objetos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tipos de operadores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aritmeticos">Aritméticos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adiccion">Adicción</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sustraccion">Sustracción</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiplicacion">Multiplicación</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#division-cociente">División (cociente)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modulo-resto-de-una-division">Módulo, (<em>resto de una división</em>)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#operadores-de-asignacion">Operadores de asignación</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#igual">Igual (<code class="docutils literal notranslate"><span class="pre">=</span></code>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mas-e-igual">Más e igual (<code class="docutils literal notranslate"><span class="pre">+=</span></code>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#menos-e-igual">Menos e igual (<code class="docutils literal notranslate"><span class="pre">-=</span></code>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiplicar-e-igual">Multiplicar e igual (<code class="docutils literal notranslate"><span class="pre">*=</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#operadores-de-comparacion">Operadores de comparación</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#menor-que">Menor que</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mayor-que">Mayor que</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#menor-igual-que">Menor igual que</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mayor-igual-que">Mayor igual que</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distinto-de">Distinto de</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#operadores-logicos">Operadores lógicos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operador-and">Operador and</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operador-or">Operador or</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operador-not">Operador not</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#operadores-bitwise">Operadores <em>bitwise</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ampersan">Ampersan (&amp;)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tuberia-o-pipe">Tubería o <em>pipe</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#desplazamiento-hacia-la-derecha-o-shift-to-right">Desplazamiento hacia la derecha o (<em>shift-to-right</em>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#desplazamiento-hacia-la-izquierda-o-shift-to-left">Desplazamiento hacia la izquierda o (<em>shift-to-left</em>)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#inversion-bitwise">Inversión <em>bitwise</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operador-de-identidad">Operador de identidad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operador-is">Operador is</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oeprador-is-not">Oeprador is not</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#operadores-de-membresia">Operadores de membresía</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operador-in">Operador in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operador-not-in">Operador not in</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modulos">Módulos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#como-cargar-este-codigo">¿Cómo cargar este código?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#que-pasa-si-no-me-se-las-propiedades-o-metodos-de-un-modulo">¿Qué pasa si no me sé las propiedades o métodos de un módulo?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#listas">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#diccionarios">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#sets">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Preparando%20el%20entorno/Preparando%20el%20entorno.html">Instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#historia">Historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#notas-importantes">Notas importantes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="python.html">Python</a> &raquo;</li>
+        
+      <li>Tipos de operadores</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/devel/python/Tipos de operadores e introducción a los módulos.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tipos-de-operadores">
+<h1>Tipos de operadores<a class="headerlink" href="#tipos-de-operadores" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En Python tenemos varios tipos de oepradores para hacer comparaciones, cálculos, valorar expresiones lógicas…</p>
+<ul class="simple">
+<li><p>Aritmético</p></li>
+<li><p>Asignación</p></li>
+<li><p>Comparación</p></li>
+<li><p>Lógico</p></li>
+<li><p>Bit a bit (<em>bitwise</em>)</p></li>
+<li><p>Identidad</p></li>
+<li><p>Membresía</p></li>
+</ul>
+<div class="section" id="aritmeticos">
+<h2>Aritméticos<a class="headerlink" href="#aritmeticos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se utiliza para realizar operaciones matemáticas y se utilizando dos operandos para llevarlas a cabo.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operador</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p>Se utiliza para realizar operaciones de adicción (suma)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>Operaciones de sustracción (resta)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>Multiplicación</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p>División (cociente)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td><p>Módulo (resto de una división)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="adiccion">
+<h3>Adicción<a class="headerlink" href="#adiccion" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sustraccion">
+<h3>Sustracción<a class="headerlink" href="#sustraccion" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multiplicacion">
+<h3>Multiplicación<a class="headerlink" href="#multiplicacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="division-cociente">
+<h3>División (cociente)<a class="headerlink" href="#division-cociente" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modulo-resto-de-una-division">
+<h3>Módulo, (<em>resto de una división</em>)<a class="headerlink" href="#modulo-resto-de-una-division" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">%</span> <span class="mi">2</span>
+<span class="go">2.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="operadores-de-asignacion">
+<h2>Operadores de asignación<a class="headerlink" href="#operadores-de-asignacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Estos operadores permiten asignar valores, por norma general a variables, pero no olvidemos que podemos involucrar otros tipos de identificadores como pueden ser listas, tuplas…</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operador</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=</span></code></p></td>
+<td><p>Asigna un valor</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">+=</span></code></p></td>
+<td><p>Suma un valor al valor actual y guardar el nuevo valor</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-=</span></code></p></td>
+<td><p>Resta un valor al valor actual y guardar el nuevo valor</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*=</span></code></p></td>
+<td><p>Multiplica un valor al valor actual y guardar el nuevo valor</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="igual">
+<h3>Igual (<code class="docutils literal notranslate"><span class="pre">=</span></code>)<a class="headerlink" href="#igual" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mas-e-igual">
+<h3>Más e igual (<code class="docutils literal notranslate"><span class="pre">+=</span></code>)<a class="headerlink" href="#mas-e-igual" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="menos-e-igual">
+<h3>Menos e igual (<code class="docutils literal notranslate"><span class="pre">-=</span></code>)<a class="headerlink" href="#menos-e-igual" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">-=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multiplicar-e-igual">
+<h3>Multiplicar e igual (<code class="docutils literal notranslate"><span class="pre">*=</span></code>)<a class="headerlink" href="#multiplicar-e-igual" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="operadores-de-comparacion">
+<h2>Operadores de comparación<a class="headerlink" href="#operadores-de-comparacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Estos operadores te permiten realizar una comparación entre dos valores, son muy utilizados en los condicionales o en validaciones como pueden ser bucles…etc. Además, los valores comparados devuelven un <code class="code docutils literal notranslate"><span class="pre">True</span></code> o un <code class="code docutils literal notranslate"><span class="pre">False</span></code> (<em>booleano</em>) si la comparación se cumple o no.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operador</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>Menor que</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>Mayor que</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>Menor o igual que</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>Mayor o igual que</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>Distinto de</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="menor-que">
+<h3>Menor que<a class="headerlink" href="#menor-que" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mayor-que">
+<h3>Mayor que<a class="headerlink" href="#mayor-que" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="menor-igual-que">
+<h3>Menor igual que<a class="headerlink" href="#menor-igual-que" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mayor-igual-que">
+<h3>Mayor igual que<a class="headerlink" href="#mayor-igual-que" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="distinto-de">
+<h3>Distinto de<a class="headerlink" href="#distinto-de" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="operadores-logicos">
+<h2>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Estos permiten realizar operaciones lógicas y devuelven <code class="code docutils literal notranslate"><span class="pre">True</span></code> o <code class="code docutils literal notranslate"><span class="pre">False</span></code> según el resultado.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operador</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">and</span></code></p></td>
+<td><p>Deben cumplirse las condiciones sí o sí</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">or</span></code></p></td>
+<td><p>Debe cumplir al menos una de las condiciones evaluadas</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">not</span></code></p></td>
+<td><p>Devuelve <code class="code docutils literal notranslate"><span class="pre">False</span></code> si el resultado es verdadero</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="operador-and">
+<h3>Operador and<a class="headerlink" href="#operador-and" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">&lt;</span><span class="mi">2</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">&lt;</span><span class="mi">3</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="mi">20</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">&gt;</span><span class="mi">3</span>
+<span class="go">&gt;&gt;&gt;print(x)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operador-or">
+<h3>Operador or<a class="headerlink" href="#operador-or" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">&lt;</span><span class="mi">2</span> <span class="ow">and</span> <span class="mi">100</span><span class="o">&gt;</span><span class="mi">100</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operador-not">
+<h3>Operador not<a class="headerlink" href="#operador-not" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="ow">not</span><span class="p">(</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">100</span> <span class="ow">and</span> <span class="mi">90</span><span class="o">&lt;</span><span class="mi">200</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="operadores-bitwise">
+<h2>Operadores <em>bitwise</em><a class="headerlink" href="#operadores-bitwise" title="Enlazar permanentemente con este título">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 91%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operador</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="3"><p><code class="code docutils literal notranslate"><span class="pre">&amp;</span></code></p></td>
+<td rowspan="3"><p>Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº.</p>
+<p>Cuando se encuentra 1 bit en el primer nº, y en el segundo también, se establece 1.</p>
+<p>Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 0.</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td rowspan="3"><p><code class="docutils literal notranslate"><span class="pre">\</span></code></p></td>
+<td rowspan="3"><p>Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº.</p>
+<p>Cuando se encuentra 1 bit en el primer nº, y en el segundo también, se establece 1.</p>
+<p>Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 1.</p>
+</td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td rowspan="3"><p><code class="code docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></p></td>
+<td rowspan="3"><p>Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº.</p>
+<blockquote>
+<div><p>Cuando se encuentra 1 bit en el segundo nº, y se desplaza el bit en el segundo también, se establece 1.</p>
+<p>Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 1.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">&lt;&lt;</span></code></p></td>
+<td><p>Lo anterior pero desde la izquierda</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">~</span></code></p></td>
+<td><p>Devuelve el complemento del nº menos el nº que obtenemos cambiado cada 1 por un 0 y un 0 por un 1. Es lo mismo que -nº-1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="ampersan">
+<h3>Ampersan (&amp;)<a class="headerlink" href="#ampersan" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">7</span> <span class="o">&amp;</span> <span class="mi">2</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>¿Por qué nos devuelve 2? Si nosotros pasamos a binario ambos números:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">=</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Cuando coincida el 1 del primer valor, con el 1 del segundo quedará como 1. Si el primer valor hay un 0 y en el segundo hay 1, se quedará el 0 por encima del 1 quedando tal que así:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="o">---------------------</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Si conviertes este número binario a decimal te dará 2.</p>
+</div>
+</div>
+<div class="section" id="tuberia-o-pipe">
+<h2>Tubería o <em>pipe</em><a class="headerlink" href="#tuberia-o-pipe" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">190</span> <span class="o">|</span> <span class="mi">9</span>
+<span class="go">191</span>
+</pre></div>
+</div>
+<p>¿Por qué nos devuelve 191? Si nosotros pasamos a binario ambos números:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">190</span> <span class="o">=</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="mi">9</span> <span class="o">=</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Cuando coincida el 1 del primer valor, con el 1 del segundo quedará como 1. Si el primer valor hay un 0 y en el segundo hay 1, se quedará el 1 por encima del 0 quedando tal que así:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="o">---------------------</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Si conviertes este número binario a decimal te dará 191.</p>
+<div class="section" id="desplazamiento-hacia-la-derecha-o-shift-to-right">
+<h3>Desplazamiento hacia la derecha o (<em>shift-to-right</em>)<a class="headerlink" href="#desplazamiento-hacia-la-derecha-o-shift-to-right" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>¿Por qué nos devuelve 2? Si pasas el nº 10 a binario:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">=</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Desplazas 2 posiciones añadiendo dos ceros hacia la derecha, y te quedaría:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Si conviertes este número binario a decimal te dará 2.</p>
+</div>
+<div class="section" id="desplazamiento-hacia-la-izquierda-o-shift-to-left">
+<h3>Desplazamiento hacia la izquierda o (<em>shift-to-left</em>)<a class="headerlink" href="#desplazamiento-hacia-la-izquierda-o-shift-to-left" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Este procedimiento es el mismo que el anterior, pero hacia el otro lado.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
+<span class="go">40</span>
+</pre></div>
+</div>
+<p>¿Por qué devuelve 2? Si pasas a binario el nº 10:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">=</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Desplazas 2 posiciones añadiendo dos ceros hacia la izquierda, y te quedaría:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Si conviertes este número binario a decimal te dará 40.</p>
+</div>
+</div>
+<div class="section" id="inversion-bitwise">
+<h2>Inversión <em>bitwise</em><a class="headerlink" href="#inversion-bitwise" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">~</span><span class="mi">100</span>
+<span class="go">-101</span>
+</pre></div>
+</div>
+<p>¿Por qué devuelve -101? Devuelve el complemento del nº menos el nº que obtenemos cambiado cada 1 por un 0 y un 0 por un 1. Es lo mismo que -nº-1</p>
+</div>
+<div class="section" id="operador-de-identidad">
+<h2>Operador de identidad<a class="headerlink" href="#operador-de-identidad" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Prueba si dos operandos comparten una identidad. Aquí hay dos tipos de operadores <code class="code docutils literal notranslate"><span class="pre">is</span></code> e <code class="code docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code>.</p>
+<div class="section" id="operador-is">
+<h3>Operador is<a class="headerlink" href="#operador-is" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Por ejemplo, comparamos si un valor almacenado en x es igual a su valor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="mi">10</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="oeprador-is-not">
+<h3>Oeprador is not<a class="headerlink" href="#oeprador-is-not" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Aquí utilizamos el ejemplo anterior pero a la inversa.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mi">10</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="operadores-de-membresia">
+<h2>Operadores de membresía<a class="headerlink" href="#operadores-de-membresia" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Estos operadores permiten verificar si hay un <code class="code docutils literal notranslate"><span class="pre">str</span></code> en otro <code class="code docutils literal notranslate"><span class="pre">str</span></code>, <code class="code docutils literal notranslate"><span class="pre">list</span></code>, <code class="code docutils literal notranslate"><span class="pre">dict</span></code>, <code class="code docutils literal notranslate"><span class="pre">tuple</span></code>…
+Se utiliza <code class="code docutils literal notranslate"><span class="pre">in</span></code> para buscar y devolver <code class="code docutils literal notranslate"><span class="pre">True</span></code> si encuentra dicho <code class="code docutils literal notranslate"><span class="pre">str</span></code>, o, <cite>not in</cite> para verificar que no está.</p>
+<div class="section" id="operador-in">
+<h3>Operador in<a class="headerlink" href="#operador-in" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;echemos&quot;</span> <span class="ow">in</span> <span class="s2">&quot;echemos un bitstazo&quot;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operador-not-in">
+<h3>Operador not in<a class="headerlink" href="#operador-not-in" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;.es&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;echemos un bitstazo&quot;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="modulos">
+<h2>Módulos<a class="headerlink" href="#modulos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>¿Qué son los módulos? Los módulos son fragmentos de código que contienen librerías… que elaboran otros usuarios o que ya vienen integradas con Python. Hay muchos módulos que vienen ya pre-instalados en el sistema como pueden ser <code class="code docutils literal notranslate"><span class="pre">os</span></code> que permite interactuar con el sistema operativo; <code class="code docutils literal notranslate"><span class="pre">subprocess</span></code> que permite ejecutar comandos de shell; <code class="code docutils literal notranslate"><span class="pre">json</span></code> con el que podremos trabajar con archivos o salidas JSON…</p>
+<div class="section" id="como-cargar-este-codigo">
+<h3>¿Cómo cargar este código?<a class="headerlink" href="#como-cargar-este-codigo" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El código de los módulos puede cargarse utilizando la palabra <code class="code docutils literal notranslate"><span class="pre">import</span></code>, como en el siguiente ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+<p>También podemos cargar parte del código de los módulos como por ejemplo <code class="code docutils literal notranslate"><span class="pre">random</span></code> es un módulo que contiene métodos y propiedades. Podemos cargar solo uno de los métodos que tienes como es <code class="code docutils literal notranslate"><span class="pre">.random()</span></code> y asignarle un alias para trabajar con él como en le siguiente ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> <span class="k">as</span> <span class="n">GenerarAleatorio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GenerarAleatorio</span><span class="p">()</span>
+<span class="go">0.9037083824066462</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="que-pasa-si-no-me-se-las-propiedades-o-metodos-de-un-modulo">
+<h3>¿Qué pasa si no me sé las propiedades o métodos de un módulo?<a class="headerlink" href="#que-pasa-si-no-me-se-las-propiedades-o-metodos-de-un-modulo" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>No pasa nada, puedes revisar siempre la documentación de Python pulsando <a class="reference external" href="https://docs.python.org/3/">aquí</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html" class="btn btn-neutral float-right" title="Tuplas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Programaci%C3%B3n%20Orientada%20a%20Objetos.html" class="btn btn-neutral float-left" title="Programación orientada a objetos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

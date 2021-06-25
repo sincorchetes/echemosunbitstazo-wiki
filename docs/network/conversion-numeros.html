@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Conversión de números &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Python" href="../devel/python/python.html" />
+    <link rel="prev" title="Redes informáticas" href="network.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sysadmin/sysadmin.html">Administración de sistemas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sysadmin/automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="network.html">Redes informáticas</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Conversión de números</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#binario">Binario</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#binario-decimal-bin-dec">Binario =&gt; Decimal BIN-&gt;DEC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#binario-hexadecimal">Binario =&gt; Hexadecimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#binario-octal">Binario -&gt; Octal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#decimal">Decimal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#decimal-binario-dec-bin">Decimal =&gt; Binario DEC-&gt;BIN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decimal-hexadecimal">Decimal -&gt; Hexadecimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decimal-octal">Decimal -&gt; Octal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hexadecimal">Hexadecimal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hexadecimal-decimal">Hexadecimal =&gt; Decimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexadecimal-binario">Hexadecimal =&gt; Binario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexadecimal-octal">Hexadecimal -&gt; Octal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#octal">Octal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#octal-decimal">Octal -&gt; Decimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#octal-binario">Octal -&gt; Binario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#octal-hexadecimal">Octal -&gt; Hexadecimal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fuentes">Fuentes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="network.html">Redes informáticas</a> &raquo;</li>
+        
+      <li>Conversión de números</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/network/conversion-numeros.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conversion-de-numeros">
+<h1>Conversión de números<a class="headerlink" href="#conversion-de-numeros" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En informática tendremos que enfrentarnos con varios problemas que requieren de soluciones distintas haciendo uso de la capacidad resolutiva para según que problemas con los que nos podamos encontrar en el ámbito de sistemas, haciendo uso de algoritmos para sacarnos de apuros en desarrollo Web, e incluso, haciendo un proceso de descartes en base a pruebas de rendimiento.</p>
+<p>Aquí todo es posible, sin embargo, también debemos aprender las unidades básicas con la que las máquinas trabajan para enviar información a bajo nivel, obtener un color para nuestros desarrollos Web…etc Todo esto lo aprenderemos aquí.</p>
+</div>
+<div class="section" id="binario">
+<h2>Binario<a class="headerlink" href="#binario" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los números binarios son aquellos que están comprendidos entre 0 y 1 utilizando como base el 2. Esto representa la condición eléctrica, es decir, 0 es apagado y 1 es encendido.</p>
+<div class="section" id="binario-decimal-bin-dec">
+<h3>Binario =&gt; Decimal BIN-&gt;DEC<a class="headerlink" href="#binario-decimal-bin-dec" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para convertir de binario a decimal tenemos dos formas de hacerlo.</p>
+<ul class="simple">
+<li><p>Mediante el uso de una tabla exponencial</p></li>
+<li><p>Tabla de exponentes</p></li>
+</ul>
+<div class="section" id="mediante-posicion">
+<h4>Mediante posición<a class="headerlink" href="#mediante-posicion" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Para convertir mediante posición, lo único que deberemos hacer, es saber en qué posición tenemos cada número y utilizar las potencias.</p>
+<p>110101:sub:(2) =&gt; Decimal</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>((1*2⁵)+(1*2⁴)+(0*2³)+(1*2²)+(0*2¹)+(1*2⁰)) =
+((1*2⁵)+(1*2⁴)+(1*2²)+(1*2⁰)) = 53(10)
+</pre></div>
+</div>
+<p>53:sub:(10) es nuestro número decimal.</p>
+<p>Tabla de exponentes</p>
+<p>Dibujamos una tabla en relación al número que creemos que podamos obtener:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>128</p></th>
+<th class="head"><p>64</p></th>
+<th class="head"><p>32</p></th>
+<th class="head"><p>16</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2 <sup>7</sup></p></td>
+<td><p>2 <sup>6</sup></p></td>
+<td><p>2 <sup>5</sup></p></td>
+<td><p>2 <sup>4</sup></p></td>
+<td><p>2 <sup>3</sup></p></td>
+<td><p>2 <sup>2</sup></p></td>
+<td><p>2 <sup>1</sup></p></td>
+<td><p>2 <sup>0</sup></p></td>
+</tr>
+</tbody>
+</table>
+<p>Y en base al número que nos den, comenzamos a comparar de menor a mayor.
+Por ejemplo:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nº</p></th>
+<th class="head"><p>128</p></th>
+<th class="head"><p>64</p></th>
+<th class="head"><p>32</p></th>
+<th class="head"><p>16</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>105</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="binario-hexadecimal">
+<h3>Binario =&gt; Hexadecimal<a class="headerlink" href="#binario-hexadecimal" title="Enlazar permanentemente con este título">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 59%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Hexadecimal</p></th>
+<th class="head"><p>Binario</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0000</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0001</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0010</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0011</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>0100</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>0101</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>0110</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>0111</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>1000</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>1001</p></td>
+</tr>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>1010</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>1011</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>1100</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>1101</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>1110</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>1111</p></td>
+</tr>
+</tbody>
+</table>
+<p>Para convertir tan solo necesitaremos traducir cifra por cifra en base a esta tabla.
+Por ejemplo: 1010111101100100</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1010</span> <span class="o">=</span> <span class="n">A</span>
+<span class="mi">1111</span> <span class="o">=</span> <span class="n">F</span>
+<span class="mi">0110</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="mi">0100</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Nuestro número es: AF64</p>
+</div>
+<div class="section" id="binario-octal">
+<h3>Binario -&gt; Octal<a class="headerlink" href="#binario-octal" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Tenemos que tener presente la siguiente equivalencia:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Decimal</p></th>
+<th class="head"><p>Binario</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>000</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>001</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>010</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>011</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>101</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>110</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>111</p></td>
+</tr>
+</tbody>
+</table>
+<p>El octal solo hace uso de 3 bits, y no de 4 como el decimal o hexadecimal. Tomaremos los 3 primeros bits y los separamos para hacer la conversión.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">010</span> <span class="mi">010</span> <span class="mi">111</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="mi">1</span> <span class="mi">010</span> <span class="mi">111</span> <span class="o">=&gt;</span> <span class="n">Vemos</span> <span class="n">como</span> <span class="n">el</span> <span class="mi">1</span> <span class="n">está</span> <span class="n">solo</span><span class="p">,</span> <span class="n">por</span> <span class="n">ello</span><span class="p">,</span> <span class="n">le</span> <span class="n">añadimos</span> <span class="mi">2</span> <span class="n">ceros</span> <span class="n">para</span> <span class="n">normalizarlo</span><span class="o">.</span>
+<span class="mi">001</span> <span class="mi">010</span> <span class="mf">111.</span>
+</pre></div>
+</div>
+<p>Nuestro número es: 127:sub:(8)</p>
+</div>
+</div>
+<div class="section" id="decimal">
+<h2>Decimal<a class="headerlink" href="#decimal" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Son números comprendidos entre 0 y 9, hacen uso de base 10. Estos se suelen utilizar mucho para representar la numeración IPv4, obtener un color para aplicarlo en desarrollo Web mediante la función <cite>rgb/rgba()</cite>…etc</p>
+<div class="section" id="decimal-binario-dec-bin">
+<h3>Decimal =&gt; Binario DEC-&gt;BIN<a class="headerlink" href="#decimal-binario-dec-bin" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para convertir de binario a decimal tenemos dos formas de hacerlo:</p>
+<ul class="simple">
+<li><p>Mediante división</p></li>
+<li><p>Tabla exponencial</p></li>
+</ul>
+<div class="section" id="division">
+<h4>División<a class="headerlink" href="#division" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Para convertir de decimal a binario, simplemente tenemos que tener en cuenta el resto de la división, ignorar los decimales y continuar dividiendo el número del cociente hasta que ya no pueda dividirse más. Para reconstruir el número, se seleccionan de derecha a izquierda.</p>
+<p>Por ejemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">362</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="mi">181</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span>
+ <span class="mi">90</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span>
+ <span class="mi">45</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span>
+ <span class="mi">22</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span>
+ <span class="mi">11</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="mi">5</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="mi">2</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="mi">0</span><span class="o">|</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>101101010</p>
+<p>Tabla de exponentes</p>
+<p>Dibujamos una tabla en relación al número que creemos que podamos obtener.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>128</p></th>
+<th class="head"><p>64</p></th>
+<th class="head"><p>32</p></th>
+<th class="head"><p>16</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2 <sup>7</sup></p></td>
+<td><p>2 <sup>6</sup></p></td>
+<td><p>2 <sup>5</sup></p></td>
+<td><p>2 <sup>4</sup></p></td>
+<td><p>2 <sup>3</sup></p></td>
+<td><p>2 <sup>2</sup></p></td>
+<td><p>2 <sup>1</sup></p></td>
+<td><p>2 <sup>0</sup></p></td>
+</tr>
+</tbody>
+</table>
+<p>Y en base al número que nos den, comenzamos a comparar de menor a mayor.
+Por ejemplo:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nº</p></th>
+<th class="head"><p>128</p></th>
+<th class="head"><p>64</p></th>
+<th class="head"><p>32</p></th>
+<th class="head"><p>16</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>105</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="decimal-hexadecimal">
+<h3>Decimal -&gt; Hexadecimal<a class="headerlink" href="#decimal-hexadecimal" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dividimos el número entre 16 utilizamos el cociente para seguir dividiendo sin utilizar los decimales resultantes. Posteriormente, para obtener el resto, se multiplica el decimal obtenido de la división por 16 que es la base para obtener el resto.</p>
+<p>Por ejemplo:</p>
+<p>2937:sub:(10) -&gt; x:sub:(16)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2937</span><span class="o">|</span><span class="mi">16</span> <span class="o">=</span> <span class="mf">183.5625</span> <span class="o">-&gt;</span> <span class="n">Resto</span> <span class="o">=</span> <span class="mf">0.5625</span><span class="o">*</span><span class="mi">16</span> <span class="o">=</span> <span class="mi">9</span>
+ <span class="mi">183</span><span class="o">|</span><span class="mi">16</span> <span class="o">=</span> <span class="mf">11.4375</span> <span class="o">-&gt;</span> <span class="n">Re</span> <span class="o">=</span> <span class="mf">0.4375</span><span class="o">*</span><span class="mi">16</span> <span class="o">=</span> <span class="mi">7</span>
+  <span class="mi">11</span><span class="o">|</span><span class="mi">16</span> <span class="o">=</span> <span class="mf">0.6875</span> <span class="o">-&gt;</span> <span class="n">Re</span> <span class="o">=</span> <span class="mf">0.6875</span><span class="o">*</span><span class="mi">16</span> <span class="o">=</span> <span class="n">B</span>
+</pre></div>
+</div>
+<p>Con lo que nuestro nº es: B79:sub:(16)</p>
+</div>
+<div class="section" id="decimal-octal">
+<h3>Decimal -&gt; Octal<a class="headerlink" href="#decimal-octal" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se divide el número decimal entre 8, se desestiman los decimales, y el último número que ya no puede ser divisible se queda tal cual como resto formando parte del nº. Se lee de derecha hacia la izquierda.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">210</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="mi">210</span><span class="o">|</span><span class="mi">8</span> <span class="o">=</span> <span class="n">Resto</span> <span class="o">=</span><span class="mi">2</span>
+ <span class="mi">26</span><span class="o">|</span><span class="mi">8</span> <span class="o">=</span> <span class="n">Re</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="mi">3</span><span class="o">|</span><span class="mi">8</span> <span class="o">=</span> <span class="n">Re</span> <span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>Nuestro número es: 322.</p>
+</div>
+</div>
+<div class="section" id="hexadecimal">
+<h2>Hexadecimal<a class="headerlink" href="#hexadecimal" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Estos números son muy utilizados sobre todo cuando queremos manipular cierta información de archivos, contemplan un rango entre 0 y F, siendo F el número 15, hace uso de base 16.</p>
+<div class="section" id="hexadecimal-decimal">
+<h3>Hexadecimal =&gt; Decimal<a class="headerlink" href="#hexadecimal-decimal" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para convertir de hexadecimal a decimal</p>
+<p>Utilizamos las posiciones de los números y los multiplicamos por el resultado de su base.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>B79(16) = x(12)
+
+B*16² + 7*16¹ + 9*16⁰ =
+11*256 + 7*16 + 9*1 =
+2816+112+9 = 2937(10)
+</pre></div>
+</div>
+</div>
+<div class="section" id="hexadecimal-binario">
+<h3>Hexadecimal =&gt; Binario<a class="headerlink" href="#hexadecimal-binario" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Tenemos que tener en cuenta la siguiente equivalencia:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 59%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Hexadecimal</p></th>
+<th class="head"><p>Binario</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0000</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0001</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0010</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0011</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>0100</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>0101</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>0110</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>0111</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>1000</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>1001</p></td>
+</tr>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>1010</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>1011</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>1100</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>1101</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>1110</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>1111</p></td>
+</tr>
+</tbody>
+</table>
+<p>Para convertir tan solo necesitaremos traducir cifra por cifra en base a esta tabla. Por ejemplo: A7F0</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1010</span>
+<span class="mi">7</span> <span class="o">=</span> <span class="mi">0111</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mi">1111</span>
+<span class="mi">0</span> <span class="o">=</span> <span class="mi">0000</span>
+</pre></div>
+</div>
+<p>Nuestro número es: 1010011111110000</p>
+</div>
+<div class="section" id="hexadecimal-octal">
+<h3>Hexadecimal -&gt; Octal<a class="headerlink" href="#hexadecimal-octal" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Realizar este proceso de conversión no es un método directo. Primero hay que traducir de HEX-&gt;BIN y luego de BIN-&gt;OCT para obtener el valor.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E67</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">E</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1110</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">6</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0110</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">7</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0111</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nº convertido= 111001100111</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Una</span> <span class="n">vez</span> <span class="n">obtenido</span> <span class="n">el</span> <span class="n">binario</span><span class="p">,</span> <span class="n">lo</span> <span class="n">pasamos</span> <span class="n">a</span> <span class="n">octal</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">111001100111</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="mi">111</span> <span class="mi">001</span> <span class="mi">100</span> <span class="mi">111</span> <span class="o">=</span> <span class="mi">7147</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nuestro número es 7147:sub:(8)</p>
+</div>
+</div>
+<div class="section" id="octal">
+<h2>Octal<a class="headerlink" href="#octal" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Útil pero menos visto, nos permite obtener un número comprendido entre 0-7, hace uso de base 8.</p>
+<div class="section" id="octal-decimal">
+<h3>Octal -&gt; Decimal<a class="headerlink" href="#octal-decimal" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se tiene en cuenta la posición de la cifra, ya que luego se multiplica por su base, y a su vez, la base se multiplica por sí misma tantas veces tenga n en el exponente.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>7147(8) = x(10)
+
+7*8³ + 1*8² + 4*8¹ + 7*8⁰ = 3584 + 64 + 32 + 7
+</pre></div>
+</div>
+<p>Nuestro número es: 3,687</p>
+</div>
+<div class="section" id="octal-binario">
+<h3>Octal -&gt; Binario<a class="headerlink" href="#octal-binario" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Básicamente utilizamos 3 bits por dígito, hay que tener en cuenta la siguiente equivalencia:</p>
+<p>Tenemos que tener presente la siguiente equivalencia:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Decimal</p></th>
+<th class="head"><p>Binario</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>000</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>001</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>010</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>011</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>101</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>110</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>111</p></td>
+</tr>
+</tbody>
+</table>
+<p>7420:sub:(8)-&gt; x:sub:(2)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">=</span> <span class="mi">111</span>
+<span class="mi">4</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="mi">2</span> <span class="o">=</span> <span class="mi">010</span>
+<span class="mi">0</span> <span class="o">=</span> <span class="mi">000</span>
+</pre></div>
+</div>
+<p>Nuestro número es: 111100010000:sub:(2)</p>
+</div>
+<div class="section" id="octal-hexadecimal">
+<h3>Octal -&gt; Hexadecimal<a class="headerlink" href="#octal-hexadecimal" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como hemos dicho anteriormente, es un proceso que no se hace directo y hay que hacer uso del paso anterior para obtener el número hexadecimal.</p>
+<p>7456(8) -&gt; x(2)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">=</span> <span class="mi">111</span>
+<span class="mi">4</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="mi">5</span> <span class="o">=</span> <span class="mi">101</span>
+<span class="mi">6</span> <span class="o">=</span> <span class="mi">110</span>
+
+<span class="n">Nº</span> <span class="n">binario</span><span class="p">:</span> <span class="mi">111100101110</span>
+</pre></div>
+</div>
+<p>Para obtener el número hexadecimal, bastará con separar 4 bits los dígitos del nº binario.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1111</span> <span class="mi">0010</span> <span class="mi">1110</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="mi">1111</span> <span class="o">=</span> <span class="n">F</span>
+<span class="mi">0010</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="mi">1110</span> <span class="o">=</span> <span class="n">E</span>
+</pre></div>
+</div>
+<p>Nuestro número es: F2E</p>
+</div>
+</div>
+<div class="section" id="fuentes">
+<h2>Fuentes<a class="headerlink" href="#fuentes" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>[Wikipedia](<a class="reference external" href="https://wikipedia.org?target=_blank">https://wikipedia.org?target=_blank</a>)</p></li>
+<li><p>[Conversor números](<a class="reference external" href="https://coderstoolbox.net/number?target=_blank">https://coderstoolbox.net/number?target=_blank</a>)</p></li>
+<li><p>[Youtube](<a class="reference external" href="https://youtube.com?target=_blank">https://youtube.com?target=_blank</a>)</p></li>
+<li><p>[Calculadora Conversor](<a class="reference external" href="https://www.calculadoraconversor.com?target=_blank">https://www.calculadoraconversor.com?target=_blank</a>)</p></li>
+<li><p>[Img de cabecera](<a class="reference external" href="https://es.wikipedia.org/wiki/Archivo_binario#/media/File:Binary_file.png">https://es.wikipedia.org/wiki/Archivo_binario#/media/File:Binary_file.png</a>?target=_blank)</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../devel/python/python.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="network.html" class="btn btn-neutral float-left" title="Redes informáticas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

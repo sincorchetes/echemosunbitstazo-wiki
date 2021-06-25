@@ -1,0 +1,898 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Aprendiendo scripting &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Servicios" href="../../services/services.html" />
+    <link rel="prev" title="Trabajando con Bash" href="trabajando-con-bash.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../sysadmin.html">Administración de sistemas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bash.html">Bash</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="trabajando-con-bash.html">Trabajando con Bash</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Aprendiendo scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#como-aprender">¿Cómo aprender?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arrays-vectores">Arrays (vectores)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#condicionales">Condicionales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="bash.html#que-es-bash">¿Qué es Bash?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/services.html">Servicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../storage/storage.html">Almacenamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gui/desktop.html">Entorno gráfico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../network/network.html">Redes informáticas</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../sysadmin.html">Administración de sistemas</a> &raquo;</li>
+        
+          <li><a href="bash.html">Bash</a> &raquo;</li>
+        
+      <li>Aprendiendo scripting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/sysadmin/scripting/bash/aprendiendo-scripting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aprendiendo-scripting">
+<h1>Aprendiendo scripting<a class="headerlink" href="#aprendiendo-scripting" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="como-aprender">
+<h2>¿Cómo aprender?<a class="headerlink" href="#como-aprender" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Realmente cuando hablamos de desarrollo se traduce literalmente en <em>por mucho que sepas, siempre aprenderás</em>. Porque se te olvida un <code class="code docutils literal notranslate"><span class="pre">done</span></code> en bucle, <code class="code docutils literal notranslate"><span class="pre">fi</span></code> en un condicional, una variable mal declarada…etc, esto es así y hay que sumarle que debemos estar constantemente mirando otros <code class="code docutils literal notranslate"><span class="pre">scripts</span></code> elaborados por terceras personas, practicar siempre que podamos porque esto nos ayudará a fianzar más los conocimientos que hemos aprendido aquí. Esto no es como memorizar un texto, haces examen y ¡ciao! ¡Implican muchas cosas! Como comprender conceptos abstractos, saber qué implica la ejecución de determinados comandos, conocer el sistema…etc</p>
+<p>Pero no tenemos de que preocuparnos, todo es posible. Ahora le daremos paso a las variables y <code class="code docutils literal notranslate"><span class="pre">arrays</span></code></p>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las variables como hemos visto en su día en matemáticas, es un conjunto de caracteres alfanuméricos (peras, melones, X:sub:1, abc:sub:12) cuyo valor asignado varía o está sujeto a algún cambio.</p>
+<p>En Bash las variables las podemos declarar directamente o mediante el uso del comando <code class="code docutils literal notranslate"><span class="pre">declare(1)</span></code> que lo hablaremos más adelante ya que permite generar diferentes tipos de</p>
+<div class="section" id="restricciones-y-usos">
+<h3>Restricciones y usos<a class="headerlink" href="#restricciones-y-usos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Por norma general, las variables en mayúsculas se reservan para temas de administración y gestión del sistema.</p>
+<p>Si utilizamos el comando <code class="code docutils literal notranslate"><span class="pre">env(1)</span></code>, veremos toda la ristra de variables de entorno que tenemos:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">LANG</span><span class="o">=</span>en_US.utf8
+<span class="nv">GDM_LANG</span><span class="o">=</span>en_US.utf8
+<span class="nv">HISTCONTROL</span><span class="o">=</span>ignoredups
+<span class="nv">DISPLAY</span><span class="o">=</span>:0.0
+<span class="nv">GUESTFISH_RESTORE</span><span class="o">=</span><span class="se">\e</span><span class="o">[</span>0m
+<span class="nv">HOSTNAME</span><span class="o">=</span>set0.lan
+<span class="nv">GTK_OVERLAY_SCROLLING</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">COLORTERM</span><span class="o">=</span>truecolor
+<span class="nv">GUESTFISH_INIT</span><span class="o">=</span><span class="se">\e</span><span class="o">[</span><span class="m">1</span><span class="p">;</span>34m
+<span class="nv">IMSETTINGS_INTEGRATE_DESKTOP</span><span class="o">=</span>yes
+<span class="nv">KDEDIRS</span><span class="o">=</span>/usr
+<span class="nv">XDG_VTNR</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">SSH_AUTH_SOCK</span><span class="o">=</span>/home/sincorchetes/.cache/keyring-RYPSKZ/ssh
+<span class="nv">XDG_SESSION_ID</span><span class="o">=</span><span class="m">2</span>
+<span class="nv">XDG_GREETER_DATA_DIR</span><span class="o">=</span>/var/lib/lightdm-data/sincorchetes
+<span class="nv">USER</span><span class="o">=</span>sincorchetes
+<span class="nv">GUESTFISH_PS1</span><span class="o">=</span><span class="se">\[\e</span><span class="o">[</span><span class="m">1</span><span class="p">;</span>32m<span class="se">\]</span>&gt;&lt;fs&gt;<span class="se">\[\e</span><span class="o">[</span><span class="m">0</span><span class="p">;</span>31m<span class="se">\]</span>
+<span class="nv">DESKTOP_SESSION</span><span class="o">=</span>mate
+<span class="nv">PT7HOME</span><span class="o">=</span>/opt/pt
+<span class="o">[</span>SALIDA ACORTADA<span class="o">]</span>
+</pre></div>
+</div>
+<p>No pueden empezar con números, signos &#64;#~½!, deberán comenzar con al menos una letra y luego si es posible usar números:</p>
+<p>Ejemplo de errores:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>@hola<span class="o">=</span><span class="m">23</span>
+h!ola<span class="o">=</span><span class="m">23</span>
+<span class="c1">#o#=23</span>
+<span class="nv">3hola</span><span class="o">=</span><span class="m">23</span>
+</pre></div>
+</div>
+<p>Correcto:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">hola</span><span class="o">=</span><span class="m">23</span>
+<span class="nv">h014</span><span class="o">=</span><span class="m">23</span>
+<span class="nv">hola</span><span class="o">=</span><span class="s2">&quot;Esto es un valor&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="declarando-variables-con-texto">
+<h3>Declarando variables con texto<a class="headerlink" href="#declarando-variables-con-texto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si queremos añadir valores con cadenas a las variables, es muy importante comprender estas dos diferencias.
+Podemos declarar ambas con doble comillado «», ó, comillado simple “”. El problema erradica, en que no son lo mismo, el («») permite mostrar el contenido de una variable dentro de un texto, mientras que (“”) interpreta el texto tal cual.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$hw</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$hw</span><span class="s2"> for everyone&quot;</span>
+
+Hello World <span class="k">for</span> everyone
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$hw</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="nb">echo</span> <span class="s1">&#39;$hw for everyone&#39;</span>
+<span class="nv">$hw</span> <span class="k">for</span> everyone
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualizando-las-variables-de-entorno-sistema">
+<h3>Visualizando las variables de entorno/sistema<a class="headerlink" href="#visualizando-las-variables-de-entorno-sistema" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Tenemos a nuestra disposición el comando <code class="code docutils literal notranslate"><span class="pre">env(1)</span></code> que nos enseña todas las variables de entorno y de sistema que debemos respetar, vamos a comentar algunas de ellas.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Nombre variable</p></td>
+<td><p>Descripción</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">HOME</span></code></p></td>
+<td><p>Ruta de trabajo del usuario actual</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">PATH</span></code></p></td>
+<td><p>Lista de directorios dónde el shell buscará ejecutables (binarios, scripts…)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">PS1</span></code></p></td>
+<td><p>Prompt String 1, muestra el caracter, texto previo a la introducción de los comandos. <code class="code docutils literal notranslate"><span class="pre">[sincorchetes&#64;set0</span> <span class="pre">~]$</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">IFS</span></code></p></td>
+<td><p>Internal Field Separator, separadores como tabulación, espacio, salto de línea, si está en blanco, se usan espacios</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">MAIL</span></code></p></td>
+<td><p>Ruta y archivo de los mensajes del (la) usuari&#64; que tienen que ver con el e-mail</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">SHELL</span></code></p></td>
+<td><p>Ruta del shell del usuario</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">LANG</span></code></p></td>
+<td><p>Idioma y codificación</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">USER</span></code></p></td>
+<td><p>Variable que identifica al/la usuari&#64; actual</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">LOGNAME</span></code></p></td>
+<td><p>Nombre del login utilizado en inicio de sesión, por lo general suele ser el mismo que <code class="code docutils literal notranslate"><span class="pre">$USER</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">HISTFILE</span></code></p></td>
+<td><p>Ruta de archivo del historial de comandos ejecutados en la shell</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">HISTSIZE</span></code></p></td>
+<td><p>Tamaño del archivo historial de comandos ejecutados en shell</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">OLDPWD</span></code></p></td>
+<td><p>Directorio accedido anteriormente</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">PWD</span></code></p></td>
+<td><p>Ruta actual</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">RANDOM</span></code></p></td>
+<td><p>Genera un número aleatorio comprendido entre 0 y 31767</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="eliminando-una-variable">
+<h3>Eliminando una variable<a class="headerlink" href="#eliminando-una-variable" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para eliminar una variable y su contenido, bastará con ejecutar el comando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">unset</span> variable
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-con-acceso-solo-lectura">
+<h3>Variable con acceso solo lectura<a class="headerlink" href="#variable-con-acceso-solo-lectura" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se puede establecer una variable cuyo contenido no cambia como si fuese una constante haciendo uso del comando <code class="code docutils literal notranslate"><span class="pre">readonly(1)</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">readonly</span> <span class="nv">ejemplo</span><span class="o">=</span><span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualizando-el-contenido-de-una-variable">
+<h3>Visualizando el contenido de una variable<a class="headerlink" href="#visualizando-el-contenido-de-una-variable" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para visualizar una variable, bastará con utilizar el comando <code class="code docutils literal notranslate"><span class="pre">echo(1)</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ejemplo</span><span class="o">=</span><span class="s2">&quot;Hola que tal&quot;</span>
+
+<span class="nb">echo</span> <span class="nv">$ejemplo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="convertir-una-variable-en-global">
+<h3>Convertir una variable en global<a class="headerlink" href="#convertir-una-variable-en-global" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En desarrollo, se puede entender variable global como aquella que es accesible en todo momento por el programa a pesar de encontrarse en una función de manera cerrada, y una variable local aquella que solo se produce una vez y posteriormente, una vez efectuada la ejecución del bloque de código acaba por auto-suprimirse como un mensaje del inspector Gadget.</p>
+<p>Para poder hacerla accesible deberemos hacer uso del comando <code class="code docutils literal notranslate"><span class="pre">source(1)</span></code>. Si tenemos un archivo con variables y queremos cargarlas, bastará con ejecutar:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ruta_script
+</pre></div>
+</div>
+<p>Y podremos acceder desde dónde queramos desde la shell dónde hayamos ejecutado dicho comando.</p>
+</div>
+<div class="section" id="utilizando-variable-para-ayudarnos-con-los-comandos">
+<h3>Utilizando variable para ayudarnos con los comandos<a class="headerlink" href="#utilizando-variable-para-ayudarnos-con-los-comandos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Por supuestísimo que podemos hacer uso de las variables para obtener una automatización.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ejemplo</span><span class="o">=</span>:code:<span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+ls <span class="nv">$ejemplo</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>No obstante, si tratamos de copiar archivos, directorios cuyas rutas se encuentran en variables, puede dar error, y es porque interpreta uno de los dos el nombre tal cual dando error. Para ello tendremos que utilizar el {}.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ruta_archivo_origen</span> <span class="o">=</span> /etc/group
+<span class="nv">ruta_archivo_destino</span> <span class="o">=</span> /home/<span class="nv">$USER</span>/Documentos
+
+cp <span class="si">${</span><span class="nv">ruta_archivo_origen</span><span class="si">}</span> <span class="si">${</span><span class="nv">ruta_archivo_destino</span><span class="si">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sustituir-cadenas-en-variables">
+<h3>Sustituir cadenas en variables<a class="headerlink" href="#sustituir-cadenas-en-variables" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Podemos sustituir los valores que se encuentran en las variables sin tener que reasignarlas, solo utilizando llaves.</p>
+<p>Si la variable está vacía o no existe, el texto se autoasignará. Probaremos con una variable cualquiera que al hacerle un <code class="code docutils literal notranslate"><span class="pre">echo(1)</span></code> no mostrará valor alguno. Si está definida, mostrará el valor de la variable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$ejemplo</span>
+</pre></div>
+</div>
+<p>Posteriormente efectuamos:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${</span><span class="nv">ejemplo</span><span class="k">:-</span><span class="nv">Está</span><span class="p"> aprobado</span><span class="si">}</span>Está aprobado
+</pre></div>
+</div>
+<p>Pero el valor y la variable desaparecen. Si está definida, mostrará el valor de la variable. Si queremos que perduren, haremos los siguiente:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${</span><span class="nv">ejemplo</span><span class="p">:=Está aprobado</span><span class="si">}</span>Está aprobadoecho <span class="nv">$ejemploEstá</span> aprobado
+</pre></div>
+</div>
+<p>Por otro lado, si nos encontramos con una variable previamente declarada, pero no vacía, se puede sustituir utilizando el «:+», no es un cambio permanente.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${</span><span class="nv">PS1</span><span class="p">:+[</span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="p">@:</span><span class="nv">code</span><span class="p">:</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span><span class="p">]</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>Y por último, si tenemos una variable que está vacía o que no exista, se interrumpe el script y mostrará el mensaje de error que le asignemos, si existe, devolverá el contenido de la variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${</span><span class="nv">dsfsd</span><span class="p">:?[</span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="p">@:</span><span class="nv">code</span><span class="p">:</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span><span class="p">]</span><span class="si">}</span>bash: dsfsd: <span class="o">[</span>sincorchetes@/home/sincorchetes<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="obtener-el-valor-de-una-cadena">
+<h3>Obtener el valor de una cadena<a class="headerlink" href="#obtener-el-valor-de-una-cadena" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si queremos obtener el número de caracteres que constituyen el valor de una variable podemos hacerlo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ejemplo</span><span class="o">=</span><span class="s2">&quot;Hola que tal&quot;</span><span class="nb">echo</span> <span class="si">${#</span><span class="nv">ejemplo</span><span class="si">}</span><span class="m">12</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operaciones-aritmeticas-con-variables">
+<h3>Operaciones aritméticas con variables<a class="headerlink" href="#operaciones-aritmeticas-con-variables" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se pueden hacer operaciones aritméticas con variables si primeramente declaramos el tipo de dato a través del comando <code class="code docutils literal notranslate"><span class="pre">typeset(1)</span></code>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Operador</p></td>
+<td><p>Función</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">*</span> <span class="pre">/</span></code></p></td>
+<td><p>Sumar, restar, multiplicar, dividir</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td><p>Nos da el módulo de la operación</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span> <span class="pre">&lt;=</span> <span class="pre">=&gt;</span></code></p></td>
+<td><p>Establece comparaciones, <code class="code docutils literal notranslate"><span class="pre">1=True;</span></code> <code class="code docutils literal notranslate"><span class="pre">0=False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>Igual que</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>Diferente de</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mostrar-el-resultado-de-la-siguiente-suma">
+<h3>Mostrar el resultado de la siguiente suma<a class="headerlink" href="#mostrar-el-resultado-de-la-siguiente-suma" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">typeset</span> -i <span class="nv">aa</span><span class="o">=</span><span class="m">1200</span>+2200echo <span class="nv">$a3200</span>
+</pre></div>
+</div>
+<p>¿Son iguales estos resultados?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">typeset</span> -i <span class="nv">resultadoa</span><span class="o">=</span><span class="nv">1200b</span><span class="o">=</span><span class="nv">1200resultado</span><span class="o">=</span><span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="o">==</span><span class="si">${</span><span class="nv">b</span><span class="si">}</span><span class="nb">echo</span> <span class="nv">$resultado1</span>
+</pre></div>
+</div>
+<p>Podemos encontrar muchos más operadores <code class="code docutils literal notranslate"><span class="pre">help</span> <span class="pre">let</span></code>.</p>
+</div>
+<div class="section" id="variables-especiales">
+<h3>Variables especiales<a class="headerlink" href="#variables-especiales" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>No se pueden utilizar, suelen ser de solo lectura y notifican de algo ocurrido por lo general.</p>
+<div class="section" id="saber-si-un-comando-se-ejecuto-con-exito-o-nop">
+<h4>Saber si un comando se ejecutó con éxito o nop<a class="headerlink" href="#saber-si-un-comando-se-ejecuto-con-exito-o-nop" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$?</span>
+</pre></div>
+</div>
+<p>Nos devolverá un código al haber ejecutado un comando. Por lo general, 0 es que se ejecutó con éxito, 1 falló la ejecución del comando, 127 no encontró el ejecutable. Según el comando, ejecutable, binario… devuelve un código de error distinto.</p>
+</div>
+<div class="section" id="obtener-el-pid-del-shell-actual">
+<h4>Obtener el PID del shell actual<a class="headerlink" href="#obtener-el-pid-del-shell-actual" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>El PID proviene de Process ID, es el número que identifica un proceso, (<em>más adelante explicaremos qué son los procesos</em>) de la shell actual</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$$</span><span class="m">25382</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pid-del-ultimo-proceso-iniciado-en-segundo-plano">
+<h4>PID del último proceso iniciado en segundo plano<a class="headerlink" href="#pid-del-ultimo-proceso-iniciado-en-segundo-plano" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Si hemos ejecutado un binario y/o ejecutable en segundo plano, nos chivará el número de identificación de proceso.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$!</span><span class="m">25982</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="opciones-del-shell">
+<h4>Opciones del shell<a class="headerlink" href="#opciones-del-shell" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Son las características que tiene habilitadas la shell por defecto, en Fedora muestran las siguientes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$-</span>himBHs
+</pre></div>
+</div>
+<p>El significado lo podemos encontrar <code class="code docutils literal notranslate"><span class="pre">bash(1)</span></code>, sección <em>SHELL BUILTIN COMMANDS</em>:</p>
+<ul class="simple">
+<li><p>h: Recuerda la ubicación de los comandos a medida de que se buscan para ejecutarse.  Activado por defecto.</p></li>
+<li><p>i: Interactiva</p></li>
+<li><p>m: Modo monitor. El control de trabajos está activado.</p></li>
+<li><p>B: El intérprete de comandos permite una expansión del uso de las llaves y las varibles. Por ejemplo, <code class="code docutils literal notranslate"><span class="pre">echo</span> <span class="pre">a{d,c,d,b}e</span></code> devolverá <code class="code docutils literal notranslate"><span class="pre">ade</span> <span class="pre">ace</span> <span class="pre">abe</span></code>. Viene habilitado por defecto.</p></li>
+<li><p>H: Permite sustituir el estilo del histórico de comandos, se habilita por defecto pero debe tener la característica de interactivo (i).</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="arrays-vectores">
+<h2>Arrays (vectores)<a class="headerlink" href="#arrays-vectores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los vectores, o también conocidos como <em>arrays</em> permiten almacenar un conjunto de datos en un solo espacio de la memoria. En otros lenguajes como PHP pueden anidarse y confinar múltiples conjuntos de datos dentro de un solo espacio de memoria creando <em>arrays</em> multidimensionales.</p>
+<p>Sin embargo, en Bash, esto no es posible, ya que solo podremos crear vectores de una sola dimensión y sin un índice personalizado mediante su creación. a menos que declaremos la posición como el resultado de una variable (* <code class="code docutils literal notranslate"><span class="pre">pagina1=1</span></code> = <code class="code docutils literal notranslate"><span class="pre">array[pagina1]=&quot;Valor&quot;</span></code> <em>). El índice en este caso, se identifica mediante un número comprendido entre 0-(n) dónde «n» es el número de datos que hemos añadido cuando declaramos un *array</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$array</span> <span class="o">=</span> <span class="o">(</span>a b c d <span class="o">)</span>   Datos almacenados en cada una de las posiciones   ^    <span class="se">\_</span><span class="p">|</span>_<span class="p">|</span>_<span class="p">|</span>_/      /*----------------------*<span class="se">\ </span>   <span class="p">|</span>     <span class="o">||</span><span class="p">|</span>      /   <span class="o">==</span>&gt; <span class="nv">a</span> <span class="o">=</span> <span class="m">1234</span>       <span class="se">\ </span>  Nombre     Datos    /  <span class="o">==</span>&gt; <span class="nv">b</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>   <span class="se">\ </span>  del    de  -------*   <span class="o">==</span>&gt; <span class="nv">c</span> <span class="o">=</span> :code:<span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>         *    Array    Declarados   <span class="se">\ </span> <span class="o">==</span>&gt; <span class="nv">d</span> <span class="o">=</span> <span class="nv">$resultado</span>     /                <span class="se">\*</span>-----------------------*/
+</pre></div>
+</div>
+<p>En este caso, para acceder al valor de cada letra correspondiente, tendremos que hacer uso de: <code class="code docutils literal notranslate"><span class="pre">$nombre_array</span></code> + [<code class="code docutils literal notranslate"><span class="pre">n</span></code>]. Dónde n es la posición del dato que queremos obtener.</p>
+<p>Ejemplo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$array</span><span class="o">[</span><span class="m">0</span><span class="o">]||</span>----&gt; Obtendremos: 1234echo <span class="nv">$array</span><span class="o">[</span><span class="m">1</span><span class="o">]||</span>----&gt; Obtendremos: Hello worldecho <span class="nv">$array</span><span class="o">[</span><span class="m">2</span><span class="o">]||</span>----&gt; Obtendremos: /home/sincorchetes <span class="o">(</span>en mi caso<span class="o">)</span>
+</pre></div>
+</div>
+<div class="section" id="como-obtener-la-longitud-de-un-array">
+<h3>¿Cómo obtener la longitud de un <em>array</em>?<a class="headerlink" href="#como-obtener-la-longitud-de-un-array" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Básicamente, de la siguiente forma:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${#</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>Nos tendrá que dar como resultado «4», que son los valores declarados. (a= 1234, b = «Hello world»…)</p>
+</div>
+<div class="section" id="como-obtener-todos-los-valores-de-un-array">
+<h3>¿Cómo obtener todos los valores de un <em>array</em>?<a class="headerlink" href="#como-obtener-todos-los-valores-de-un-array" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Sustituiremos el número de la posición por una &#64;.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>
+</pre></div>
+</div>
+<div class="section" id="como-anadir-un-nuevo-valor-a-un-indice-especifico-de-un-array-declarado">
+<h4>¿Cómo añadir un nuevo valor a un índice específico de un array declarado?<a class="headerlink" href="#como-anadir-un-nuevo-valor-a-un-indice-especifico-de-un-array-declarado" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Bastará con mencionar el número de posición que queremos asignar el nuevo dato:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$array</span><span class="o">[</span><span class="m">10</span><span class="o">]=</span><span class="s2">&quot;Hola que tal&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualizar-el-numero-de-posiciones-ocupadas-dentro-de-un-array">
+<h4>Visualizar el número de posiciones ocupadas dentro de un <em>array</em><a class="headerlink" href="#visualizar-el-numero-de-posiciones-ocupadas-dentro-de-un-array" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Simplemente si queremos ver que posiciones están ocupadas para utilizar las que estén libres:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${</span><span class="p">!array[*]</span><span class="si">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ver-cuanto-tamano-contiene-de-largo-una-posicion">
+<h4>Ver cuánto tamaño contiene de largo una posición<a class="headerlink" href="#ver-cuanto-tamano-contiene-de-largo-una-posicion" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Para comprobar el tamaño, simplemente hacemos:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${#</span><span class="nv">array</span><span class="p">[1]</span><span class="si">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="como-anadir-un-nuevo-valor-sin-declarar-posicion-en-un-array">
+<h4>¿Cómo añadir un nuevo valor sin declarar posición en un <em>array</em>?<a class="headerlink" href="#como-anadir-un-nuevo-valor-sin-declarar-posicion-en-un-array" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Simplemente si queremos añadir un dato nuevo sin especificar un índice en cuestión.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">array</span><span class="o">+=(</span>nuevo_valor<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="eliminar-una-posicion-del-array">
+<h4>Eliminar una posición del array<a class="headerlink" href="#eliminar-una-posicion-del-array" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Utilizaremos el comando <code class="code docutils literal notranslate"><span class="pre">unset(1)</span></code> como se ha utilizado para eliminar variables declaradas.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">unset</span> array<span class="o">[</span>n<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="resultado-de-un-comando-que-se-separe-como-valores-y-que-estos-ocupen-una-posicion-dentro-del-array">
+<h4>Resultado de un comando que se separe como valores y que estos ocupen una posición dentro del <em>array</em><a class="headerlink" href="#resultado-de-un-comando-que-se-separe-como-valores-y-que-estos-ocupen-una-posicion-dentro-del-array" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Esto quiere decir, que si asignamos un solo valor, cuyo valor sea el resultado de un comando, este generará una salida y todos los datos expuestos en la salida del comando se convertirán en un valor dentro de una posición. Por ejemplo, si hacemos un <code class="code docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/etc/group</span></code>, obtendremos una salida similar a esta:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root:x:0:bin:x:1:daemon:x:2:sys:x:3:adm:x:4:tty:x:5:disk:x:6:<span class="o">[</span>SALIDA ACORTADA<span class="o">]</span>
+</pre></div>
+</div>
+<p>Bien, si le decimos al <em>array</em> que nos almacene esta lista para luego visualizarla, podemos hacerlo.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">array</span><span class="o">=(</span><span class="sb">`</span>cat /etc/group<span class="sb">`</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Si hacemos un <code class="code docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${array[0]}</span></code> veremos que nos saldrá la primera línea del documento:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root:x:0:
+</pre></div>
+</div>
+<p>Si queremos obtener toda la lista:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="condicionales">
+<h2>Condicionales<a class="headerlink" href="#condicionales" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Imaginémonos que vamos a comprar el pan y resulta de que o bien no hay, o bien sale más caro de lo que imaginamos, o bien no es el tipo que buscamos…etc, entonces tenemos que pensar ¿Qué hacer? y aquí entra en juego el uso de los condicionales.</p>
+<p>Los condicionales son evaulaciones que aplicamos en determinados valores que obtenemos como resultado de una operación anterior, bloques de código que han sido ejecutados y que han devuelto alguna salida. Es decir, con el if <strong>regularemos el flujo de trabajo de nuestro sript</strong>, añadiendo diferentes situaciones para resultados diferentes.</p>
+<div class="section" id="condicional-if">
+<h3>Condicional If<a class="headerlink" href="#condicional-if" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>If permite añadir una situación diferente que en caso de que no se cumpla la condición, continuará ejecutando el resto del código. Este se puede elaborar en dentro de un script (<em>como haremos a partir de ahora</em>), o bien se puede ejecutar en una sola línea de ejecución en Bash.</p>
+<p>Creamos un script dónde añadiremos el siguiente bloque de código.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">estado</span><span class="o">=</span><span class="s2">&quot;Cerrado&quot;</span>
+<span class="nv">parque</span><span class="o">=</span><span class="nv">$estado</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Cerrado&quot;</span><span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está cerrado&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>Si ejecutamos el código de arriba, nos devolverá un mensaje de que se encuentra cerrado. Sin embargo, si cambiamos «Cerrado» =&gt; «Abierto». La cosa cambia, ya que no producirá una salida.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">estado</span><span class="o">=</span><span class="s2">&quot;Cerrado&quot;</span>
+<span class="nv">parque</span><span class="o">=</span><span class="nv">$estado</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Cerrado&quot;</span><span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está cerrado&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>¿Por qué sucede esto? Porque como la condición no se cumple, ya que caracter-caracter se va comprobando que sean correctos dentro de la condición, en cuanto sea alguno de ellos distinto, se prosigue con el resto del código sin hacer nada al respecto. Si queremos decirle que ejecute otra instrucción de código utilizaremos la sentencia else.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">estado</span><span class="o">=</span><span class="s2">&quot;Cerrado&quot;</span>
+<span class="nv">parque</span><span class="o">=</span><span class="nv">$estado</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Cerrado&quot;</span><span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está cerrado&quot;</span>
+<span class="k">else</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está abierto&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>Pero… ¿Y si queremos añadir más condiciones? Un parque puede estar abierto, cerrado, en obras entre otras cosas. Para eso tenemos la sentencia if-elif.</p>
+</div>
+<div class="section" id="condicional-if-elif">
+<h3>Condicional If-elif<a class="headerlink" href="#condicional-if-elif" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">estado</span><span class="o">=</span><span class="s2">&quot;Abierto&quot;</span>
+<span class="nv">parque</span><span class="o">=</span><span class="nv">$estado</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Cerrado&quot;</span><span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está cerrado&quot;</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Abierto&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está abierto&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>Más estados…</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">estado</span><span class="o">=</span><span class="s2">&quot;Obras&quot;</span>
+<span class="nv">parque</span><span class="o">=</span><span class="nv">$estado</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Cerrado&quot;</span><span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está cerrado&quot;</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Abierto&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está abierto&quot;</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Obras&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Está en obras&quot;</span>
+
+<span class="k">else</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Consulte al ayuntamiento de su ciudad&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="condicional-en-una-simple-linea">
+<h3>Condicional en una simple linea<a class="headerlink" href="#condicional-en-una-simple-linea" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se pueden escribir condicionales en una sola línea, acortando todo el bloque de código en una sola instrucción reduciendo el consumo de memoria y de procesamiento, pero aumentando la complejidad de lectura para el desarrollador.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Cerrado&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  <span class="nb">echo</span> <span class="s2">&quot;Está cerrado&quot;</span> <span class="p">;</span> <span class="k">elif</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Abierto&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  <span class="nb">echo</span> <span class="s2">&quot;Está abierto&quot;</span> <span class="p">;</span> <span class="k">elif</span> <span class="o">[</span> <span class="nv">$parque</span> <span class="o">==</span> <span class="s2">&quot;Obras&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&quot;Está en obras&quot;</span> <span class="p">;</span> <span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="como-evalua-if-todo-esto">
+<h3>¿Cómo evalúa if todo esto?<a class="headerlink" href="#como-evalua-if-todo-esto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los corchetes que incluimos como sintaxis del if, realmente esconden el comando <code class="code docutils literal notranslate"><span class="pre">test(1)</span></code>. Este comando básicamente compara valores, por ejemplo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span> <span class="m">2</span> -eq <span class="m">0</span> <span class="o">]</span>
+</pre></div>
+</div>
+<p>Si hacemos un <code class="code docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$?</span></code> para ver el resultado de la ejecución del comando, nos saldrá un 1 como señal de ARCHIVOALSE.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span> <span class="m">0</span> -eq <span class="m">0</span> <span class="o">]</span>
+</pre></div>
+</div>
+<p>Al hacer un <code class="code docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$?</span></code> nos mostrará el 0, de verdadero.</p>
+<p>Lo mismo da utilizar los corchetes como llamar directamente al comando.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">test</span> <span class="m">0</span> -eq <span class="m">0</span>
+</pre></div>
+</div>
+<p>Veremos el resultado de la ejecución del comando, recordemos 0 es éxito !=0 puede ser un error.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$?</span>
+</pre></div>
+</div>
+<div class="section" id="tabla-de-expresiones-utilizadas">
+<h4>Tabla de expresiones utilizadas<a class="headerlink" href="#tabla-de-expresiones-utilizadas" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Las siguientes expresiones devuelven todas verdadero en su defecto en caso de que cumplan la condición. Para ver el resultado, hay que verificar la salida de la ejecución del comando con <code class="code docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$?</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Expresión en terminal</p></td>
+<td><p>Descripción</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-a</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-b</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y es un fichero especial de bloques</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-c</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y es archivo especial de caracteres</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-d</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y es un directorio</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-e</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-f</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y es un archivo regular</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-g</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y tiene el SGID asignado</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-h</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y es un enlace simbólico</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-k</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y tiene asignado sticky bit</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-p</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y está nombrado como tubería (ARCHIVOIARCHIVOO)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-r</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y tiene permisos de lectura</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-s</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y tiene un tamaño mayor que 0</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-t</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>La descripción del fichero de ARCHIVO está abierta y se refiere a una terminal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-u</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y tiene SUID asignado</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-w</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y puede escribirse en él</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-x</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y es un ejecutable</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-O</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y está gestionado por su usario</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-G</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y está gestionado por su grupo</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-L</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y es enlace simbólico</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-N</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y se modificó desde la última vez que se leyó</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-S</span> <span class="pre">ARCHIVO</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO existe y es un socket</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">ARCHIVO1</span> <span class="pre">-nt</span> <span class="pre">ARCHIVO2</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO1 se modificó antes que ARCHIVO2, o si ARCHIVO1 existe y ARCHIVO2 no</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">ARCHIVO1</span> <span class="pre">-ot</span> <span class="pre">ARCHIVO2</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO1 es más viejo que ARCHIVO2, o ARCHIVO2 existe y ARCHIVO1 no</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">ARCHIVO1</span> <span class="pre">-ef</span> <span class="pre">ARCHIVO2</span> <span class="pre">]</span></code></p></td>
+<td><p>ARCHIVO1 y ARCHIVO2 se refieren al mismo dispositivo y número de inodo</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-o</span> <span class="pre">OPNAME</span> <span class="pre">]</span></code></p></td>
+<td><p>Si la shell tiene la opción «OPTIONNAME» activdada <code class="code docutils literal notranslate"><span class="pre">bash</span> <span class="pre">-o</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-z</span> <span class="pre">STRING</span> <span class="pre">]</span></code></p></td>
+<td><p>La longitud del STR es 0</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">-n</span> <span class="pre">STRING</span> <span class="pre">]</span></code></p></td>
+<td rowspan="2"><p>Si la longitud de STRING no es 0</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">STRING</span> <span class="pre">]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">STR1</span> <span class="pre">==</span> <span class="pre">STR2</span> <span class="pre">]</span></code></p></td>
+<td rowspan="2"><p>Si las cadenas son iguales</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">STR1</span> <span class="pre">=</span> <span class="pre">STR2</span> <span class="pre">]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">STR1</span> <span class="pre">!=</span> <span class="pre">STR2</span> <span class="pre">]</span></code></p></td>
+<td><p>Si las cadenas no son iguales</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">STR1</span> <span class="pre">&lt;</span> <span class="pre">STR2</span> <span class="pre">]</span></code></p></td>
+<td><p>STR1 se ordena antes que STR2 según como esté la localización configurada</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">STR1</span> <span class="pre">&gt;</span> <span class="pre">STR2</span> <span class="pre">]</span></code></p></td>
+<td><p>STR1 ordena después de STR2 en base al idioma del sistema</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="expresiones-para-numeros">
+<h4>Expresiones para números<a class="headerlink" href="#expresiones-para-numeros" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Las siguientes condiciones solo son aplicables para números enteros, y devolverán verdadero en caso de cumplir la condición.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Expresión en terminal</p></td>
+<td><p>Descripción</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">N1</span> <span class="pre">-eq</span> <span class="pre">N2</span> <span class="pre">]</span></code></p></td>
+<td><p>N1 es igual que N2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">N1</span> <span class="pre">-ne</span> <span class="pre">N2</span> <span class="pre">]</span></code></p></td>
+<td><p>N1 no es igual a N2</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">N1</span> <span class="pre">-lt</span> <span class="pre">N2</span> <span class="pre">]</span></code></p></td>
+<td><p>N1 es menor que N2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">N1</span> <span class="pre">-le</span> <span class="pre">N2</span> <span class="pre">]</span></code></p></td>
+<td><p>N1 es menor o igual que N2</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">N1</span> <span class="pre">-gt</span> <span class="pre">N2</span> <span class="pre">]</span></code></p></td>
+<td><p>N1 es mayor que N2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">N1</span> <span class="pre">-ge</span> <span class="pre">N2</span> <span class="pre">]</span></code></p></td>
+<td><p>N1 es mayor o igual que N2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="comparando-multiples-valores">
+<h4>Comparando múltiples valores<a class="headerlink" href="#comparando-multiples-valores" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Se pueden anidar condiciones para un determinado valor o conjunto de valores como podemos ver a continuación gracias a los operadores lógicos.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">cmd1</span> <span class="pre">&amp;&amp;</span> <span class="pre">cmd2</span></code> =&gt; Si devuelve 0 (éxito), se ejecutará <code class="code docutils literal notranslate"><span class="pre">cmd2</span></code>
+<code class="code docutils literal notranslate"><span class="pre">cmd1</span> <span class="pre">||</span> <span class="pre">cmd2</span></code> =&gt; Si devuelve un número distinto a 0, se ejecutará <code class="code docutils literal notranslate"><span class="pre">cmd2</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Expresión en terminal</p></td>
+<td><p>Descripción</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">[[</span> <span class="pre">VAL1</span> <span class="pre">-eq</span> <span class="pre">VAL2</span> <span class="pre">&amp;&amp;</span> <span class="pre">VAL3</span> <span class="pre">-lt</span> <span class="pre">VAL1</span> <span class="pre">]]</span></code></p></td>
+<td><p>Si el VAL1 es igual a VAL2 y a su vez, VAL3 es menor que VAL1, devolverá verdadero</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">[[</span> <span class="pre">VAL1</span> <span class="pre">==</span> <span class="pre">VAL2</span> <span class="pre">]]</span></code></p></td>
+<td><p>Comprueba que VAL1 es igual a VAL2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>Ediciones ENI ~ LPIC-1</p></li>
+<li><p>StackOverflow - <a class="reference external" href="https://stackoverflow.com/questions/35432562/why-echo-outputs-himbh-on-man-bash-shell">Why echo outputs himBH on man bash shell</a></p></li>
+<li><p>Gulvi ~ <a class="reference external" href="https://gulvi.com/serie/curso-programacion-bash/capitulo/arrays-bash">Curso programación Bash</a></p></li>
+<li><p>StackExchange ~ <a class="reference external" href="https://unix.stackexchange.com/questions/68322/how-can-i-remove-an-element-from-an-array-completely">How can I remove an element from an array</a></p></li>
+<li><p>LinuxQuestions ~ <a class="reference external" href="https://www.linuxquestions.org/questions/programming-9/bash-array-add-function-example-using-indirect-array-reference-as-function-argument-815329">Bash array Add function example using indirect</a></p></li>
+<li><p>GNU.org ~ <a class="reference external" href="https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html?target=_blank">Brace Expansion</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../services/services.html" class="btn btn-neutral float-right" title="Servicios" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="trabajando-con-bash.html" class="btn btn-neutral float-left" title="Trabajando con Bash" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

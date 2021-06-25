@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Diferencias entre gestores de servicios &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Zabbix" href="../monitoring/zabbix/Zabbix.html" />
+    <link rel="prev" title="systemd" href="systemd.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../sysadmin.html">Administración de sistemas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../linux/linux.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services.html">Servicios</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../databases/mariadb/MariaDB.html">MariaDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../databases/mariadb/MariaDB-sql.html">MariaDB - Comandos SQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="systemd.html">systemd</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Diferencias entre gestores de servicios</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breves-diferencias-a-nivel-de-servicios">Breves diferencias a nivel de servicios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fuentes">Fuentes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../monitoring/zabbix/Zabbix.html">Zabbix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../storage/storage.html">Almacenamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gui/desktop.html">Entorno gráfico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../containers/containers.html">Contenedores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../network/network.html">Redes informáticas</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../sysadmin.html">Administración de sistemas</a> &raquo;</li>
+        
+          <li><a href="../services.html">Servicios</a> &raquo;</li>
+        
+      <li>Diferencias entre gestores de servicios</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/sysadmin/services/systemd/systemd-construyendo-svc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="diferencias-entre-gestores-de-servicios">
+<h1>Diferencias entre gestores de servicios<a class="headerlink" href="#diferencias-entre-gestores-de-servicios" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Red Hat 6 y 7 tienen gestores de servicio diferentes. La versión 6 utiliza Upstart, sin embargo, el equipo de Red Hat lo implementó como reemplazo de SysVinit por su modo de arranque que es más cómodo y más moderno, no obstante, ellos utilizan para todo el sistema scripts de SysVinit por su compatibilidad con Upstart.</p>
+<p>En Red Hat 7, utilizan el gestor de servicios de systemd, este gestor de servicios es una síntesis de todos los gestores que habían en el ecosistema UNIX incluyendo el de OS X, y Lennart Poettering, voluntario del proyecto Fedora elaboró un gestor de servicios con cada una de las ideas de cada gestor (SysVinit, Upstart, runit, rc.d…). Este soportaba paralelización de procesos en el arranque acelerando las cargas del sistema operativo, también permite una mayor escritura en logs porque no usa texto si no, binarios. Hoy en día, es el gestor de servicios estándar después de que los demás proyectos comunitarios como OpenSUSE, ArchLinux, el proyecto Debian y por consiguiente Ubuntu lo hubiesen adoptado por defecto.</p>
+</div>
+<div class="section" id="breves-diferencias-a-nivel-de-servicios">
+<h2>Breves diferencias a nivel de servicios<a class="headerlink" href="#breves-diferencias-a-nivel-de-servicios" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="sysvinit">
+<h3>SysVinit<a class="headerlink" href="#sysvinit" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li><p>Directorio de scripts de arranque: <code class="code docutils literal notranslate"><span class="pre">/etc/init.d</span></code></p></li>
+<li><p>Los logs son específicos de cada servicio, por lo general se almacenan en <code class="code docutils literal notranslate"><span class="pre">/var/log/</span></code> (el texto es más difícil de procesar a nivel de servicio)</p></li>
+<li><p>No existe paralelización al arranque/parada de servicios</p></li>
+<li><p>La elaboración de servicios es más enrrebesada y compleja de mantener, las funciones de arranque, parada, reinicio o consulta del servicio están definidos como funciones dentro del script del servicio.</p></li>
+</ul>
+<div class="section" id="elaborando-servicios-para-sysvinit-rhel6">
+<h4>Elaborando servicios para SysVinit (RHEL6)<a class="headerlink" href="#elaborando-servicios-para-sysvinit-rhel6" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Vamos a elaborar un ejemplo de servicio que monitorice el servicio nfs y que lo reinicie en caso de que esté caído. Para ello, verificamos si el archivo <code class="code docutils literal notranslate"><span class="pre">/var/lock/subsys/nfs</span></code> existe, si no existe, reiniciaremos el servicio.</p>
+</div>
+<div class="section" id="creando-el-servicio-o-demonio-etc-init-d-check-nfs-working">
+<h4>Creando el servicio (o demonio) /etc/init.d/check_nfs_working<a class="headerlink" href="#creando-el-servicio-o-demonio-etc-init-d-check-nfs-working" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#</span>
+<span class="c1"># checking_nfs        Check NFS is working on system</span>
+<span class="c1">#</span>
+<span class="c1"># chkconfig: 2345 12 88</span>
+<span class="c1"># description: System would be check if NFS service is loaded</span>
+<span class="c1">### BEGIN INIT INFO</span>
+<span class="c1"># Provides: $checking_nfs</span>
+<span class="c1"># Required-Start: $local_fs</span>
+<span class="c1"># Required-Stop: $local_fs</span>
+<span class="c1"># Default-Start:  2 3 4 5</span>
+<span class="c1"># Default-Stop: 0 1 6</span>
+<span class="c1"># Short-Description: System would be check if NFS service is loaded</span>
+<span class="c1"># Description: System would be check if NFS service is loaded</span>
+<span class="c1">### END INIT INFO</span>
+
+<span class="c1"># Source function library.</span>
+. /etc/init.d/functions
+
+<span class="nv">prog</span><span class="o">=</span>checking_nfs
+<span class="nv">script</span><span class="o">=</span>/admin/bin/checking_nfs
+<span class="nv">lockfile</span><span class="o">=</span>/var/lock/subsys/<span class="nv">$prog</span>
+
+start<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> -n <span class="s2">&quot;Starting NFS is working: &quot;</span>
+  <span class="si">${</span><span class="nv">script</span><span class="si">}</span> <span class="p">&amp;</span>
+  touch /var/lock/subsys/checking_nfs
+  success <span class="s2">$&quot;Checking NFS is started&quot;</span>
+  <span class="nb">echo</span>
+<span class="o">}</span>
+
+stop<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> -n <span class="s2">&quot;Stopping NFS is working: &quot;</span>
+  killproc checking_nfs
+  rm -f /var/lock/subsys/checking_nfs
+  <span class="nb">echo</span>
+  <span class="o">}</span>
+
+restart<span class="o">()</span> <span class="o">{</span>
+  stop
+  start
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="k">in</span>
+  start<span class="o">)</span>
+    start
+    <span class="p">;;</span>
+  stop<span class="o">)</span>
+    stop
+    <span class="p">;;</span>
+  restart<span class="o">)</span>
+    restart
+    <span class="p">;;</span>
+  reload<span class="o">)</span>
+    <span class="nb">exit</span> <span class="m">3</span>
+    <span class="p">;;</span>
+  force-reload<span class="o">)</span>
+    restart
+    <span class="p">;;</span>
+  status<span class="o">)</span>
+    status checking_nfs
+    <span class="p">;;</span>
+  condrestart<span class="p">|</span>try-restart<span class="o">)</span>
+    rhstatus &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">0</span>
+    restart
+    <span class="p">;;</span>
+  *<span class="o">)</span>
+    <span class="nb">echo</span> $<span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart|condrestart|try-restart|reload|force-reload|status}&quot;</span>
+    <span class="nb">exit</span> <span class="m">3</span>
+<span class="k">esac</span>
+
+<span class="nb">exit</span> <span class="nv">$?</span>
+</pre></div>
+</div>
+<p>El contenido de arriba sería todo lo que necesitaríamos para elaborar el objetivo que tenemos, vamos a explicar un poco qué es cada parte:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+</pre></div>
+</div>
+<p>Declaramos el BashGang para que, al leer el script lo interprete con la Shell Bash y no con otra como SH, KSH, Fish…etc</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># checking_nfs        Check NFS is working on system</span>
+<span class="c1">#</span>
+<span class="c1"># chkconfig: 2345 12 88</span>
+<span class="c1"># description: System would be check if NFS service is loaded</span>
+</pre></div>
+</div>
+<p>Definimos algunos datos necesarios para que podamos identificar que hace este servicio, también es importante incluir esta cabecera porque si no no se podrá configurar al arranque del inicio del sistema operativo. Si nos fijamos en el comando chkconfig, tenemos 3 argumentos con solo números enteros, lo explicamos:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">2345</span></code> – Se refiere a los runlevels en el que el servicio se habilitará por defecto.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">12</span></code> – Es la prioridad para que arranque, si el valor es muy bajo tendrá una prioridad más alta para que se arranque en el inicio del sistema.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">88</span></code> – Es la prioridad para que se detenga el servicio, si el valor es muy bajo tendrá una prioridad más alta para que se detenga en el apagado del sistema.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN INIT INFO</span>
+<span class="c1"># Provides: $checking_nfs</span>
+<span class="c1"># Required-Start: $local_fs</span>
+<span class="c1"># Required-Stop: $local_fs</span>
+<span class="c1"># Default-Start:  2 3 4 5</span>
+<span class="c1"># Default-Stop: 0 1 6</span>
+<span class="c1"># Short-Description: System would be check if NFS service is loaded</span>
+<span class="c1"># Description: System would be check if NFS service is loaded</span>
+<span class="c1">### END INIT INFO</span>
+</pre></div>
+</div>
+<p>Este bloque, es la parte de Linux Standard Base, se definen las dependencias necesarias para el arranque o inicio del servicio incluyendo información adicional, incluyendo los runlevels de ejecución y de parada.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source function library.</span>
+. /etc/init.d/functions
+</pre></div>
+</div>
+<p>Permite cargar funciones adicionales como <code class="code docutils literal notranslate"><span class="pre">daemon</span></code>, <code class="code docutils literal notranslate"><span class="pre">killproc</span></code>… que se pueden utilizar en otros scripts, sin embargo, principalmente utilizaremos <code class="code docutils literal notranslate"><span class="pre">killproc</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">prog</span><span class="o">=</span>checking_nfs
+<span class="nv">script</span><span class="o">=</span>/admin/bin/checking_nfs
+<span class="nv">lockfile</span><span class="o">=</span>/var/lock/subsys/<span class="nv">$prog</span>
+</pre></div>
+</div>
+<p>Definimos como se llama el programa, dónde está ubicado el script, y el archivo que se bloqueará para que no haya una ejecución descontrolada del servicio (se ejecuten 2,3, 4 a la vez)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>start<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> -n <span class="s2">&quot;Starting NFS is working: &quot;</span>
+  <span class="si">${</span><span class="nv">script</span><span class="si">}</span> <span class="p">&amp;</span>
+  touch /var/lock/subsys/checking_nfs
+  success <span class="s2">$&quot;Checking NFS is started&quot;</span>
+  <span class="nb">echo</span>
+<span class="o">}</span>
+
+stop<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> -n <span class="s2">&quot;Stopping NFS is working: &quot;</span>
+  killproc checking_nfs
+  rm -f /var/lock/subsys/checking_nfs
+  <span class="nb">echo</span>
+<span class="o">}</span>
+
+restart<span class="o">()</span> <span class="o">{</span>
+  stop
+  start
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Definimos las funciones que hará nuestro servicio, por lo general son los comandos que ejecutaremos para que funcione en sí el servicio.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="k">in</span>
+  start<span class="o">)</span>
+    start
+    <span class="p">;;</span>
+  stop<span class="o">)</span>
+    stop
+    <span class="p">;;</span>
+  restart<span class="o">)</span>
+    restart
+    <span class="p">;;</span>
+  reload<span class="o">)</span>
+    <span class="nb">exit</span> <span class="m">3</span>
+    <span class="p">;;</span>
+  force-reload<span class="o">)</span>
+    restart
+    <span class="p">;;</span>
+  status<span class="o">)</span>
+    status checking_nfs
+    <span class="p">;;</span>
+  condrestart<span class="p">|</span>try-restart<span class="o">)</span>
+    rhstatus &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">0</span>
+    restart
+    <span class="p">;;</span>
+  *<span class="o">)</span>
+    <span class="nb">echo</span> $<span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart|condrestart|try-restart|reload|force-reload|status}&quot;</span>
+    <span class="nb">exit</span> <span class="m">3</span>
+<span class="k">esac</span>
+
+<span class="nb">exit</span> <span class="nv">$?</span>
+</pre></div>
+</div>
+<p>Este switch funciona cuando ejecutemos el comando <code class="code docutils literal notranslate"><span class="pre">service</span> <span class="pre">check_nfs_working</span> <span class="pre">start|status|restart</span></code>, el parámetro recibido. :code:` ` <strong>¡No olvides asignarle permisos de ejecución!</strong></p>
+<p>Elaborando el script que comprueba el servicio nfs</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">while</span> :
+<span class="k">do</span>
+  <span class="k">if</span> <span class="o">[</span> -f /var/lock/subsys/nfs <span class="o">]</span>
+  <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;El servicio NFS está funcionando&quot;</span> &gt;&gt; /var/log/checking_nfs
+  <span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Ha fallado el servicio NFS, se va a reiniciar&quot;</span> &gt;&gt; /var/log/checking_nfs
+    service nfs restart
+  <span class="k">fi</span>
+  sleep <span class="m">5</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>Este script permite comprobar si el fichero que genera el servicio de nfs está creado, si lo está vuelca en un archivo de log que existe y está funcionando (para revisiones futuras). En caso de que no exista el archivo, se reiniciará todo el servicio. Esta comprobación es infinita, <strong>es importante que el bucle sea infinito pero que contenga un :code:`sleep` para que no sature los recursos del sistema.</strong> Con el <cite>sleep</cite> definimos el tiempo (en segundos) que queremos que se compruebe. <strong>¡No olvides asignarle permisos de ejecución!</strong></p>
+</div>
+<div class="section" id="arrancando-el-servicio">
+<h4>Arrancando el servicio<a class="headerlink" href="#arrancando-el-servicio" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo service check_nfs_working start
+Starting NFS is working:                                   <span class="o">[</span>  OK  <span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consultando-el-servicio">
+<h4>Consultando el servicio<a class="headerlink" href="#consultando-el-servicio" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo service check_nfs_working status
+checking_nfs <span class="o">(</span>pid <span class="m">9599</span> <span class="m">7158</span><span class="o">)</span> is running...
+</pre></div>
+</div>
+</div>
+<div class="section" id="parando-el-servicio">
+<h4>Parando el servicio<a class="headerlink" href="#parando-el-servicio" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo service check_nfs_working stop
+Stopping NFS is working:                                   <span class="o">[</span>  OK  <span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="habilitando-el-servicio-en-el-arranque">
+<h4>Habilitando el servicio en el arranque<a class="headerlink" href="#habilitando-el-servicio-en-el-arranque" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo chkconfig check_nfs_working on
+</pre></div>
+</div>
+</div>
+<div class="section" id="comprobando-que-los-runlevels-son-los-que-hemos-configurado-en-el-servicio-o-demonio">
+<h4>Comprobando que los runlevels son los que hemos configurado en el servicio (o demonio)<a class="headerlink" href="#comprobando-que-los-runlevels-son-los-que-hemos-configurado-en-el-servicio-o-demonio" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo chkconfig --list check_nfs_working
+check_nfs_working       <span class="m">0</span>:off   <span class="m">1</span>:off   <span class="m">2</span>:on    <span class="m">3</span>:on    <span class="m">4</span>:on    <span class="m">5</span>:on    <span class="m">6</span>:off
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Si los comparamos con el servicio, veremos que coinciden.</p>
+</div>
+</div>
+<div class="section" id="desactivando-el-servicio-al-arranque">
+<h4>Desactivando el servicio al arranque<a class="headerlink" href="#desactivando-el-servicio-al-arranque" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo chkconfig check_nfs_working off
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="systemd">
+<h3>Systemd<a class="headerlink" href="#systemd" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li><p>Directorio de servicios locales: <code class="code docutils literal notranslate"><span class="pre">/etc/systemd/</span></code></p></li>
+<li><p>Directorio de servicios específicos por RPM instalados: <code class="code docutils literal notranslate"><span class="pre">/usr/lib/systemd</span></code></p></li>
+<li><p>Los logs se leen mediante <code class="code docutils literal notranslate"><span class="pre">journalctl</span></code>, el resultado o salida de la ejecución de los servicios se almacenan en formato binario (más rápidez de lectura/escritura)</p></li>
+<li><p>Existe paralelización al arranque/parada de servicios disminuyendo el tiempo de encendido/apagado</p></li>
+<li><p>Elaborar un servicio es más fácil, no hay que definir los bloques de <code class="code docutils literal notranslate"><span class="pre">start</span></code>, <code class="code docutils literal notranslate"><span class="pre">stop</span></code>, <code class="code docutils literal notranslate"><span class="pre">restart</span></code>, status como en SysVinit facilitando más la rápidez y legibilidad cuando se crea un servicio.</p></li>
+</ul>
+<div class="section" id="elaborando-un-servicio-no-demonio-para-systemd-rhel7">
+<h4>Elaborando un servicio (no demonio) para systemd (RHEL7)<a class="headerlink" href="#elaborando-un-servicio-no-demonio-para-systemd-rhel7" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>En systemd el concepto de demonio (daemon) se pierde, no se menciona, solo se comenta el uso de servicio.</p>
+</div>
+<div class="section" id="creando-el-servicio-etc-systemd-system-check-nfs-working-service">
+<h4>Creando el servicio /etc/systemd/system/check_nfs_working.service<a class="headerlink" href="#creando-el-servicio-etc-systemd-system-check-nfs-working-service" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>Checking <span class="k">if</span> NFS is working
+<span class="nv">After</span><span class="o">=</span>network.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>simple
+
+<span class="nv">User</span><span class="o">=</span>root
+<span class="nv">ExecStart</span><span class="o">=</span>/admin/bin/check_nfs_working.sh
+<span class="nv">Restart</span><span class="o">=</span>on-failure
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</pre></div>
+</div>
+<p>Como ves, la diferencia está muy clara. Vamos a explicar este bloque declarativo.</p>
+<p>En <code class="code docutils literal notranslate"><span class="pre">systemd</span></code>, los <code class="code docutils literal notranslate"><span class="pre">Units</span></code> pueden contener servicios abstractos, recursos de red, dispositivos, sistemas de archivos montados, y recursos aislados, por lo que es más que una definición.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">Checking</span> <span class="k">if</span> <span class="n">NFS</span> <span class="ow">is</span> <span class="n">working</span>
+<span class="n">After</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p>Por ejemplo, aquí decimos que se arranque este servicio después de que el <code class="code docutils literal notranslate"><span class="pre">network.target</span></code> se haya completado, que quiere decir, cuando la red esté lista, arranca este servicio.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Los targets vienen siendo un símil a los runlevels.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>simple
+
+<span class="nv">User</span><span class="o">=</span>root
+<span class="nv">ExecStart</span><span class="o">=</span>/admin/bin/check_nfs_working.sh
+<span class="nv">Restart</span><span class="o">=</span>on-failure
+</pre></div>
+</div>
+<p>Definimos la información del servicio, ¿Cómo debe ejecutarse? ¿Qué tiene que hacer? ¿Qué ocurre si se reinicia? ¿Se crean hilos o subprocesos?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p>Definimos en qué runlevel debe arrancar este servicio.</p>
+</div>
+<div class="section" id="elaborando-el-script-que-comprueba-el-servicio-nfs-admin-bin-check-nfs-working-sh">
+<h4>Elaborando el script que comprueba el servicio nfs /admin/bin/check_nfs_working.sh<a class="headerlink" href="#elaborando-el-script-que-comprueba-el-servicio-nfs-admin-bin-check-nfs-working-sh" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">while</span> :
+<span class="k">do</span>
+  <span class="nv">checkProcess</span><span class="o">=</span><span class="k">$(</span>systemctl status nfs <span class="p">|</span>grep Active <span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">checkProcess</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;active&quot;</span> <span class="o">]</span>
+  <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;El proceso está funcionando correctamente.&quot;</span>
+  <span class="k">else</span>
+    systemctl restart nfs
+    <span class="nb">echo</span> <span class="s2">&quot;El proceso no está funcionando correctamente.&quot;</span>
+
+  <span class="k">fi</span>
+  sleep <span class="m">5</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>Este script permite comprobar si el servicio nfs está funcionando, si lo está vuelca en un archivo de log que existe y está funcionando (para revisiones futuras). En caso de que no exista el archivo, se reiniciará todo el servicio. Esta comprobación es infinita, <strong>es importante que el bucle sea infinito pero que contenga un sleep para que no sature los recursos del sistema.</strong> Con el sleep definimos el tiempo (en segundos) que queremos que se compruebe. <strong>¡No olvides asignarle permisos de ejecución!</strong></p>
+</div>
+<div class="section" id="id1">
+<h4>Arrancando el servicio<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl start_nfs_working
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>Consultando el servicio<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl status checking_nfs_working.service
+● check_nfs_working.service - Checking <span class="k">if</span> daemon is working
+   Loaded: loaded <span class="o">(</span>/etc/systemd/system/check_nfs_working.service<span class="p">;</span> disabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
+   Active: active <span class="o">(</span>running<span class="o">)</span> since Fri <span class="m">2019</span>-10-04 <span class="m">11</span>:19:02 CEST<span class="p">;</span> 1s ago
+ Main PID: <span class="m">24600</span> <span class="o">(</span>check_nfs_worki<span class="o">)</span>
+   CGroup: /system.slice/check_nfs_working.service
+           ├─24600 /bin/bash /admin/bin/check_nfs_working.sh
+           └─24605 sleep <span class="m">5</span>
+
+Oct <span class="m">04</span> <span class="m">11</span>:19:02 server systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Started Checking <span class="k">if</span> daemon is working.
+Oct <span class="m">04</span> <span class="m">11</span>:19:02 server check_nfs_working.sh<span class="o">[</span><span class="m">24600</span><span class="o">]</span>: El proceso está funcionando correctamente.
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>Parando el servicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl stop check_nfs_working.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Habilitando el servicio en el arranque<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl <span class="nb">enable</span> check_nfs_working.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="comprobando-si-esta-habilitado-al-arranque">
+<h4>Comprobando si está habilitado al arranque<a class="headerlink" href="#comprobando-si-esta-habilitado-al-arranque" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl is-enabled check_nfs_working.service
+disabled
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Si los comparamos con el servicio, veremos que coinciden.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Desactivando el servicio al arranque<a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable check_nfs_working.service
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fuentes">
+<h2>Fuentes<a class="headerlink" href="#fuentes" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.devdungeon.com/content/creating-systemd-service-files">Creating systemd service files</a></p></li>
+<li><p><a class="reference external" href="https://wiki.debian.org/LSBInitScripts/">Debian Wiki LSB Init Scripts</a></p></li>
+<li><p><a class="reference external" href="https://www.cyberciti.biz/tips/linux-write-sys-v-init-script-to-start-stop-service.html">Linux Write Sys V init to start stop service</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../monitoring/zabbix/Zabbix.html" class="btn btn-neutral float-right" title="Zabbix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="systemd.html" class="btn btn-neutral float-left" title="systemd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

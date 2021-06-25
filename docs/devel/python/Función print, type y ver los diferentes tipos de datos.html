@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Función print() &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Imprimir valores y funciones" href="Imprimir%20valores%20y%20funciones.html" />
+    <link rel="prev" title="Fecha y hora" href="Fecha%20y%20hora.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/sysadmin.html">Administración de sistemas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sysadmin/automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Controles%20de%20flujo.html">Condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fecha%20y%20hora.html">Fecha y hora</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Función print()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funcion-type">Función type()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cadenas-o-strings">Cadenas o <em>strings</em></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#se-puede-definir-cadenas-con-multiples-lineas">Se puede definir cadenas con múltiples líneas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtener-la-primera-letra-de-un-str">Obtener la primera letra de un str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtener-letras-de-un-str-a-partir-de-un-rango">Obtener letras de un str a partir de un rango</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conseguir-la-posicion-de-un-str-en-un-str">Conseguir la posición de un str en un str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reemplazar-un-str-dentro-de-un-str">Reemplazar un str dentro de un str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#separar-un-str-cuando-encuentre-un-caracter-especifico-y-devolver-el-resultado-como-una-lista">Separar un str cuando encuentre un caracter específico y devolver el resultado como una lista</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#busca-en-el-str-un-str-y-devuelve-el-no-de-coincidencias">Busca en el str un str y devuelve el nº de coincidencias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convertir-todos-los-caracteres-de-un-str-a-mayusculas">Convertir todos los caracteres de un str a mayúsculas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convertir-todos-los-caracteres-de-un-str-a-minusculas">Convertir todos los caracteres de un str a minúsculas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convertir-el-primer-caracter-de-un-str-en-mayuscula">Convertir el primer caracter de un str en mayúscula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtener-el-valor-maximo-de-un-str">Obtener el valor máximo de un str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtener-el-valor-minimo-de-un-str">Obtener el valor mínimo de un str</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#constantes">Constantes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numeros">Números</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#int-o-numeros-enteros">int o números enteros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float-o-numero-de-coma-flotante">float o número de coma flotante</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#complex-o-numeros-complejos">complex o números complejos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tipos-de-datos-especiales">Tipos de datos especiales</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Imprimir%20valores%20y%20funciones.html">Imprimir valores y funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introducir%20datos%20y%20control%20de%20excepciones.html">Obtener datos introducidos por el usuario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Int%C3%A9rprete%2C%20comentarios%2C%20identificadores%20y%20palabras%20clave.html">¿Cómo usar Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programaci%C3%B3n%20Orientada%20a%20Objetos.html">Programación orientada a objetos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tipos%20de%20operadores%20e%20introducci%C3%B3n%20a%20los%20m%C3%B3dulos.html">Tipos de operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#listas">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#diccionarios">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#sets">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Preparando%20el%20entorno/Preparando%20el%20entorno.html">Instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#historia">Historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#notas-importantes">Notas importantes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="python.html">Python</a> &raquo;</li>
+        
+      <li>Función print()</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/devel/python/Función print, type y ver los diferentes tipos de datos.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="funcion-print">
+<h1>Función print()<a class="headerlink" href="#funcion-print" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Esta función se utiliza para imprimir valores por lo que nos podemos imaginar lo que podemos imprimir, resultados de funciones, valores asignados a variables, textos…etc.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esta sentencia imprime en pantalla <cite>Hello World</cite>. Más adelante, veremos distintos usos de cómo utilizar esta función como por ejemplo, sustituciones de valores por variables…</p>
+</div>
+<div class="section" id="funcion-type">
+<h1>Función type()<a class="headerlink" href="#funcion-type" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Esta función nos permite averiguar el tipo de dato que estamos tratando.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>O asignándolo en una variable y después imprimirlo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esto nos devolverá un mensaje como: <code class="code docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'str'&gt;</span></code> indicando que es un <code class="code docutils literal notranslate"><span class="pre">str</span></code> o cadena.</p>
+<p>Si probamos con un nº entero como el 2 nos devolverá <code class="code docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">type()</span></code> y <code class="code docutils literal notranslate"><span class="pre">print()</span></code> son unas de las funciones más utilizadas, sobre todo para cuando tengamos que hacer depuración y revisar por qué en nuestro código hay cosas que no funcionan si estamos tratando con tipos de datos.</p>
+<p>Tipos de datos en Python (Literals)</p>
+<ul class="simple">
+<li><p>Cadenas o strings</p></li>
+<li><p>Constantes</p></li>
+<li><p>Númericos</p></li>
+<li><p>Especiales</p></li>
+</ul>
+</div>
+<div class="section" id="cadenas-o-strings">
+<h1>Cadenas o <em>strings</em><a class="headerlink" href="#cadenas-o-strings" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Se forman encerrando un texto utilizando (» «) ó (“ “).</p>
+<p>Por ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">helloWorld</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>
+<span class="n">helloWorld</span> <span class="o">=</span> <span class="s1">&#39;Hello world&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="se-puede-definir-cadenas-con-multiples-lineas">
+<h2>Se puede definir cadenas con múltiples líneas<a class="headerlink" href="#se-puede-definir-cadenas-con-multiples-lineas" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">helloWorldMessage</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Este es un mensaje para toda la civilización.</span>
+<span class="s1">Todos(as) aquellos(as) que no se interesen por la historia,</span>
+<span class="s1">estarán condenados(as) a repetir los mismos errores que se</span>
+<span class="s1">cometieron en el pasado. &#39;&#39;&#39;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="obtener-la-primera-letra-de-un-str">
+<h2>Obtener la primera letra de un str<a class="headerlink" href="#obtener-la-primera-letra-de-un-str" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">h</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="obtener-letras-de-un-str-a-partir-de-un-rango">
+<h2>Obtener letras de un str a partir de un rango<a class="headerlink" href="#obtener-letras-de-un-str-a-partir-de-un-rango" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+<span class="go">hola</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conseguir-la-posicion-de-un-str-en-un-str">
+<h2>Conseguir la posición de un str en un str<a class="headerlink" href="#conseguir-la-posicion-de-un-str-en-un-str" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo, me llamo sincorchetes y estamos en echemosunbitstazo.es&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mensaje</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;me&quot;</span><span class="p">)</span>
+<span class="go">12</span>
+</pre></div>
+</div>
+<p>Si nos ponemos a contar (<em>desde 0 siempre</em>) caracter por caracter (<em>incluyendo los espacios y ,</em>), obtendremos el número 12.</p>
+</div>
+<div class="section" id="reemplazar-un-str-dentro-de-un-str">
+<h2>Reemplazar un str dentro de un str<a class="headerlink" href="#reemplazar-un-str-dentro-de-un-str" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo, me llamo sincorchetes y estamos en echemosunbitstazo.es&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mensaje</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;sincorchetes&quot;</span><span class="p">,</span><span class="s2">&quot;anonymous&quot;</span><span class="p">)</span>
+<span class="go">&#39;Hola mundo, me llamo anonymous y estamos en echemosunbitstazo.es&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="separar-un-str-cuando-encuentre-un-caracter-especifico-y-devolver-el-resultado-como-una-lista">
+<h2>Separar un str cuando encuentre un caracter específico y devolver el resultado como una lista<a class="headerlink" href="#separar-un-str-cuando-encuentre-un-caracter-especifico-y-devolver-el-resultado-como-una-lista" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo, me llamo sincorchetes y estamos en echemosunbitstazo.es&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mensaje</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="go">[&#39;Hola&#39;,</span>
+<span class="go"> &#39;mundo,&#39;,</span>
+<span class="go"> &#39;me&#39;,</span>
+<span class="go"> &#39;llamo&#39;,</span>
+<span class="go"> &#39;sincorchetes&#39;,</span>
+<span class="go"> &#39;y&#39;,</span>
+<span class="go"> &#39;estamos&#39;,</span>
+<span class="go"> &#39;en&#39;,</span>
+<span class="go"> &#39;echemosunbitstazo.es&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="busca-en-el-str-un-str-y-devuelve-el-no-de-coincidencias">
+<h2>Busca en el str un str y devuelve el nº de coincidencias<a class="headerlink" href="#busca-en-el-str-un-str-y-devuelve-el-no-de-coincidencias" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;l&quot;</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="convertir-todos-los-caracteres-de-un-str-a-mayusculas">
+<h2>Convertir todos los caracteres de un str a mayúsculas<a class="headerlink" href="#convertir-todos-los-caracteres-de-un-str-a-mayusculas" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="go">&#39;HELLO&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="convertir-todos-los-caracteres-de-un-str-a-minusculas">
+<h2>Convertir todos los caracteres de un str a minúsculas<a class="headerlink" href="#convertir-todos-los-caracteres-de-un-str-a-minusculas" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="o">&gt;&gt;&gt;</span> <span class="n">hi</span> <span class="o">=</span> <span class="s2">&quot;HELLO&quot;</span>
+ <span class="o">&gt;&gt;&gt;</span> <span class="n">hi</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="s1">&#39;hello&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="convertir-el-primer-caracter-de-un-str-en-mayuscula">
+<h2>Convertir el primer caracter de un str en mayúscula<a class="headerlink" href="#convertir-el-primer-caracter-de-un-str-en-mayuscula" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="go">&#39;Hello&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="obtener-el-valor-maximo-de-un-str">
+<h2>Obtener el valor máximo de un str<a class="headerlink" href="#obtener-el-valor-maximo-de-un-str" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valor</span> <span class="o">=</span> <span class="s2">&quot;!#aBcDeFghI&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<span class="go">&#39;h&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="obtener-el-valor-minimo-de-un-str">
+<h2>Obtener el valor mínimo de un str<a class="headerlink" href="#obtener-el-valor-minimo-de-un-str" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valor</span> <span class="o">=</span> <span class="s2">&quot;!#aBcDeFghI&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">min</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<span class="go">&#39;!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="constantes">
+<h1>Constantes<a class="headerlink" href="#constantes" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Las constantes como su nombre indica son valores que no se modificarán a lo largo de la vida del programa. Sin embargo en Python no se declaran a lo mejor como en otro lenguaje tipo PHP. Para hacerlo en Python, tenemos que respetar una forma de trabajo y sintaxis específicas.</p>
+<ol class="arabic simple">
+<li><p>Crea un archivo llamado <code class="code docutils literal notranslate"><span class="pre">constantes.py</span></code></p></li>
+<li><p>Define en el variables, todas en mayúsculas y seguidas de «_ _ _».</p></li>
+<li><p>Importa tu archivo en tu proyecto.</p></li>
+<li><p>Llama a la constante.</p></li>
+</ol>
+<p>Veamos un ejemplo:</p>
+<ol class="arabic simple">
+<li><p>Creamos el archivo <code class="code docutils literal notranslate"><span class="pre">constantes.py</span></code></p></li>
+<li><p>Añadimos las siguientes variables:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">IP_SERVIDOR</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span>
+<span class="n">PUERTO_SERVIDOR</span> <span class="o">=</span> <span class="mi">3306</span>
+<span class="n">NOMBRE_USUARIO</span> <span class="o">=</span> <span class="s1">&#39;sincorchetes&#39;</span>
+<span class="n">PASS_USUARIO</span> <span class="o">=</span> <span class="s1">&#39;Foo1234&#39;</span>
+<span class="n">NOMBRE_DB</span> <span class="o">=</span> <span class="s1">&#39;Foo&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Creamos un archivo <code class="code docutils literal notranslate"><span class="pre">main.py</span></code></p></li>
+<li><p>Importamos el archivo y mencionamos a la constante.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">constantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">constantes</span><span class="o">.</span><span class="n">IP_SERVIDOR</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Veremos que tendremos una salida:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">127.0.0.1</span>
+</pre></div>
+</div>
+<p>Así definiríamos una constante en Python.</p>
+<p>Por otro lado, Python tiene unas constantes integradas que no estaría más echarles un vistazo, no son muchas, pero viene bien <a class="reference external" href="https://docs.python.org/3/library/constants.html">saberlas</a></p>
+</div>
+<div class="section" id="numeros">
+<h1>Números<a class="headerlink" href="#numeros" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Tenemos varios tipos de dato en Python como puede ser:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">long</span></code> (no se usa más en Python 3)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">complex</span></code></p></li>
+</ul>
+<div class="section" id="int-o-numeros-enteros">
+<h2>int o números enteros<a class="headerlink" href="#int-o-numeros-enteros" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>Este tipo de dato solo almacena números enteros (<em>positivos y negativos, nada de comas, ni decimales, ni fracciones</em>).</p></li>
+<li><p>Este tipo de dato no contiene ninguna restricción por parte del número de bits en Python y puede expandirse el límite de la memoria disponible.</p></li>
+<li><p>No se necesita ningún tipo de declaración especial para almacenar números muy largos.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="float-o-numero-de-coma-flotante">
+<h2>float o número de coma flotante<a class="headerlink" href="#float-o-numero-de-coma-flotante" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Si necesitas utilizar decimales, este es el tipo de dato que buscar.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">20.30</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mf">33.99</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="mf">100.12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">-45.83</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="complex-o-numeros-complejos">
+<h2>complex o números complejos<a class="headerlink" href="#complex-o-numeros-complejos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se utilizan para diferentes tipos de cálculos aplicados a la geometría, física… La definición en Python es <code class="code docutils literal notranslate"><span class="pre">a+bj</span></code>, dónde <code class="code docutils literal notranslate"><span class="pre">a</span></code> es el número que se encuentra representado en los números reales; <code class="code docutils literal notranslate"><span class="pre">bj</span></code> es el número imaginario.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">2+3j</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tipos-de-datos-especiales">
+<h2>Tipos de datos especiales<a class="headerlink" href="#tipos-de-datos-especiales" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Tenemos el valor <code class="code docutils literal notranslate"><span class="pre">None</span></code> que viene a ser el valor <code class="code docutils literal notranslate"><span class="pre">null</span></code> en otros lenguajes como SQL, se suele utilizar para declarar un campo con este valor <em>¡ojo, esto no quiere decir que esté vacío!</em></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Imprimir%20valores%20y%20funciones.html" class="btn btn-neutral float-right" title="Imprimir valores y funciones" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Fecha%20y%20hora.html" class="btn btn-neutral float-left" title="Fecha y hora" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

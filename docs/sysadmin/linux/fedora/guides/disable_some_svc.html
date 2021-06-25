@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Deshabilitando servicios &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+    <link rel="next" title="Docker" href="docker.html" />
+    <link rel="prev" title="Códecs audio/video" href="codecs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../sysadmin.html">Administración de sistemas</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../linux.html">Linux</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../acl/acl.html">Gestión de usuari&#64;s y grupos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../pkgmnt/pkgmnt.html">Gestores de paquetes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="fedora.html">Fedora</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="codecs.html">Códecs audio/video</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Deshabilitando servicios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="locales.html">Codificación/idioma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="locales.html#paginas-de-documentacion-man">Páginas de documentación, man</a></li>
+<li class="toctree-l4"><a class="reference internal" href="locales.html#libreoffice">Libreoffice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="locales.html#plasma-kde">Plasma (KDE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nvidia_optimus.html">NVIDIA Optimus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="selenium.html">Selenium</a></li>
+<li class="toctree-l4"><a class="reference internal" href="skype.html">Skype</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify.html">Spotify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="third_party_repos.html">Repositorio a terceros</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zoom.html">Zoom</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../centos/guides/centos.html">CentOS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/services.html">Servicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../automation/ansible/ansible.html">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../storage/storage.html">Almacenamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gui/desktop.html">Entorno gráfico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../containers/containers.html">Contenedores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../network/network.html">Redes informáticas</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../sysadmin.html">Administración de sistemas</a> &raquo;</li>
+        
+          <li><a href="../../linux.html">Linux</a> &raquo;</li>
+        
+          <li><a href="fedora.html">Fedora</a> &raquo;</li>
+        
+      <li>Deshabilitando servicios</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/sysadmin/linux/fedora/guides/disable_some_svc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deshabilitando-servicios">
+<h1>Deshabilitando servicios<a class="headerlink" href="#deshabilitando-servicios" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Cuando Fedora se instala hay servicios que podemos prescindir de ellos o deshabilitarlos si no los utilizamos, así evitamos problemas de seguridad y reduciremos en consumo, a pesar de que puede que el sistema  no se inicie con todos los servicios que he expuesto aquí, es recomendable desactivar los que no necesitemos.</p>
+<div class="section" id="fprintd-lector-de-huellas">
+<h3>fprintd - Lector de huellas<a class="headerlink" href="#fprintd-lector-de-huellas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si no utilizamos un lector de huellas, es mejor deshabilitarlo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable --now fprintd.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="livesys-livesys-late-servicios-livecd-dvd-usb">
+<h3>livesys/livesys-late - Servicios LiveCD/DVD/USB<a class="headerlink" href="#livesys-livesys-late-servicios-livecd-dvd-usb" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Estos servicios se utilizan para configuraciones mientras se instala la distribución pero no nos hace más falta una vez instalada</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable --now livesys
+sudo systemctl disable --now livesys-late
+</pre></div>
+</div>
+</div>
+<div class="section" id="bluetooth-sistema-de-conexion-pan">
+<h3>Bluetooth - Sistema de conexion PAN<a class="headerlink" href="#bluetooth-sistema-de-conexion-pan" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si no tienes un dispositivo de Bluetooth o lo quieres utilizar solo bajo demanda, conviene desactivarlo y activarlo cuando guste.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable --now bluetooth.service
+sudo systemctl disable --now bluetooth.target
+</pre></div>
+</div>
+</div>
+<div class="section" id="avahi-autodescubrimiento">
+<h3>Avahi - Autodescubrimiento<a class="headerlink" href="#avahi-autodescubrimiento" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si no utilizas autodescubrimiento en la red local, no hace falta que los tengas</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable --now avahi-daemon.service
+sudo systemctl disable --now avahi-daemon.socket
+</pre></div>
+</div>
+</div>
+<div class="section" id="cups-impresoras">
+<h3>CUPS - Impresoras<a class="headerlink" href="#cups-impresoras" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si no tienes impresoras, ¿para qué lo necesitas?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable --now cups.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="nfs-sistema-de-archivos-en-red">
+<h3>NFS - Sistema de archivos en red<a class="headerlink" href="#nfs-sistema-de-archivos-en-red" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si no usas NFS cliente/servidor, desactívalo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable --now nfs-blkmap.service
+sudo systemctl disable --now nfs-client.target
+sudo systemctl disable --now nfs-server.service
+sudo systemctl disable --now nfs-convert.service
+</pre></div>
+</div>
+</div>
+<div class="section" id="scsi-sistemas-de-deteccion-y-manipulacion-scsi">
+<h3>scsi - Sistemas de detección y manipulación SCSI<a class="headerlink" href="#scsi-sistemas-de-deteccion-y-manipulacion-scsi" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si solo usas pendrives, discos SATA/IDE, SSD… no hace falta tener este servicio</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable --now iscsid.service
+sudo systemctl disable --now iscsid.socket
+sudo systemctl disable --now iscsi.service
+sudo systemctl disable --now iscsiuio.service
+sudo systemctl disable --now iscsiuio.socket
+</pre></div>
+</div>
+</div>
+<div class="section" id="raid-sistema-de-replicacion-de-discos-disp-almacenamiento">
+<h3>RAID - Sistema de replicación de discos/disp almacenamiento<a class="headerlink" href="#raid-sistema-de-replicacion-de-discos-disp-almacenamiento" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si no lo usamos</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable raid-check.timer
+</pre></div>
+</div>
+</div>
+<div class="section" id="lvm-gestor-de-volumenes-de-linux">
+<h3>LVM - Gestor de Volúmenes de Linux<a class="headerlink" href="#lvm-gestor-de-volumenes-de-linux" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>DESACTIVAR SOLO SI NO USAMOS LVM O PROVOCARÁ UN SISTEMA INSERVIBLE**</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo systemctl disable lvm2-lvmpolld.socket
+sudo systemctl disable lvm2-monitor.service
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="docker.html" class="btn btn-neutral float-right" title="Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="codecs.html" class="btn btn-neutral float-left" title="Códecs audio/video" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

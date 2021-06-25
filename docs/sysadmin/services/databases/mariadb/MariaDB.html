@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MariaDB &mdash; documentación de Echemos un bitstazo ~ Wiki - </title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+    <link rel="next" title="MariaDB - Comandos SQL" href="MariaDB-sql.html" />
+    <link rel="prev" title="Servicios" href="../../services.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Echemos un bitstazo ~ Wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Administración de sistemas</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../sysadmin.html">Administración de sistemas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/linux.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripting/bash/bash.html">Bash</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../services.html">Servicios</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MariaDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instalacion">Instalación</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exportando-base-de-datos">Exportando base de datos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#importando-la-base-de-datos">Importando la base de datos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="MariaDB-sql.html">MariaDB - Comandos SQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../systemd/systemd.html">systemd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../systemd/systemd-construyendo-svc.html">Diferencias entre gestores de servicios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../monitoring/zabbix/Zabbix.html">Zabbix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../automation/ansible/ansible.html">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../storage/storage.html">Almacenamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gui/desktop.html">Entorno gráfico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../containers/containers.html">Contenedores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../network/network.html">Redes informáticas</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Automatización</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../automation/ansible/ansible.html">Ansible</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Redes informáticas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../network/network.html">Redes informáticas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Desarrollo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devel/python/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Echemos un bitstazo ~ Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../sysadmin.html">Administración de sistemas</a> &raquo;</li>
+        
+          <li><a href="../../services.html">Servicios</a> &raquo;</li>
+        
+      <li>MariaDB</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/sysadmin/services/databases/mariadb/MariaDB.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mariadb">
+<h1>MariaDB<a class="headerlink" href="#mariadb" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="instalacion">
+<h2>Instalación<a class="headerlink" href="#instalacion" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="exportando-base-de-datos">
+<h2>Exportando base de datos<a class="headerlink" href="#exportando-base-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="todas-las-bases-de-datos-en-formato-plano">
+<h3>Todas las bases de datos en formato plano<a class="headerlink" href="#todas-las-bases-de-datos-en-formato-plano" title="Enlazar permanentemente con este título">¶</a></h3>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysqldump -u root --all-databases -p  &gt; dump.sql
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">-u</span> <span class="pre">root</span></code>: Usuario root</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">--all-databases</span></code>: Todas las bases de datos</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-p</span></code>: Pregunta por la contraseña</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&gt;</span></code> : Redirige el flujo hacia el fichero salida <code class="code docutils literal notranslate"><span class="pre">dump.sql</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="especificando-las-bases-de-datos">
+<h3>Especificando las bases de datos<a class="headerlink" href="#especificando-las-bases-de-datos" title="Enlazar permanentemente con este título">¶</a></h3>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysqldump -u root -p --databases <span class="o">[</span>db1 db2 db3<span class="o">]</span> &gt; dump.sql
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">-u</span> <span class="pre">root</span></code>: Usuario root</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">--databases</span> <span class="pre">[]</span></code>: Las bases de datos que queremos exportar</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-p</span></code>: Pregunta por la contraseña</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&gt;</span></code> : Redirige el flujo hacia el fichero salida <code class="code docutils literal notranslate"><span class="pre">dump.sql</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="importando-la-base-de-datos">
+<h2>Importando la base de datos<a class="headerlink" href="#importando-la-base-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="id1">
+<h3>Todas las bases de datos en formato plano<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h3>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysqldump -u root -p  &lt; dump.sql
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">-u</span> <span class="pre">root</span></code>: Usuario root</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-p</span></code>: Pregunta por la contraseña</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&lt;</span></code> : Redirige el flujo del fichero salida :code:` dump.sql` hacia el sistema gestor de base de datos</p></li>
+</ul>
+</div>
+<div class="section" id="una-base-de-datos">
+<h3>Una base de datos<a class="headerlink" href="#una-base-de-datos" title="Enlazar permanentemente con este título">¶</a></h3>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysqldump -u root -p <span class="o">[</span>basededatos1<span class="o">]</span> &lt; dump.sql
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">-u</span> <span class="pre">root</span></code>: Usuario root</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-p</span></code>: Pregunta por la contraseña</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">[basededatos1]</span></code>: El nombre de la base de datos a restaurar</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&lt;</span></code> : Redirige el flujo del fichero salida :code:` dump.sql` hacia el sistema gestor de base de datos</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="MariaDB-sql.html" class="btn btn-neutral float-right" title="MariaDB - Comandos SQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../services.html" class="btn btn-neutral float-left" title="Servicios" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Derechos de autor 2021, Álvaro Castillo.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
