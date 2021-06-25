@@ -13,8 +13,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -31,7 +29,6 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -71,7 +68,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -140,7 +137,9 @@
 <li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#listas">Listas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#diccionarios">Diccionarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#sets">Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Preparando%20el%20entorno/Preparando%20el%20entorno.html">Historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Preparando%20el%20entorno/Preparando%20el%20entorno.html">Instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#historia">Historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#notas-importantes">Notas importantes</a></li>
 </ul>
 </li>
 </ul>
@@ -199,7 +198,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/devel/python/Programación Orientada a Objetos.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+            <a href="../../_sources/devel/python/Programación Orientada a Objetos.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -294,105 +293,176 @@
 </pre></div>
 </div>
 <p>Utilizando el ejemplo que hemos creado antes:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">Coche</span><span class="p">:</span>
-<span class="linenos"> 2</span>  <span class="n">marca</span> <span class="o">=</span> <span class="s2">&quot;Toyota&quot;</span>
-<span class="linenos"> 3</span>  <span class="n">modelo</span> <span class="o">=</span> <span class="s2">&quot;Corolla&quot;</span>
-<span class="linenos"> 4</span>  <span class="n">publicidad</span> <span class="o">=</span> <span class="s2">&quot;De 0 a 100 en 10 segundos&quot;</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span>  <span class="k">def</span> <span class="nf">eslogan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Este es un método&quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">publicidad</span><span class="p">)</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">Sara</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
-<span class="linenos">10</span><span class="n">Ionela</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Coche</span><span class="p">:</span>
+  <span class="n">marca</span> <span class="o">=</span> <span class="s2">&quot;Toyota&quot;</span>
+  <span class="n">modelo</span> <span class="o">=</span> <span class="s2">&quot;Corolla&quot;</span>
+  <span class="n">publicidad</span> <span class="o">=</span> <span class="s2">&quot;De 0 a 100 en 10 segundos&quot;</span>
+
+  <span class="k">def</span> <span class="nf">eslogan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Este es un método&quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">publicidad</span><span class="p">)</span>
+
+<span class="n">Sara</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+<span class="n">Ionela</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Tenemos a dos personas que utilizan el mismo coche Ionela y Sara y lo vemos:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="n">Ionela</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Ionela</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
-<span class="linenos">2</span><span class="n">Toyota</span> <span class="n">Corolla</span>
-<span class="linenos">3</span><span class="n">Ionela</span><span class="o">.</span><span class="n">eslogan</span><span class="p">()</span>
-<span class="linenos">4</span><span class="n">De</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">en</span> <span class="mi">10</span> <span class="n">segundos</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">Sara</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Sara</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
-<span class="linenos">7</span><span class="n">Toyota</span> <span class="n">Corolla</span>
-<span class="linenos">8</span><span class="n">Sara</span><span class="o">.</span><span class="n">eslogan</span><span class="p">()</span>
-<span class="linenos">9</span><span class="n">De</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">en</span> <span class="mi">10</span> <span class="n">segundos</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Ionela</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Ionela</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
+<span class="n">Toyota</span> <span class="n">Corolla</span>
+<span class="n">Ionela</span><span class="o">.</span><span class="n">eslogan</span><span class="p">()</span>
+<span class="n">De</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">en</span> <span class="mi">10</span> <span class="n">segundos</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Sara</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Sara</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
+<span class="n">Toyota</span> <span class="n">Corolla</span>
+<span class="n">Sara</span><span class="o">.</span><span class="n">eslogan</span><span class="p">()</span>
+<span class="n">De</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">en</span> <span class="mi">10</span> <span class="n">segundos</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>¿Qué pasa si Sara quiere cambiar de coche?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Sara</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="s2">&quot;Citröen&quot;</span>
-<span class="linenos">2</span><span class="n">Sara</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="s2">&quot;Xsara&quot;</span>
-<span class="linenos">3</span><span class="n">Sara</span><span class="o">.</span><span class="n">publicidad</span> <span class="o">=</span> <span class="s2">&quot;El confort no es discutible.&quot;</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">Sara</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Sara</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">Citröen</span> <span class="n">Xsara</span>
-<span class="linenos">6</span><span class="n">Sara</span><span class="o">.</span><span class="n">eslogan</span><span class="p">()</span>
-<span class="linenos">7</span><span class="n">El</span> <span class="n">confort</span> <span class="n">no</span> <span class="n">es</span> <span class="n">discutible</span><span class="o">.</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Sara</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="s2">&quot;Citröen&quot;</span>
+<span class="n">Sara</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="s2">&quot;Xsara&quot;</span>
+<span class="n">Sara</span><span class="o">.</span><span class="n">publicidad</span> <span class="o">=</span> <span class="s2">&quot;El confort no es discutible.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Sara</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Sara</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
+<span class="n">Citröen</span> <span class="n">Xsara</span>
+<span class="n">Sara</span><span class="o">.</span><span class="n">eslogan</span><span class="p">()</span>
+<span class="n">El</span> <span class="n">confort</span> <span class="n">no</span> <span class="n">es</span> <span class="n">discutible</span><span class="o">.</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>¿Pero Ionela ha cambiado de coche?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="n">Ionela</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Ionela</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
-<span class="linenos">2</span><span class="n">Toyota</span> <span class="n">Corolla</span>
-<span class="linenos">3</span><span class="n">Ionela</span><span class="o">.</span><span class="n">eslogan</span><span class="p">()</span>
-<span class="linenos">4</span><span class="n">De</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">en</span> <span class="mi">10</span> <span class="n">segundos</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Ionela</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Ionela</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
+<span class="n">Toyota</span> <span class="n">Corolla</span>
+<span class="n">Ionela</span><span class="o">.</span><span class="n">eslogan</span><span class="p">()</span>
+<span class="n">De</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">en</span> <span class="mi">10</span> <span class="n">segundos</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>¡Ya lo tenemos! Podemos instanciar objetos diferentes partiendo de una misma clase y cambiar sus propiedades sin afectar al resto de objetos. ¿A qué es sencillo? Pero, ¿Qué pasa si queremos cualquier persona pueda tener un coche diferente desde el principio?</p>
 <p>Pues a pesar de que se puede hacer creando un método que le asigne el valor a las propiedades, lo más correcto es utilizando el método <code class="code docutils literal notranslate"><span class="pre">__init__</span></code>. Este método <code class="code docutils literal notranslate"><span class="pre">constructor</span></code> (que permite inicializar un objeto) asigna valores a las propiedades del objeto cuando se construye, por ejemplo.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">class</span> <span class="nc">NombreClase</span><span class="p">:</span>
-<span class="linenos">2</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor_propiedad1</span><span class="p">,</span> <span class="n">valor_propiedad2</span><span class="p">):</span>
-<span class="linenos">3</span>    <span class="bp">self</span><span class="o">.</span><span class="n">propiedad1</span> <span class="o">=</span> <span class="n">valor_propiedad1</span>
-<span class="linenos">4</span>    <span class="bp">self</span><span class="o">.</span><span class="n">propiedad2</span> <span class="o">=</span> <span class="n">valor_propiedad2</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span>  <span class="k">def</span> <span class="nf">metodo1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">7</span>    <span class="c1"># Bloque de código</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NombreClase</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor_propiedad1</span><span class="p">,</span> <span class="n">valor_propiedad2</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">propiedad1</span> <span class="o">=</span> <span class="n">valor_propiedad1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">propiedad2</span> <span class="o">=</span> <span class="n">valor_propiedad2</span>
+
+  <span class="k">def</span> <span class="nf">metodo1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Bloque de código</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Para crear el objeto:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Variable</span><span class="o">=</span><span class="n">NombreClase</span><span class="p">(</span><span class="s2">&quot;Valor de ejemplo n1&quot;</span><span class="p">,</span><span class="s2">&quot;Valor de ejemplo n2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Si parece dificultoso de entender, no pasa nada, este es otro ejemplo con comentarios (<em>¡Será por ejemplos!</em>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Definimos la clase Coche</span>
-<span class="linenos"> 2</span><span class="k">class</span> <span class="nc">Coche</span><span class="p">:</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span>  <span class="c1"># Definimos el constructor que sustituirá los</span>
-<span class="linenos"> 5</span>  <span class="c1"># valores de las propiedades cuando las definamos al inicializar el objeto.</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">marca</span><span class="p">,</span><span class="n">modelo</span><span class="p">,</span> <span class="n">velocidad</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
-<span class="linenos"> 9</span>    <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
-<span class="linenos">10</span>    <span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span> <span class="o">=</span> <span class="n">velocidad</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span>  <span class="c1"># Cuando se llama a este método la velocidad se incrementa +1.</span>
-<span class="linenos">13</span>  <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">14</span>    <span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">15</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span><span class="p">)</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>  <span class="c1"># Cuando se llama a este método la velocidad disminuye en -1.</span>
-<span class="linenos">18</span>  <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">19</span>    <span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span> <span class="o">-=</span> <span class="mi">1</span>
-<span class="linenos">20</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span><span class="p">)</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span>  <span class="c1"># Creamos los objetos:</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span>  <span class="n">Chami</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">(</span><span class="s2">&quot;Nissan&quot;</span><span class="p">,</span> <span class="s2">&quot;Almera&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="linenos">25</span>  <span class="n">Jose</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span><span class="s2">&quot;Corolla AE92 GTi Twin Cam&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="linenos">26</span>
-<span class="linenos">27</span>  <span class="c1"># Imprimimos los valores que tienen las propiedades de cada objeto:</span>
-<span class="linenos">28</span>
-<span class="linenos">29</span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El coche de Chami es un:&quot;</span><span class="p">,</span><span class="n">Chami</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Chami</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span><span class="s2">&quot;y ahora va a&quot;</span><span class="p">,</span><span class="n">Chami</span><span class="o">.</span><span class="n">velocidad</span><span class="p">,</span><span class="s2">&quot;km/h.&quot;</span><span class="p">)</span>
-<span class="linenos">30</span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El coche de Jose es un:&quot;</span><span class="p">,</span><span class="n">Jose</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Jose</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span><span class="s2">&quot;y ahora va a&quot;</span><span class="p">,</span><span class="n">Jose</span><span class="o">.</span><span class="n">velocidad</span><span class="p">,</span><span class="s2">&quot;km/h.&quot;</span><span class="p">)</span>
-<span class="linenos">31</span>
-<span class="linenos">32</span>  <span class="c1"># Aumentamos la velocidad a uno de los objetos:</span>
-<span class="linenos">33</span>  <span class="n">Chami</span><span class="o">.</span><span class="n">acelerar</span><span class="p">()</span>
-<span class="linenos">34</span>
-<span class="linenos">35</span>  <span class="c1"># Si queremos aumentar más veces la velocidad, podemos usar un bucle</span>
-<span class="linenos">36</span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
-<span class="linenos">37</span>    <span class="n">Chami</span><span class="o">.</span><span class="n">acelerar</span><span class="p">()</span>
-<span class="linenos">38</span>
-<span class="linenos">39</span>  <span class="c1"># Imprimimos la velocidad actual</span>
-<span class="linenos">40</span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chami va a una velocidad de </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Chami</span><span class="o">.</span><span class="n">velocidad</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Definimos la clase Coche</span>
+<span class="k">class</span> <span class="nc">Coche</span><span class="p">:</span>
+
+  <span class="c1"># Definimos el constructor que sustituirá los</span>
+  <span class="c1"># valores de las propiedades cuando las definamos al inicializar el objeto.</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">marca</span><span class="p">,</span><span class="n">modelo</span><span class="p">,</span> <span class="n">velocidad</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span> <span class="o">=</span> <span class="n">velocidad</span>
+
+  <span class="c1"># Cuando se llama a este método la velocidad se incrementa +1.</span>
+  <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span><span class="p">)</span>
+
+  <span class="c1"># Cuando se llama a este método la velocidad disminuye en -1.</span>
+  <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">velocidad</span><span class="p">)</span>
+
+  <span class="c1"># Creamos los objetos:</span>
+
+  <span class="n">Chami</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">(</span><span class="s2">&quot;Nissan&quot;</span><span class="p">,</span> <span class="s2">&quot;Almera&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="n">Jose</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span><span class="s2">&quot;Corolla AE92 GTi Twin Cam&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+  <span class="c1"># Imprimimos los valores que tienen las propiedades de cada objeto:</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El coche de Chami es un:&quot;</span><span class="p">,</span><span class="n">Chami</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Chami</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span><span class="s2">&quot;y ahora va a&quot;</span><span class="p">,</span><span class="n">Chami</span><span class="o">.</span><span class="n">velocidad</span><span class="p">,</span><span class="s2">&quot;km/h.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El coche de Jose es un:&quot;</span><span class="p">,</span><span class="n">Jose</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span><span class="n">Jose</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span><span class="s2">&quot;y ahora va a&quot;</span><span class="p">,</span><span class="n">Jose</span><span class="o">.</span><span class="n">velocidad</span><span class="p">,</span><span class="s2">&quot;km/h.&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Aumentamos la velocidad a uno de los objetos:</span>
+  <span class="n">Chami</span><span class="o">.</span><span class="n">acelerar</span><span class="p">()</span>
+
+  <span class="c1"># Si queremos aumentar más veces la velocidad, podemos usar un bucle</span>
+  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">Chami</span><span class="o">.</span><span class="n">acelerar</span><span class="p">()</span>
+
+  <span class="c1"># Imprimimos la velocidad actual</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chami va a una velocidad de </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Chami</span><span class="o">.</span><span class="n">velocidad</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Este ejemplo si lo ejecutamos dará como resultado:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">coche</span> <span class="n">de</span> <span class="n">Chami</span> <span class="n">es</span> <span class="n">un</span><span class="p">:</span> <span class="n">Nissan</span> <span class="n">Almaera</span> <span class="n">y</span> <span class="n">ahora</span> <span class="n">va</span> <span class="n">a</span> <span class="mi">0</span> <span class="n">km</span><span class="o">/</span><span class="n">h</span><span class="o">.</span>
 <span class="n">El</span> <span class="n">coche</span> <span class="n">de</span> <span class="n">Jose</span> <span class="n">es</span> <span class="n">un</span><span class="p">:</span> <span class="n">Toyota</span> <span class="n">Corolla</span> <span class="n">AE92</span> <span class="n">GTi</span> <span class="n">Twin</span> <span class="n">Cam</span> <span class="n">y</span> <span class="n">ahora</span> <span class="n">va</span> <span class="n">a</span> <span class="mi">0</span> <span class="n">km</span><span class="o">/</span><span class="n">h</span><span class="o">.</span>
@@ -404,89 +474,155 @@
 <div class="section" id="herencia">
 <h2>Herencia<a class="headerlink" href="#herencia" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Una de las propiedades que mencionamos que podían tener los objetos es la herencia, por lo que una clase hija puede contener propiedades y métodos de una clase padre. Veamos un ejemplo:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Definimos la clase padre:</span>
-<span class="linenos"> 2</span><span class="k">class</span> <span class="nc">ClasePadre</span><span class="p">:</span>
-<span class="linenos"> 3</span><span class="c1"># Decimos que se ejecute el código sin hacer nada.</span>
-<span class="linenos"> 4</span>  <span class="k">pass</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="c1"># Y aquí la clase hija:</span>
-<span class="linenos"> 7</span><span class="k">class</span> <span class="nc">ClaseHija</span><span class="p">(</span><span class="n">ClasePadre</span><span class="p">):</span>
-<span class="linenos"> 8</span>  <span class="k">pass</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="c1"># Creamos el objeto</span>
-<span class="linenos">11</span><span class="n">Objeto</span> <span class="o">=</span> <span class="n">ClaseHija</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Definimos la clase padre:</span>
+<span class="k">class</span> <span class="nc">ClasePadre</span><span class="p">:</span>
+<span class="c1"># Decimos que se ejecute el código sin hacer nada.</span>
+  <span class="k">pass</span>
+
+<span class="c1"># Y aquí la clase hija:</span>
+<span class="k">class</span> <span class="nc">ClaseHija</span><span class="p">(</span><span class="n">ClasePadre</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+<span class="c1"># Creamos el objeto</span>
+<span class="n">Objeto</span> <span class="o">=</span> <span class="n">ClaseHija</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Este es un ejemplo:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Definimos la clase Familia</span>
-<span class="linenos"> 2</span><span class="k">class</span> <span class="nc">Familia</span><span class="p">():</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span>  <span class="c1"># Con sus propiedades que se rellenarán cuando se inicialice el objeto.</span>
-<span class="linenos"> 5</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miembros</span><span class="p">,</span> <span class="n">apellidos</span><span class="p">):</span>
-<span class="linenos"> 6</span>    <span class="bp">self</span><span class="o">.</span><span class="n">miembros</span> <span class="o">=</span> <span class="n">miembros</span>
-<span class="linenos"> 7</span>    <span class="bp">self</span><span class="o">.</span><span class="n">apellidos</span> <span class="o">=</span> <span class="n">apellidos</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span>    <span class="c1"># Cuando se cree la clase, mostrará el apellido que ha recibido.</span>
-<span class="linenos">10</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Apellidos: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apellidos</span><span class="p">))</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="c1"># Creamos la clase Hijo que hereda de Familia</span>
-<span class="linenos">13</span><span class="k">class</span> <span class="nc">Hijo</span><span class="p">(</span><span class="n">Familia</span><span class="p">):</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span>  <span class="c1"># Se rellenarán propiedades para este objeto.</span>
-<span class="linenos">16</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">apellidos</span><span class="p">):</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span>  <span class="c1"># Si queremos heredar propiedades y métodos, tendremos que hacer uso de la función super()</span>
-<span class="linenos">19</span>  <span class="c1"># super() lo explicaremos más adelante.</span>
-<span class="linenos">20</span>  <span class="c1"># Aquí llamamos la propiedad específica de Familia, Familia.apellidos y la inicializamos</span>
-<span class="linenos">21</span>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">apellidos</span><span class="p">)</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span>  <span class="c1"># Definimos aquí los valores que tendrán estas propiedades</span>
-<span class="linenos">24</span>    <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
-<span class="linenos">25</span>    <span class="bp">self</span><span class="o">.</span><span class="n">apellidos</span> <span class="o">=</span> <span class="n">apellidos</span>
-<span class="linenos">26</span>
-<span class="linenos">27</span><span class="c1"># Añadimos un método para el Hijo</span>
-<span class="linenos">28</span>  <span class="k">def</span> <span class="nf">mostrar_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">29</span>
-<span class="linenos">30</span>    <span class="c1"># Decimos que imprima self.nombre y self.apellidos.</span>
-<span class="linenos">31</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soy </span><span class="si">%s</span><span class="s2"> y soy de la familia </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">apellidos</span><span class="p">))</span>
-<span class="linenos">32</span>
-<span class="linenos">33</span><span class="c1"># Creamos el objeto</span>
-<span class="linenos">34</span><span class="n">Pugsley</span> <span class="o">=</span> <span class="n">Hijo</span><span class="p">(</span><span class="s2">&quot;Pugsley&quot;</span><span class="p">,</span><span class="s2">&quot;Adams&quot;</span><span class="p">)</span>
-<span class="linenos">35</span>
-<span class="linenos">36</span><span class="c1"># Llamamos al método mostrar_info()</span>
-<span class="linenos">37</span><span class="n">Pugsley</span><span class="o">.</span><span class="n">mostrar_info</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Definimos la clase Familia</span>
+<span class="k">class</span> <span class="nc">Familia</span><span class="p">():</span>
+
+  <span class="c1"># Con sus propiedades que se rellenarán cuando se inicialice el objeto.</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miembros</span><span class="p">,</span> <span class="n">apellidos</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">miembros</span> <span class="o">=</span> <span class="n">miembros</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">apellidos</span> <span class="o">=</span> <span class="n">apellidos</span>
+
+    <span class="c1"># Cuando se cree la clase, mostrará el apellido que ha recibido.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Apellidos: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apellidos</span><span class="p">))</span>
+
+<span class="c1"># Creamos la clase Hijo que hereda de Familia</span>
+<span class="k">class</span> <span class="nc">Hijo</span><span class="p">(</span><span class="n">Familia</span><span class="p">):</span>
+
+  <span class="c1"># Se rellenarán propiedades para este objeto.</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">apellidos</span><span class="p">):</span>
+
+  <span class="c1"># Si queremos heredar propiedades y métodos, tendremos que hacer uso de la función super()</span>
+  <span class="c1"># super() lo explicaremos más adelante.</span>
+  <span class="c1"># Aquí llamamos la propiedad específica de Familia, Familia.apellidos y la inicializamos</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">apellidos</span><span class="p">)</span>
+
+  <span class="c1"># Definimos aquí los valores que tendrán estas propiedades</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">apellidos</span> <span class="o">=</span> <span class="n">apellidos</span>
+
+<span class="c1"># Añadimos un método para el Hijo</span>
+  <span class="k">def</span> <span class="nf">mostrar_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="c1"># Decimos que imprima self.nombre y self.apellidos.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soy </span><span class="si">%s</span><span class="s2"> y soy de la familia </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">apellidos</span><span class="p">))</span>
+
+<span class="c1"># Creamos el objeto</span>
+<span class="n">Pugsley</span> <span class="o">=</span> <span class="n">Hijo</span><span class="p">(</span><span class="s2">&quot;Pugsley&quot;</span><span class="p">,</span><span class="s2">&quot;Adams&quot;</span><span class="p">)</span>
+
+<span class="c1"># Llamamos al método mostrar_info()</span>
+<span class="n">Pugsley</span><span class="o">.</span><span class="n">mostrar_info</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Seguro que te preguntas sobre <code class="code docutils literal notranslate"><span class="pre">super().__init__(...)</span></code>, esta función como comentamos permite heredar propiedades y métodos de otra clase. Vendría a ser lo mismo que:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-<span class="linenos"> 2</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ejemplo</span><span class="p">):</span>
-<span class="linenos"> 3</span>    <span class="bp">self</span><span class="o">.</span><span class="n">ejemplo</span> <span class="o">=</span> <span class="n">ejemplo</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="linenos"> 6</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span>    <span class="c1"># Este procedimiento es más complicado y más tedioso de hacer.</span>
-<span class="linenos"> 9</span>    <span class="bp">self</span><span class="o">.</span><span class="n">guardar_info</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="n">obj</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">guardar_info</span><span class="o">.</span><span class="n">ejemplo</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ejemplo</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ejemplo</span> <span class="o">=</span> <span class="n">ejemplo</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+
+    <span class="c1"># Este procedimiento es más complicado y más tedioso de hacer.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">guardar_info</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">guardar_info</span><span class="o">.</span><span class="n">ejemplo</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <div class="section" id="sobreescribiendo-metodos-en-clases-hijas">
 <h3>Sobreescribiendo métodos en clases hijas<a class="headerlink" href="#sobreescribiendo-metodos-en-clases-hijas" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se puede hacer evidentemente, si en la clase A tenemos un método llamado <code class="code docutils literal notranslate"><span class="pre">saludar()</span></code>, y la clase B que hereda de la clase A, le podemos definir el contenido del mensaje que devolverá el método <code class="code docutils literal notranslate"><span class="pre">saludar()</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-<span class="linenos"> 2</span>  <span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos"> 3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola mundo&quot;</span><span class="p">)</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="linenos"> 6</span>  <span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello everybody&quot;</span><span class="p">)</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">obj</span> <span class="o">=</span> <span class="n">B</span>
-<span class="linenos">10</span><span class="n">obj</span><span class="o">.</span><span class="n">saludar</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola mundo&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello everybody&quot;</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">B</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">saludar</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Y devolverá <code class="code docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">everybody</span></code>.</p>
 </div>
 <div class="section" id="tipos-de-herencia">
@@ -512,18 +648,27 @@
 <div class="section" id="multiple">
 <h4>Múltiple<a class="headerlink" href="#multiple" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Es una clase que hereda desde otras clases, por lo que tendrá propiedades y métodos de ambas clases (A y B).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-<span class="linenos"> 2</span>  <span class="k">pass</span>
-<span class="linenos"> 3</span><span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
-<span class="linenos"> 4</span>  <span class="k">pass</span>
-<span class="linenos"> 5</span><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
-<span class="linenos"> 6</span>  <span class="k">pass</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="c1"># Establecemos una comparación para ver si realmente son subclases o no.</span>
-<span class="linenos"> 9</span><span class="c1"># Devolverá True o False dependiendo de si es correcto o no.</span>
-<span class="linenos">10</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">A</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+  <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+  <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+<span class="c1"># Establecemos una comparación para ver si realmente son subclases o no.</span>
+<span class="c1"># Devolverá True o False dependiendo de si es correcto o no.</span>
+<span class="nb">issubclass</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">A</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="multinivel">
 <h4>Multinivel<a class="headerlink" href="#multinivel" title="Enlazar permanentemente con este título">¶</a></h4>
@@ -541,16 +686,23 @@
 <div class="section" id="jerarquica">
 <h4>Jerárquica<a class="headerlink" href="#jerarquica" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Tenemos múltiples clases que heredan de una sola clase, es decir.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-<span class="linenos">2</span>  <span class="k">pass</span>
-<span class="linenos">3</span><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="linenos">4</span>  <span class="k">pass</span>
-<span class="linenos">5</span><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="linenos">6</span>  <span class="k">pass</span>
-<span class="linenos">7</span><span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="linenos">8</span>  <span class="k">pass</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+  <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">pass</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Un ejemplo puede ser, clase Jefe/Jefa de una empresa que tiene el rol más alto de una organización y que por debajo de ellos hay otros roles acordes a la labor de la empresa que tienen menos privilegios, otras funciones…etc</p>
 </div>
 <div class="section" id="hibrido">
@@ -583,20 +735,31 @@ Imaginamos que tenemos 5 clases (A,B,C,D,E).</p>
 </pre></div>
 </div>
 <p>Si añadimos una variable en la clase A, creamos un objeto que referencie a E:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-<span class="linenos"> 2</span>  <span class="n">hello_world</span> <span class="o">=</span> <span class="s2">&quot;Hola Mundo&quot;</span>
-<span class="linenos"> 3</span><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="linenos"> 4</span>  <span class="k">pass</span>
-<span class="linenos"> 5</span><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="linenos"> 6</span>  <span class="k">pass</span>
-<span class="linenos"> 7</span><span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="linenos"> 8</span>  <span class="k">pass</span>
-<span class="linenos"> 9</span><span class="k">class</span> <span class="nc">E</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">D</span><span class="p">):</span>
-<span class="linenos">10</span>  <span class="k">pass</span>
-<span class="linenos">11</span><span class="n">obj</span> <span class="o">=</span> <span class="n">E</span><span class="p">()</span>
-<span class="linenos">12</span>  <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">hello_world</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+  <span class="n">hello_world</span> <span class="o">=</span> <span class="s2">&quot;Hola Mundo&quot;</span>
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">E</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">D</span><span class="p">):</span>
+  <span class="k">pass</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">E</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">hello_world</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><code class="code docutils literal notranslate"><span class="pre">obj</span></code> habrá impreso <code class="code docutils literal notranslate"><span class="pre">&quot;Hola</span> <span class="pre">Mundo&quot;</span></code>.</p>
 </div>
 </div>
@@ -671,71 +834,124 @@ Imaginamos que tenemos 5 clases (A,B,C,D,E).</p>
 <div class="section" id="como-podemos-acceder-o-modificar-las-variables-propiedades-o-los-metodos-de-ambito-privado">
 <h3>¿Cómo podemos acceder o modificar las variables, propiedades, o los métodos de ámbito privado?<a class="headerlink" href="#como-podemos-acceder-o-modificar-las-variables-propiedades-o-los-metodos-de-ambito-privado" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Tendremos que crear métodos específicos que puedan acceder a esas variables, propiedades o métodos.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-<span class="linenos"> 2</span>  <span class="c1"># Constructor de clase</span>
-<span class="linenos"> 3</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span>    <span class="c1"># Asignamos 20 a esta propiedad privada</span>
-<span class="linenos"> 6</span>    <span class="bp">self</span><span class="o">.</span><span class="n">__propiedad</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span>  <span class="k">def</span> <span class="nf">__metodo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos"> 9</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soy un método privado.&quot;</span><span class="p">)</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span>  <span class="c1"># Soy un método público que leerá y ejecutará contenido privado.</span>
-<span class="linenos">12</span>  <span class="k">def</span> <span class="nf">mostrar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">13</span>    <span class="bp">self</span><span class="o">.</span><span class="n">__metodo</span><span class="p">()</span>
-<span class="linenos">14</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__variable</span><span class="p">)</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span>   <span class="k">def</span> <span class="nf">cambiar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">propiedad</span><span class="p">):</span>
-<span class="linenos">17</span>     <span class="bp">self</span><span class="o">.</span><span class="n">__propiedad</span> <span class="o">=</span> <span class="n">propiedad</span>
-<span class="linenos">18</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Esta es la nueva propiedad </span><span class="si">%i</span><span class="s2"> % (self.__propiedad))</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="c1"># Instanciamos el objeto</span>
-<span class="linenos">21</span><span class="n">obj</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span><span class="c1"># Ejecutamos el método público mostrar()</span>
-<span class="linenos">24</span><span class="n">obj</span><span class="o">.</span><span class="n">mostrar</span><span class="p">()</span>
-<span class="linenos">25</span>
-<span class="linenos">26</span><span class="c1"># Modificamos el valor propiedad</span>
-<span class="linenos">27</span><span class="n">obj</span><span class="o">.</span><span class="n">cambiar</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+  <span class="c1"># Constructor de clase</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="c1"># Asignamos 20 a esta propiedad privada</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__propiedad</span> <span class="o">=</span> <span class="mi">20</span>
+
+  <span class="k">def</span> <span class="nf">__metodo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soy un método privado.&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Soy un método público que leerá y ejecutará contenido privado.</span>
+  <span class="k">def</span> <span class="nf">mostrar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__metodo</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__variable</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">cambiar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">propiedad</span><span class="p">):</span>
+     <span class="bp">self</span><span class="o">.</span><span class="n">__propiedad</span> <span class="o">=</span> <span class="n">propiedad</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Esta es la nueva propiedad </span><span class="si">%i</span><span class="s2"> % (self.__propiedad))</span>
+
+<span class="c1"># Instanciamos el objeto</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+<span class="c1"># Ejecutamos el método público mostrar()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">mostrar</span><span class="p">()</span>
+
+<span class="c1"># Modificamos el valor propiedad</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">cambiar</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="polimorfismo">
 <h2>Polimorfismo<a class="headerlink" href="#polimorfismo" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Es la capacidad que tiene un objeto para ser y poder ser otra cosa al mismo tiempo. Por ejemplo, un pájaro. Un pájaro puede ser un pingüino y un gorrión, ambos tienen propiedades en común como las patas, ojos, orejas; el color de las plumas, de los ojos, de los picos. También, tienen una serie de métodos similares como volar, poner huevos, comer, dormir…
 ¿Qué tienen en común todos ellos? Que son pájaros. Por lo tanto, un pájaro puede ser un gorrión o puede ser un pingüino al mismo tiempo sin perder lo que es su esencia, que es ser un pájaro.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Creamos la clase Pájaro</span>
-<span class="linenos"> 2</span><span class="k">class</span> <span class="nc">Pajaro</span><span class="p">:</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span>  <span class="c1"># Método volar</span>
-<span class="linenos"> 5</span>  <span class="k">def</span> <span class="nf">nadar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos"> 6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puedo nadar.&quot;</span><span class="p">)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span>  <span class="k">def</span> <span class="nf">volar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos"> 9</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puedo volar.&quot;</span><span class="p">)</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="k">class</span> <span class="nc">Pinguino</span><span class="p">(</span><span class="n">Pajaro</span><span class="p">):</span>
-<span class="linenos">12</span>  <span class="k">def</span> <span class="nf">nadar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">13</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puedo nadar.&quot;</span><span class="p">)</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span>  <span class="k">def</span> <span class="nf">volar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">16</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No puedo volar.&quot;</span><span class="p">)</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span><span class="k">def</span> <span class="nf">ver_volar</span><span class="p">(</span><span class="n">birds</span><span class="p">)</span>
-<span class="linenos">19</span>  <span class="n">birds</span><span class="o">.</span><span class="n">volar</span><span class="p">()</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="n">gorrion</span><span class="o">=</span><span class="n">Pajaro</span><span class="p">()</span>
-<span class="linenos">22</span><span class="n">pinguino</span><span class="o">=</span><span class="n">Pinguino</span><span class="p">()</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span><span class="c1"># Este imprimirá que pude volar</span>
-<span class="linenos">25</span><span class="n">ver_volar</span><span class="p">(</span><span class="n">gorrion</span><span class="p">)</span>
-<span class="linenos">26</span>
-<span class="linenos">27</span><span class="c1"># Este imprimirá que no puede volar</span>
-<span class="linenos">28</span><span class="n">ver_volar</span><span class="p">(</span><span class="n">pinguino</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Creamos la clase Pájaro</span>
+<span class="k">class</span> <span class="nc">Pajaro</span><span class="p">:</span>
+
+  <span class="c1"># Método volar</span>
+  <span class="k">def</span> <span class="nf">nadar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puedo nadar.&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">volar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puedo volar.&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Pinguino</span><span class="p">(</span><span class="n">Pajaro</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">nadar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puedo nadar.&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">volar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No puedo volar.&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ver_volar</span><span class="p">(</span><span class="n">birds</span><span class="p">)</span>
+  <span class="n">birds</span><span class="o">.</span><span class="n">volar</span><span class="p">()</span>
+
+<span class="n">gorrion</span><span class="o">=</span><span class="n">Pajaro</span><span class="p">()</span>
+<span class="n">pinguino</span><span class="o">=</span><span class="n">Pinguino</span><span class="p">()</span>
+
+<span class="c1"># Este imprimirá que pude volar</span>
+<span class="n">ver_volar</span><span class="p">(</span><span class="n">gorrion</span><span class="p">)</span>
+
+<span class="c1"># Este imprimirá que no puede volar</span>
+<span class="n">ver_volar</span><span class="p">(</span><span class="n">pinguino</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 
@@ -745,8 +961,8 @@ Imaginamos que tenemos 5 clases (A,B,C,D,E).</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Tipos%20de%20operadores%20e%20introducci%C3%B3n%20a%20los%20m%C3%B3dulos.html" class="btn btn-neutral float-right" title="Tipos de operadores" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Int%C3%A9rprete%2C%20comentarios%2C%20identificadores%20y%20palabras%20clave.html" class="btn btn-neutral float-left" title="¿Cómo usar Python?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="Tipos%20de%20operadores%20e%20introducci%C3%B3n%20a%20los%20m%C3%B3dulos.html" class="btn btn-neutral float-right" title="Tipos de operadores" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Int%C3%A9rprete%2C%20comentarios%2C%20identificadores%20y%20palabras%20clave.html" class="btn btn-neutral float-left" title="¿Cómo usar Python?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
@@ -760,11 +976,11 @@ Imaginamos que tenemos 5 clases (A,B,C,D,E).</p>
     
     
     
-    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
-    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>

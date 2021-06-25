@@ -12,3 +12,5 @@ Administración de sistemas
    storage/storage
    gui/desktop
    containers/containers
+   network/network
+

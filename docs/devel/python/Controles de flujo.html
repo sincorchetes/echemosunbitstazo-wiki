@@ -13,8 +13,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -31,7 +29,6 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -71,7 +68,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -131,7 +128,9 @@
 <li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#listas">Listas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#diccionarios">Diccionarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tuplas%2C%20listas%2C%20diccionarios%20y%20sets.html#sets">Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Preparando%20el%20entorno/Preparando%20el%20entorno.html">Historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Preparando%20el%20entorno/Preparando%20el%20entorno.html">Instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#historia">Historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#notas-importantes">Notas importantes</a></li>
 </ul>
 </li>
 </ul>
@@ -190,7 +189,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/devel/python/Controles de flujo.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+            <a href="../../_sources/devel/python/Controles de flujo.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -402,37 +401,65 @@
 <p class="admonition-title">Nota</p>
 <p>Vamos a llamar al módulo <code class="code docutils literal notranslate"><span class="pre">random</span></code> y lo llamaremos como <code class="code docutils literal notranslate"><span class="pre">TirarDados</span></code> que más tarde utilizaremos el método <code class="code docutils literal notranslate"><span class="pre">.random()</span></code> para generar números aleatorios que están comprendidos entre 0.n y 1.n y que, haciendo uso del método <code class="code docutils literal notranslate"><span class="pre">.round()</span></code> aproximaremos el número a favor del 1 o del 0.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
-<span class="linenos"> 2</span><span class="c1">#</span>
-<span class="linenos"> 3</span><span class="c1"># Juego elaborado por Álvaro Castillo</span>
-<span class="linenos"> 4</span><span class="c1"># GPLv2</span>
-<span class="linenos"> 5</span><span class="c1">#</span>
-<span class="linenos"> 6</span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> <span class="k">as</span> <span class="n">TirarDados</span>
-<span class="linenos"> 7</span><span class="n">dragon_hp</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="linenos"> 8</span><span class="n">personaje_hp</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="linenos"> 9</span><span class="n">hit_dragon</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="linenos">10</span><span class="n">hit_personaje</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="linenos">13</span>  <span class="k">if</span> <span class="n">personaje_hp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">14</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hemos ganado :)&quot;</span><span class="p">)</span>
-<span class="linenos">15</span>    <span class="k">break</span>
-<span class="linenos">16</span>  <span class="k">elif</span> <span class="n">dragon_hp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">17</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ganó el Dragón :(&quot;</span><span class="p">)</span>
-<span class="linenos">18</span>    <span class="k">break</span>
-<span class="linenos">19</span>  <span class="k">else</span><span class="p">:</span>
-<span class="linenos">20</span>    <span class="k">pass</span>
-<span class="linenos">21</span>  <span class="n">dados</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">TirarDados</span><span class="p">())</span>
-<span class="linenos">22</span>  <span class="k">if</span> <span class="p">(</span> <span class="n">dados</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>
-<span class="linenos">23</span>    <span class="n">dragon_hp</span> <span class="o">-=</span> <span class="n">hit_dragon</span>
-<span class="linenos">24</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Hemos golpeado al dragón!, le queda: &quot;</span><span class="p">,</span> <span class="n">dragon_hp</span><span class="p">,</span> <span class="s2">&quot;de vida.&quot;</span><span class="p">)</span>
-<span class="linenos">25</span>  <span class="k">elif</span> <span class="p">(</span> <span class="n">dados</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
-<span class="linenos">26</span>   <span class="n">personaje_hp</span> <span class="o">-=</span> <span class="n">hit_personaje</span>
-<span class="linenos">27</span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡El dragón nos ha golpeado!, tenemos de vida:&quot;</span><span class="p">,</span> <span class="n">personaje_hp</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-<span class="linenos">28</span>  <span class="k">else</span><span class="p">:</span>
-<span class="linenos">29</span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hubo un fallo&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1">#</span>
+<span class="c1"># Juego elaborado por Álvaro Castillo</span>
+<span class="c1"># GPLv2</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> <span class="k">as</span> <span class="n">TirarDados</span>
+<span class="n">dragon_hp</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">personaje_hp</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">hit_dragon</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">hit_personaje</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">personaje_hp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hemos ganado :)&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+  <span class="k">elif</span> <span class="n">dragon_hp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ganó el Dragón :(&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">pass</span>
+  <span class="n">dados</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">TirarDados</span><span class="p">())</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">dados</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>
+    <span class="n">dragon_hp</span> <span class="o">-=</span> <span class="n">hit_dragon</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Hemos golpeado al dragón!, le queda: &quot;</span><span class="p">,</span> <span class="n">dragon_hp</span><span class="p">,</span> <span class="s2">&quot;de vida.&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="p">(</span> <span class="n">dados</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+   <span class="n">personaje_hp</span> <span class="o">-=</span> <span class="n">hit_personaje</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡El dragón nos ha golpeado!, tenemos de vida:&quot;</span><span class="p">,</span> <span class="n">personaje_hp</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hubo un fallo&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Este es el análisis resumido de este juego:</p>
 <ol class="arabic simple">
 <li><p>La vida de ambos duelistas están asignadas en una variable</p></li>
@@ -465,8 +492,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Fecha%20y%20hora.html" class="btn btn-neutral float-right" title="Fecha y hora" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="python.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="Fecha%20y%20hora.html" class="btn btn-neutral float-right" title="Fecha y hora" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="python.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
@@ -480,11 +507,11 @@
     
     
     
-    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
-    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
