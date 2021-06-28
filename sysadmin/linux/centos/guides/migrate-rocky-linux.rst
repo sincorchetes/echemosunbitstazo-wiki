@@ -25,7 +25,7 @@ Actualizar los paquetes del sistema
 
 .. code-block:: bash
   
-  sudo dnf upgrade -y
+  dnf upgrade -y
 
 Descargar el script de migración
 ********************************
