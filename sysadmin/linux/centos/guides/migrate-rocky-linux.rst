@@ -47,7 +47,7 @@ Ejecutando la migración
 
   ./migrate2rocky.sh -r
 
-A continuación se realizará una serie de procesos en los que no tendremos que interactuar a menos que den error.
+A continuación se realizará una serie de procesos en los que no tendremos que interactuar a menos que den error, reiniciamos el sistema, y si haces :source:`cat /etc/os-release` verás que ya estás utilizando Rocky Linux.
 
 Recursos
 ########
