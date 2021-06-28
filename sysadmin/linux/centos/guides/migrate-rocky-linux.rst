@@ -28,7 +28,7 @@ Actualizamos los paquetes del sistema
 Descargamos el script de migración
 **********************************
 
-.. code-block:: json
+.. code-block:: bash
 
   curl -LO https://raw.githubusercontent.com/rocky-linux/rocky-tools/main/migrate2rocky/migrate2rocky.sh
 
